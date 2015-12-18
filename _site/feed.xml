@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Home</title>
+    <description></description>
+    <link>http://gyk6985432.github.io//myBlog/</link>
+    <atom:link href="http://gyk6985432.github.io//myBlog/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Fri, 18 Dec 2015 13:49:36 +0800</pubDate>
+    <lastBuildDate>Fri, 18 Dec 2015 13:49:36 +0800</lastBuildDate>
+    <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>Welcome to Jekyll!</title>
+        <description>&lt;p&gt;第三篇博客&lt;/p&gt;
+</description>
+        <pubDate>Fri, 18 Dec 2015 00:00:00 +0800</pubDate>
+        <link>http://gyk6985432.github.io//myBlog/jekyll/update/2015/12/18/third-post.html</link>
+        <guid isPermaLink="true">http://gyk6985432.github.io//myBlog/jekyll/update/2015/12/18/third-post.html</guid>
+        
+        <category>featured</category>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
+    
+      <item>
+        <title>second post</title>
+        <description>&lt;p&gt;This is my second post.Click the link below to go back to index:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/index.html&quot;&gt;Go back&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Fri, 18 Dec 2015 00:00:00 +0800</pubDate>
+        <link>http://gyk6985432.github.io//myBlog/2015/12/18/second-post.html</link>
+        <guid isPermaLink="true">http://gyk6985432.github.io//myBlog/2015/12/18/second-post.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Helloword</title>
+        <description>&lt;hr /&gt;
+&lt;p&gt;layout: post
+title: 你好，世界
+–&lt;/p&gt;
+
+&lt;h1 id=&quot;section&quot;&gt;我的第一篇文章&lt;/h1&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;不容易啊&lt;/h3&gt;
+</description>
+        <pubDate>Thu, 17 Dec 2015 00:00:00 +0800</pubDate>
+        <link>http://gyk6985432.github.io//myBlog/2015/12/17/helloword.html</link>
+        <guid isPermaLink="true">http://gyk6985432.github.io//myBlog/2015/12/17/helloword.html</guid>
+        
+        
+      </item>
+    
+  </channel>
+</rss>
