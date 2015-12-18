@@ -1,14 +1,201 @@
----
-layout: default
-title: 我的Blog
----
+<!DOCTYPE html>
+<html>
 
-<h2>{{ 欢迎来到我的博客 }}</h2>
+  <head>
+  <meta charset="utf-8">
+  <!-- (1) Optimize for mobile versions: http://goo.gl/EOpFl -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- (1) force latest IE rendering engine: bit.ly/1c8EiC9 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<p>最新文章</p>
+  <title>Home</title>
+  <meta name="description" content="" />
 
-<ul>
-　　{% for post in site.posts %}
-　　　　<li>{{ post.date | date_to_string }} <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
-　　{% endfor %}
-</ul>
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="MobileOptimized" content="320" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@gyk6985432" />
+    <meta name="twitter:title" content="Home" />
+    <meta name="twitter:image" content="http://gyk6985432.github.io//assets/images/df_logo.jpg" />
+    
+  
+  
+  <meta property="og:site_name" content="Home" />
+  <meta property="og:title" content="Home"/>
+  
+  <meta property="og:image" content="http://gyk6985432.github.io//assets/images/df_logo.jpg" />
+  <meta property="og:url" content="http://gyk6985432.github.io//myBlog/" >
+  <meta property="og:type" content="blog" />
+  
+
+  <link rel="canonical" href="http://gyk6985432.github.io//myBlog/">
+
+  <link rel="shortcut icon" href="/myBlog/assets/images/favicon.ico">
+  <link rel="stylesheet" href="//brick.a.ssl.fastly.net/Linux+Libertine:400,400i,700,700i/Open+Sans:400,400i,700,700i">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" media="screen" href="/myBlog/css/main.css" />
+  <link rel="stylesheet" type="text/css" media="print" href="/myBlog/css/print.css" />
+</head>
+
+
+  <body>
+
+    <!-- header start -->
+
+<a href="http://gyk6985432.github.io/" class="logo-readium"><span class="logo" style="background-image: url(/assets/images/df_logo.jpg)"></span></a>
+
+<!-- header end -->
+
+
+    <!-- content start -->
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="teaserimage">
+    <div class="teaserimage-image" style="background-image: url(/assets/images/cA4aKEIPQrerBnp1yGHv_IMG_9534-3-2.jpg)">
+        Teaser Image
+    </div>
+</div>
+
+<header class="blog-header">
+    
+      <a class="blog-logo" href="http://gyk6985432.github.io/" style="background-image: url('/assets/images/df_logo.jpg')">Home</a>
+    
+    <h1 class="blog-title">Home</h1>
+    <h2 class="blog-description"></h2>
+    <div class="custom-links">
+      
+        
+            <a class="icon-twitter" href="https://twitter.com/gyk6985432"
+             title="Follow me on twitter"
+            >
+              <i class="fa fa-twitter"></i>
+            </a>
+            &nbsp;&nbsp;·&nbsp;&nbsp;
+        
+      
+        
+            <a class="icon-github" href="https://github.com/gyk6985432"
+             title="Fork me on github"
+            >
+              <i class="fa fa-github"></i>
+            </a>
+            &nbsp;&nbsp;·&nbsp;&nbsp;
+        
+      
+      <a href="/about/">About</a>
+    </div>
+</header>
+
+
+<main class="content" role="main">
+
+    
+    <h5 class="index-headline featured"><span>Featured</span></h5>
+
+    <div class="container featured">
+      
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting" role="article">
+          <div class="article-item">
+            <header class="post-header">
+              <h2 class="post-title" itemprop="name"><a href="/jekyll/update/2015/12/18/third-post.html" itemprop="url">Welcome to Jekyll!</a></h2>
+            </header>
+            <section class="post-excerpt" itemprop="description">
+              <p>第三篇博客
+</p>
+            </section>
+            <div class="post-meta">
+              <time datetime="18 December 2015">18 December 2015</time>
+  <!--            <span class="post-tags-set">on <span class="post-tag-">, <a href="/tag/"></a></span></span>-->
+            </div>
+          </div>
+        </article>
+      
+    </div>
+
+    <h5 class="index-headline normal"><span>Regular</span></h5>
+    
+
+    <div class="cf frame">
+      
+    </div>
+
+    <nav class="pagination" role="navigation">
+      
+      <span class="page-number">Page  of </span>
+      
+    </nav>
+
+
+    <!-- 
+     -->
+
+</main>
+
+      </div>
+    </div>
+
+    <!-- content end -->
+
+    <!-- footer start -->
+
+<footer class="site-footer">
+  <a class="subscribe" href="/myBlog/feed.xml"> <span class="tooltip"> <i class="fa fa-rss"></i> Subscribe!</span></a>
+    <div class="inner">
+         <section class="copyright">All content copyright <a href="mailto:gyk6985432@gmail.com">gyk6985432</a> &copy; 2015 &bull; All rights reserved.</section>
+         <section class="poweredby">Made with <a href="http://jekyllrb.com"> Jekyll</a></section>
+    </div>
+</footer>
+
+<!-- footer end -->
+
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="/myBlog/assets/js/jquery.fitvids.js"></script>
+<script type="text/javascript" src="/myBlog/assets/js/index.js"></script>
+<script type="text/javascript" src="/myBlog/assets/js/readingTime.min.js"></script>
+<script>
+(function ($) {
+  "use strict";
+  $(document).ready(function(){
+
+    var $window = $(window),
+    $image = $('.post-image-image, .teaserimage-image');
+    
+      $window.on('scroll', function() {
+        var top = $window.scrollTop();
+
+        if (top < 0 || top > 1500) { return; }
+        $image
+          .css('transform', 'translate3d(0px, '+top/3+'px, 0px)')
+          .css('opacity', 1-Math.max(top/700, 0));
+      });
+      $window.trigger('scroll');
+
+      var height = $('.article-image').height();
+      $('.post-content').css('padding-top', height + 'px');
+
+      $('a[href*=#]:not([href=#])').click(function() {
+        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
+         && location.hostname == this.hostname) {
+          var target = $(this.hash);
+          target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+          if (target.length) {
+            $('html,body').animate({ scrollTop: target.offset().top }, 500);
+            return false;
+          }
+        }
+      });
+
+  });
+}(jQuery));
+</script>
+
+
+
+  </body>
+
+</html>
