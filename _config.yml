@@ -14,7 +14,7 @@ author_image: "/assets/images/author.jpg"
 
 pagination: 2
 
-url: "http://gyk6985432.github.io/" # the base hostname & protocol for your site
+url: "http://gyk6985432.github.io/myBlog" # the base hostname & protocol for your site
 baseurl: ""
 #used to display twitter cards
 twitter_handle: '@gyk6985432'
