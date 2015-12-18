@@ -1,3 +1,4 @@
+permalink: /:categories/:year/:month/:day/:title
 # Site settings
 title: "Home"
 
