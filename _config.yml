@@ -1,30 +1,29 @@
 # Build settings
 markdown: redcarpet
 highlighter: pygments
-gems:
-  - jemoji
-  
+gem: -paginate
+
 # Site settings
-title: "Mediator"
+title: "Home"
 description: > # this means to ignore newlines until "email:"
    A Jekyll theme - Medium inspired
 
-email: a-mail@mail.mail
+email: gyk6985432@gmail.com
 #blog logo
 logo: "/assets/images/df_logo.jpg"
 # blog cover
 cover: "/assets/images/cA4aKEIPQrerBnp1yGHv_IMG_9534-3-2.jpg"
 
-name: 'Dirk Fabisch'
-author: 'Dirk Fabisch'
+name: 'gyk6985432'
+author: 'gyk6985432'
 author_image: "/assets/images/author.jpg"
 
 paginate:	5
 
-url: "http://myblog.***.***" # the base hostname & protocol for your site
-baseurl: ""
+url: "http://gyk6985432.github.io/" # the base hostname & protocol for your site
+baseurl: "/myBlog"
 #used to display twitter cards
-twitter_handle: '@dirkfabisch'
+twitter_handle: '@gyk6985432'
 
 #fill in disqus shortname to use disqus
 #disqus: disqus-shortname
@@ -32,7 +31,7 @@ twitter_handle: '@dirkfabisch'
 # social icons and sharing options
 social:
   - icon:	twitter
-    url:	https://twitter.com/dirkfabisch
+    url:	https://twitter.com/gyk6985432
     desc: Follow me on twitter
     share_url: http://twitter.com/share
     share_title: ?text=
@@ -46,7 +45,7 @@ social:
 #    share_link: "&amp;u="
 
   - icon:	github
-    url:	https://github.com/dirkfabisch
+    url:	https://github.com/gyk6985432
     desc:	Fork me on github
     share_url:
     share_title:

@@ -1,13 +1,9 @@
-```
-<?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.springframework.org/schema/beans
-        http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <bean id="u" class="com.nimi.dao.UserDAOImpl">
-    </bean>
-    <bean id="service" class="com.nimi.service.UserService">
-        <property name="userDAO" ref="u" />
-</beans>
+---
+layout: post
+title:  "Welcome to Jekyll!"
+categories: jekyll update
+tags: featured
+image: /assets/article_images/2014-08-29-welcome-to-jekyll/desktop.jpg
+---
 
-```
+第三篇博客
