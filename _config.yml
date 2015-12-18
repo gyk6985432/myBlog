@@ -12,6 +12,7 @@ name: 'gyk6985432'
 author: 'gyk6985432'
 author_image: "/assets/images/author.jpg"
 
+pagination: 2
 
 url: "http://gyk6985432.github.io/" # the base hostname & protocol for your site
 baseurl: "/myBlog"
