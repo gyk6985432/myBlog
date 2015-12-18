@@ -4,13 +4,26 @@
  <title>Home</title>
  <link href="http://gyk6985432.github.io//myBlog/atom.xml" rel="self"/>
  <link href="http://gyk6985432.github.io//myBlog/"/>
- <updated>2015-12-18T15:19:31+08:00</updated>
+ <updated>2015-12-18T15:54:47+08:00</updated>
  <id>http://gyk6985432.github.io/</id>
  <author>
    <name></name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>Welcome to my blog</title>
+   <link href="http://gyk6985432.github.io//2015/12/18/A-New-Tutorial"/>
+   <updated>2015-12-18T00:00:00+08:00</updated>
+   <id>http://gyk6985432.github.io//myBlog/2015/12/18/A-New-Tutorial</id>
+   <content type="html">&lt;p&gt;Through one day and a half, I finish this blog finally. This is tough…
+I hope I can share my experience about coding and learning process.&lt;/p&gt;
+
+&lt;p&gt;Please look forward~~&lt;/p&gt;
+
+</content>
+ </entry>
  
  <entry>
    <title>Introducing Lanyon</title>
