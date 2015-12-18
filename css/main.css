@@ -2,6 +2,7 @@
 ---
 
 @import 'syntax-highlighting';
+
 @import 'bourbon/bourbon';
 
 .cf
@@ -26,7 +27,7 @@ main
 
 
 
-body
+body{
   font-family: $font-sans
   margin: 0
   padding: 0
@@ -37,6 +38,7 @@ body
   -webkit-font-feature-settings: "liga", "dlig"
   -o-font-feature-settings: "liga", "dlig"
   font-feature-settings: "liga", "dlig"
+}
 
 .logo-readium
   position: fixed
