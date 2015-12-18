@@ -1,6 +1,5 @@
-@import 'syntax-highlighting'
-
-@import 'bourbon/bourbon'
+@import 'syntax-highlighting';
+@import 'bourbon/bourbon';
 
 .cf
   @include clearfix
