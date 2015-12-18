@@ -5,8 +5,8 @@
     <description></description>
     <link>http://gyk6985432.github.io//myBlog/</link>
     <atom:link href="http://gyk6985432.github.io//myBlog/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Fri, 18 Dec 2015 14:26:10 +0800</pubDate>
-    <lastBuildDate>Fri, 18 Dec 2015 14:26:10 +0800</lastBuildDate>
+    <pubDate>Fri, 18 Dec 2015 14:39:58 +0800</pubDate>
+    <lastBuildDate>Fri, 18 Dec 2015 14:39:58 +0800</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -14,8 +14,8 @@
         <description>&lt;p&gt;第三篇博客&lt;/p&gt;
 </description>
         <pubDate>Fri, 18 Dec 2015 00:00:00 +0800</pubDate>
-        <link>http://gyk6985432.github.io//myBlog/jekyll/update/2015/12/18/third-post.html</link>
-        <guid isPermaLink="true">http://gyk6985432.github.io//myBlog/jekyll/update/2015/12/18/third-post.html</guid>
+        <link>http://gyk6985432.github.io//myBlog/jekyll/update/2015/12/18/third-post</link>
+        <guid isPermaLink="true">http://gyk6985432.github.io//myBlog/jekyll/update/2015/12/18/third-post</guid>
         
         <category>featured</category>
         
@@ -32,8 +32,8 @@
 &lt;p&gt;&lt;a href=&quot;/index.html&quot;&gt;Go back&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Fri, 18 Dec 2015 00:00:00 +0800</pubDate>
-        <link>http://gyk6985432.github.io//myBlog/2015/12/18/second-post.html</link>
-        <guid isPermaLink="true">http://gyk6985432.github.io//myBlog/2015/12/18/second-post.html</guid>
+        <link>http://gyk6985432.github.io//myBlog/2015/12/18/second-post</link>
+        <guid isPermaLink="true">http://gyk6985432.github.io//myBlog/2015/12/18/second-post</guid>
         
         
       </item>
@@ -50,8 +50,8 @@ title: 你好，世界
 &lt;h3 id=&quot;section-1&quot;&gt;不容易啊&lt;/h3&gt;
 </description>
         <pubDate>Thu, 17 Dec 2015 00:00:00 +0800</pubDate>
-        <link>http://gyk6985432.github.io//myBlog/2015/12/17/helloword.html</link>
-        <guid isPermaLink="true">http://gyk6985432.github.io//myBlog/2015/12/17/helloword.html</guid>
+        <link>http://gyk6985432.github.io//myBlog/2015/12/17/helloword</link>
+        <guid isPermaLink="true">http://gyk6985432.github.io//myBlog/2015/12/17/helloword</guid>
         
         
       </item>
