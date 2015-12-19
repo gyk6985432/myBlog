@@ -1,6 +1,6 @@
 ---
-title: 列表
 layout: page
+title: 列表
 ---
 # test
 
