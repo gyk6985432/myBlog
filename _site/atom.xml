@@ -4,13 +4,146 @@
  <title>Home</title>
  <link href="http://gyk6985432.github.io//myBlog/atom.xml" rel="self"/>
  <link href="http://gyk6985432.github.io//myBlog/"/>
- <updated>2015-12-18T16:40:56+08:00</updated>
+ <updated>2015-12-18T18:31:32+08:00</updated>
  <id>http://gyk6985432.github.io/</id>
  <author>
    <name></name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>My sites</title>
+   <link href="http://gyk6985432.github.io//2015/12/18/my-sites"/>
+   <updated>2015-12-18T00:00:00+08:00</updated>
+   <id>http://gyk6985432.github.io//myBlog/2015/12/18/my sites</id>
+   <content type="html">&lt;p&gt;刚搭建好博客，自然得放点东西，不然总觉得空空的好难受。好吧，那就把我箱底的东西翻腾翻腾吧~`(&lt;em&gt;∩_∩&lt;/em&gt;)′~
+首先上点导航，把这当成个中转站，否则长时间不上，万一给忘了这个地方可咋整，嗯？&lt;/p&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;常去的技术分享&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/&quot;&gt;github&lt;/a&gt;
+&lt;a href=&quot;http://stackoverflow.com/&quot;&gt;stackoverflow&lt;/a&gt;
+&lt;a href=&quot;http://toutiao.io/&quot;&gt;开发者头条&lt;/a&gt;
+&lt;a href=&quot;http://geek.csdn.net/hotest&quot;&gt;极客头条&lt;/a&gt;
+&lt;a href=&quot;http://gold.xitu.io/#/&quot;&gt;掘金&lt;/a&gt;
+&lt;a href=&quot;http://www.cnblogs.com/&quot;&gt;博客园&lt;/a&gt;
+&lt;a href=&quot;http://thestartupnews.com/&quot;&gt;StartUpNews&lt;/a&gt;
+&lt;a href=&quot;http://www.importnew.com/&quot;&gt;ImportNew&lt;/a&gt;
+&lt;a href=&quot;http://blog.jobbole.com/&quot;&gt;伯乐在线&lt;/a&gt;
+&lt;a href=&quot;http://v2ex.com/&quot;&gt;v2ex&lt;/a&gt;
+&lt;a href=&quot;http://codecloud.net/&quot;&gt;codecloud&lt;/a&gt;
+&lt;a href=&quot;http://blog.codinghorror.com/&quot;&gt;codingHorror&lt;/a&gt;
+&lt;a href=&quot;http://www.iteye.com/&quot;&gt;iteye&lt;/a&gt;
+&lt;a href=&quot;https://www.reddit.com/&quot;&gt;reddit&lt;/a&gt;
+&lt;a href=&quot;http://www.codeproject.com/&quot;&gt;CodeProject&lt;/a&gt;
+&lt;a href=&quot;https://news.ycombinator.com/news&quot;&gt;HackerNews&lt;/a&gt;
+&lt;a href=&quot;https://dzone.com/&quot;&gt;DZone&lt;/a&gt;
+&lt;a href=&quot;https://lobste.rs/&quot;&gt;lobsters&lt;/a&gt;
+&lt;a href=&quot;https://bytes.com/&quot;&gt;bytes&lt;/a&gt;
+&lt;a href=&quot;http://news.oneapm.com/&quot;&gt;OneAPM&lt;/a&gt;
+&lt;a href=&quot;https://rubygems.org/&quot;&gt;rubygems&lt;/a&gt;
+&lt;a href=&quot;http://pineapple.io/?reset=true&quot;&gt;pineapple&lt;/a&gt;
+&lt;a href=&quot;http://www.codeceo.com/&quot;&gt;码农网&lt;/a&gt;
+&lt;a href=&quot;http://coolshell.cn/&quot;&gt;coolshell&lt;/a&gt;
+&lt;a href=&quot;http://www.devtf.cn/&quot;&gt;开发技术前线&lt;/a&gt;
+&lt;a href=&quot;http://www.jianshu.com/&quot;&gt;简书&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;经典导航&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://gate.guokr.com/&quot;&gt;果壳任意门&lt;/a&gt;
+&lt;a href=&quot;http://1nami.com/&quot;&gt;1纳米学习&lt;/a&gt;
+[]()
+[]()
+[]()
+[]()&lt;/p&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;网盘&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.wangpansou.cn/&quot;&gt;网盘搜&lt;/a&gt;
+&lt;a href=&quot;http://bwss.nlic.net.cn:8080/poweb/&quot;&gt;博云资料&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-3&quot;&gt;阅读&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.tmtpost.com/&quot;&gt;钛媒体&lt;/a&gt;
+&lt;a href=&quot;http://bluereader.org/&quot;&gt;深蓝阅读&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-4&quot;&gt;编程资料&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://msdn.microsoft.com/zh-cn/library/ms123401.aspx&quot;&gt;MSDN中文&lt;/a&gt;
+&lt;a href=&quot;http://wiki.jikexueyuan.com/project/bootstrap4/&quot;&gt;bootstrap4&lt;/a&gt;
+&lt;a href=&quot;https://developer.mozilla.org/zh-CN/&quot;&gt;Mozilla开发者网络&lt;/a&gt;
+&lt;a href=&quot;http://jingxuan.io/markdown/&quot;&gt;markdown&lt;/a&gt;
+&lt;a href=&quot;https://repo.spring.io/webapp/#/artifacts/browse/tree/General/libs-release-local/org/springframework/spring/4.2.3.RELEASE/spring-framework-4.2.3.RELEASE-docs.zip&quot;&gt;spring下载&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-5&quot;&gt;程序员的后院&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.livecoding.tv/&quot;&gt;编程在线&lt;/a&gt;
+&lt;a href=&quot;http://info.9iphp.com/&quot;&gt;程序员资源网&lt;/a&gt;
+&lt;a href=&quot;http://www.aliyun.com/&quot;&gt;阿里云&lt;/a&gt;
+&lt;a href=&quot;http://www.apcow.com/&quot;&gt;远程工作者&lt;/a&gt;
+&lt;a href=&quot;http://www.vertex42.com/&quot;&gt;表格大全&lt;/a&gt;
+&lt;a href=&quot;https://ttt.tt/&quot;&gt;通天塔&lt;/a&gt;
+&lt;a href=&quot;http://bbs.pediy.com/index.php&quot;&gt;看雪安全&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-6&quot;&gt;学院&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;http://mooc.guokr.com/&quot;&gt;mooc学院&lt;/a&gt;
+&lt;a href=&quot;http://www.mooc.cn/&quot;&gt;慕课中国&lt;/a&gt;
+&lt;a href=&quot;http://www.jikexueyuan.com/&quot;&gt;极客学院&lt;/a&gt;
+&lt;a href=&quot;https://www.coursera.org/&quot;&gt;coursera&lt;/a&gt;
+&lt;a href=&quot;https://www.hackerrank.com/&quot;&gt;hackerrank&lt;/a&gt;
+&lt;a href=&quot;https://www.edx.org/&quot;&gt;edx&lt;/a&gt;
+&lt;a href=&quot;https://www.udemy.com/&quot;&gt;udemy&lt;/a&gt;
+&lt;a href=&quot;https://teamtreehouse.com/&quot;&gt;treehouse&lt;/a&gt;
+&lt;a href=&quot;https://www.codecademy.com/&quot;&gt;codecademy&lt;/a&gt;
+&lt;a href=&quot;https://code.org/&quot;&gt;code.org&lt;/a&gt;
+&lt;a href=&quot;http://www.runoob.com/&quot;&gt;runoob&lt;/a&gt;
+&lt;a href=&quot;http://visualgo.net/&quot;&gt;算法可视化&lt;/a&gt;
+&lt;a href=&quot;https://www.shiyanlou.com/&quot;&gt;实验楼&lt;/a&gt;
+&lt;a href=&quot;http://www.fanshuxueyuan.com/&quot;&gt;番薯学院&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-7&quot;&gt;购物&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.buytong.com/&quot;&gt;百通物流&lt;/a&gt;
+&lt;a href=&quot;www.taobao.com&quot;&gt;淘宝&lt;/a&gt;
+&lt;a href=&quot;www.jd.com&quot;&gt;京东&lt;/a&gt;
+&lt;a href=&quot;www.amazon.cn&quot;&gt;亚马逊&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-8&quot;&gt;文艺青年&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.asknature.org/&quot;&gt;问自然&lt;/a&gt;
+&lt;a href=&quot;http://get.yousician.com/&quot;&gt;学吉他&lt;/a&gt;
+&lt;a href=&quot;http://www.popiano.org/piano/index.htm&quot;&gt;钢琴谱&lt;/a&gt;
+&lt;a href=&quot;http://www.mosh.cn/&quot;&gt;魔时&lt;/a&gt;
+&lt;a href=&quot;http://www.rubik.com.cn/&quot;&gt;魔方小站&lt;/a&gt;
+&lt;a href=&quot;http://www.ximalaya.com/&quot;&gt;喜马拉雅电台&lt;/a&gt;
+&lt;a href=&quot;https://www.chesscademy.com/&quot;&gt;ChessCademy&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-9&quot;&gt;设计&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.uisdc.com/&quot;&gt;优设&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-10&quot;&gt;个人网站&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.ruanyifeng.com/blog/&quot;&gt;阮一峰&lt;/a&gt;
+&lt;a href=&quot;http://www.barretlee.com/entry/&quot;&gt;小胡子哥&lt;/a&gt;
+&lt;a href=&quot;http://coolshell.info/index.html&quot;&gt;浮生志&lt;/a&gt;
+&lt;a href=&quot;http://blog.knownsec.com/&quot;&gt;知道创宇博客&lt;/a&gt;
+&lt;a href=&quot;http://www.liaoxuefeng.com/&quot;&gt;廖雪峰的官方网站&lt;/a&gt;
+&lt;a href=&quot;http://linuxtools-rst.readthedocs.org/&quot;&gt;Linux快速教程&lt;/a&gt;
+&lt;a href=&quot;http://mindhacks.cn/&quot;&gt;刘未鹏&lt;/a&gt;
+&lt;a href=&quot;http://greengerong.com/&quot;&gt;破狼&lt;/a&gt;
+&lt;a href=&quot;http://prog-notes.yuanbin.me/index.html&quot;&gt;编程笔记billryan&lt;/a&gt;
+&lt;a href=&quot;http://ffffound.sinaapp.com/&quot;&gt;狗的笔记&lt;/a&gt;
+&lt;a href=&quot;http://zh.lucida.me/&quot;&gt;lucida&lt;/a&gt;
+&lt;a href=&quot;http://darkhouse.com.cn/blog/list&quot;&gt;darkhouse&lt;/a&gt;
+&lt;a href=&quot;http://www.cnblogs.com/givebest/&quot;&gt;givebest&lt;/a&gt;
+&lt;a href=&quot;http://bbear.me/&quot;&gt;bbear&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-11&quot;&gt;翻墙&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://bandwagonhost.com/&quot;&gt;搬瓦工&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-12&quot;&gt;墙外&lt;/h2&gt;
+
+&lt;h2 id=&quot;section-13&quot;&gt;学术&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;http://ieeexplore.ieee.org/&quot;&gt;IEEE&lt;/a&gt;
+&lt;a href=&quot;http://wiki.opencv.org.cn&quot;&gt;OpenCV&lt;/a&gt;
+&lt;a href=&quot;http://bbs.elecfans.com/&quot;&gt;电子发烧友&lt;/a&gt;
+&lt;a href=&quot;http://xyclade.github.io/MachineLearning/&quot;&gt;MachineLearning&lt;/a&gt;&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Welcome to my blog</title>
