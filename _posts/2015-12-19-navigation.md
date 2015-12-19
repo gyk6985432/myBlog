@@ -1,0 +1,10 @@
+---
+title: 列表
+layout: page
+---
+
+{% for node in site.posts %}
+    {% if node.title !== null %}
+        <a href="{{ node.url }}">{{ node.title }}</a>
+    {% endif %}
+{% endfor %}
