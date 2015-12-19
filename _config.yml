@@ -7,7 +7,7 @@ relative_permalinks: true
 # Setup
 title:               高悦凯的博客
 tagline:             '后端为主，前端为辅'
-description:         '走在编程的大路上，吊丝们都是我同伴，鼠标和着键盘在歌唱，前端后端全栈一锅端……'
+description:         '走在编程的大路上……'
 url:                 http://lanyon.getpoole.com
 baseurl:             'http://gyk6985432.github.io/myBlog'
 paginate:            5
@@ -21,4 +21,4 @@ author:
   repo:
 
 # Custom vars
-version:             1.0.0
+template:            lanyon
