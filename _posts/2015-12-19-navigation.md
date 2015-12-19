@@ -1,6 +1,7 @@
 ---
 layout: page
 title: 列表
+url: http://gyk6985432.github.io/myBlog//2015/12/19/navigation/
 ---
 # test
 
