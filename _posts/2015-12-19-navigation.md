@@ -5,7 +5,7 @@ url: http://gyk6985432.github.io/myBlog//2015/12/19/navigation/
 ---
 # test
 
-{% for node in site.pages %}
+{% for node in site.posts %}
     {% if node.layout == "page" %}
 
         [{{ node.title }}]({{ node.url }})
