@@ -5,6 +5,6 @@ layout: page
 
 {% for node in site.posts %}
     {% if node.title != null %}
-        [{{ node.url }}]({{ node.title }})
+        [{{ node.title }}]({{ node.url }})
     {% endif %}
 {% endfor %}
