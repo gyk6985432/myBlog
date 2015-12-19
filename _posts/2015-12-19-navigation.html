@@ -1,0 +1,14 @@
+---
+layout: page
+title: About
+url: /2015/12/19/navigation/
+---
+
+
+{% for node in site.posts %}
+    {% if node.layout == "page" %}
+
+        <a href="{{ node.url }}">{{ node.title }}</a>
+
+    {% endif %}
+{% endfor %}
