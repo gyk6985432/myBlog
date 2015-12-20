@@ -7,6 +7,9 @@
 
     {% include sidebar.html %}
 
+    <!--回到顶端-->
+    <a name="toTop" href="top"></a>
+
     <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
          content to avoid any CSS collisions with our real content. -->
     <div class="wrap">
@@ -22,6 +25,11 @@
       <div class="container content">
         {{ content }}
       </div>
+
+      <div>
+        <a name="top" href="toTop">回顶端</a>
+      </div>
+
     </div>
 
     <label for="sidebar-checkbox" class="sidebar-toggle"></label>
