@@ -314,6 +314,7 @@ a.sidebar-nav-item:focus {
 .post {
   margin-bottom: 4em;
   border: 1px solid #ccc;
+  padding: 10px;
 }
 
 /* Blog post or page title */
