@@ -362,6 +362,15 @@ a.sidebar-nav-item:focus {
 }
 
 
+/*页内链接*/
+.links{
+  position: fixed;
+  left:50%;
+  margin-left:14rem;
+  margin-top: 50px;
+}
+
+
 /*
  * Pagination
  *
