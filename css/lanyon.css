@@ -366,7 +366,7 @@ a.sidebar-nav-item:focus {
 .links{
   position: fixed;
   left:50%;
-  margin-left:14rem;
+  margin-left:25%;
   margin-top: 50px;
 }
 
