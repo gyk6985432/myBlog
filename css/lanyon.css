@@ -365,9 +365,10 @@ a.sidebar-nav-item:focus {
 /*页内链接*/
 .links{
   position: fixed;
+  top: 50px;
   left:50%;
   margin-left:25%;
-  margin-top: 50px;
+
 }
 
 
