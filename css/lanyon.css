@@ -364,7 +364,7 @@ a.sidebar-nav-item:focus {
 
 /*页内链接*/
 .links{
-  position: fixed;
+  position: absolute;
   font-size: 12px;
   top: 50px;
   left:50%;
