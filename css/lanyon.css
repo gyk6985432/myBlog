@@ -365,10 +365,11 @@ a.sidebar-nav-item:focus {
 /*页内链接*/
 .links{
   position: fixed;
+  font-size: 12px;
   top: 50px;
   left:50%;
   margin-left:30%;
-  font-weight: 250;
+  /*font-weight: 250;*/
 }
 
 
