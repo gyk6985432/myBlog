@@ -370,6 +370,7 @@ a.sidebar-nav-item:focus {
   left:50%;
   margin-left:30%;
   /*font-weight: 250;*/
+  background-color: #DCDCDC;
 }
 
 

@@ -21,7 +21,7 @@ title: Home
   <div class="links">
   {% for post in paginator.posts %}
       <a href="{{ site.baseurl }}/{{ post.url }}">{{ post.title }}</a>&nbsp;&nbsp;
-    {{ post.date | date_to_string }}
+    {{ post.date | date_to_string }}<br/>
   {% endfor %}
   </div>
 </div>
