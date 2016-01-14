@@ -378,6 +378,7 @@ a.sidebar-nav-item:focus {
 
 .links a{
   width: 150px;
+  overflow: hidden;
 }
 
 .linkDate{
