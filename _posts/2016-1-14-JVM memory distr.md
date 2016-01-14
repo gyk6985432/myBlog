@@ -7,7 +7,7 @@ title: JVM内存区域及作用
 
 ### 运行时数据区域
 
-![Alt text](/myBlog/images/Java VM structure.jpg)
+![Alt text](/myBlog/images/Java VM structure.png)
 
 #### 程序计数器（Program Counter Register）
 程序计数器是一块较小的内存空间，可看作当前线程执行的字节码的行号指示器。用来给*字节码解释器*进行选取字节码指令，以及分支、循环、跳转、异常处理、线程恢复等功能。
