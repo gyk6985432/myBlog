@@ -376,13 +376,20 @@ a.sidebar-nav-item:focus {
   background-color: #DCDCDC;
 }
 
-.links a{
+
+.links .box{
+  margin:5px;
+}
+
+
+.links .box a{
+  float: left;
   width: 150px;
   overflow: hidden;
 }
 
-.linkDate{
-  float:left;
+.links .box .linkDate{
+  float:right;
 }
 
 
