@@ -21,8 +21,8 @@ title: Home
     <div class="links">
       <h6>文章列表</h6>
       {% for post in paginator.posts %}
-          <a href="{{ site.baseurl }}/{{ post.url }}">{{ post.title }}</a>&nbsp;&nbsp;
-        <div class="linkDate">{{ post.date | date_to_string }}</div><br/>
+          <a href="{{ site.baseurl }}/{{ post.url }}">{{ post.title }}</a>
+        <div class="linkDate">{{ post.date | date_to_string }}</div>
       {% endfor %}
     </div>
 </div>
