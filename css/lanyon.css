@@ -369,9 +369,9 @@ a.sidebar-nav-item:focus {
   padding: 10px;
   font-size: 15px;
   white-space: normal;
-  top: 200px;
+  top: 160px;
   left:50%;
-  margin-left:18rem;
+  margin-left:19rem;
   /*font-weight: 250;*/
   background-color: #DCDCDC;
 }
