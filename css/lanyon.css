@@ -315,7 +315,7 @@ a.sidebar-nav-item:focus {
   margin-bottom: 4em;
   border: 1px solid #ccc;
   padding: 10px;
-  font-size: 14px
+  font-size: 16px;  /*字体大小*/
 }
 
 /* Blog post or page title */
