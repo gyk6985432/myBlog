@@ -164,8 +164,9 @@ var colors = ["#000000","#000000","#000000","#000000","#000000","#000000","#0000
 
 window.onload = function(){
 
-    WINDOW_WIDTH = Math.round(document.body.clientWidth*1.2);
-    WINDOW_HEIGHT=Math.round(document.body.clientHeight*1.2);
+    WINDOW_WIDTH = Math.round(document.body.clientWidth*1.5);
+    WINDOW_HEIGHT=Math.round(document.body.clientHeight*1.5);
+    //屏幕自适应
     // WINDOW_WIDTH = document.getElementById("main").offsetWidth;
     // WINDOW_HEIGHT=document.getElementById("main").offsetHeight;
     // MARGIN_LEFT = Math.floor(WINDOW_WIDTH/10);
@@ -174,14 +175,6 @@ window.onload = function(){
     //RADIUS = Math.floor(WINDOW_WIDTH*3/5/108)-1;
     RADIUS=5;
     DOT_RADIUS = Math.floor(RADIUS/5);
-
-    console.log(WINDOW_WIDTH);
-    console.log(WINDOW_HEIGHT);
-    console.log(MARGIN_LEFT);
-    console.log(MARGIN_TOP);
-    console.log(RADIUS);
-
-
 
     var canvas = document.getElementById("canvas");
     var context = canvas.getContext("2d");
