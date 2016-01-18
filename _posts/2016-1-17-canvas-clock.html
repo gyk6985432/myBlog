@@ -8,11 +8,9 @@ title: 粒子时钟
 
 
 {{ excerpt_separator}}
-<div id="main" style="width:800px;height:768px">
-<canvas id="canvas" style="width:100%">
+<canvas id="canvas">
     您的浏览器不支持canvas，请更换浏览器
 </canvas>
-</div>
 <script type="text/javascript">
     digit =
     [
@@ -166,8 +164,8 @@ var colors = ["#000000","#000000","#000000","#000000","#000000","#000000","#0000
 
 window.onload = function(){
 
-    WINDOW_WIDTH = Math.round(document.body.clientWidth*0.8);
-    WINDOW_HEIGHT=Math.round(document.body.clientHeight*0.8);
+    WINDOW_WIDTH = Math.round(document.body.clientWidth*1.2);
+    WINDOW_HEIGHT=Math.round(document.body.clientHeight*1.2);
     // WINDOW_WIDTH = document.getElementById("main").offsetWidth;
     // WINDOW_HEIGHT=document.getElementById("main").offsetHeight;
     MARGIN_LEFT = Math.floor(WINDOW_WIDTH/10);
