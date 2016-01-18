@@ -175,6 +175,14 @@ window.onload = function(){
     RADIUS = Math.floor(WINDOW_WIDTH*3/5/108)-1;
     DOT_RADIUS = Math.floor(RADIUS/5);
 
+    console.log(WINDOW_WIDTH);
+    console.log(WINDOW_HEIGHT);
+    console.log(MARGIN_LEFT);
+    console.log(MARGIN_TOP);
+    console.log(RADIUS);
+
+
+
     var canvas = document.getElementById("canvas");
     var context = canvas.getContext("2d");
 
@@ -308,7 +316,7 @@ function addBalls(x,y,num){
 }
 
 function updateBalls(){
-    console.log(balls.length);
+    //console.log(balls.length);
 
     for (var i = 0; i < balls.length; i++) {
         balls[i].x += balls[i].vx;
