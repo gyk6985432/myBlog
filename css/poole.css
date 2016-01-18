@@ -49,7 +49,7 @@ body {
 
 html {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 12px;/*原来为16px*/
+  font-size: 16px;/*原来为16px*/
   line-height: 1.5;
 }
 @media (min-width: 38em) {
@@ -201,7 +201,7 @@ pre code {
   background-color: transparent;
 }
 .gist .gist-file .gist-data {
-  font-size: .8rem !important;
+  font-size: .6rem !important;
   line-height: 1.4;
 }
 .gist code {
