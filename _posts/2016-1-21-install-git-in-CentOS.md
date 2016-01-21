@@ -8,16 +8,19 @@ title: CentOS6.7上安装git
 由于CentOS的默认源上没有git，改成国内最大的163源也还是没有.
 
 1. 进入目录
+
 ```
 cd /usr/local/src
 ```
 
 2. 安装git需要的依赖：
+
 ```
 yum install curl curl-devel zlib-devel openssl-devel perl cpio expat-devel gettext-devel
 ```
 
 3. 下载git包
+
 ```
 wget http://git-core.googlecode.com/files/git-1.7.7.5.tar.gz
 autoconf
@@ -27,6 +30,7 @@ make install
 ```
 
 4. 安装完成
+
 ```
 git --version
 ```
