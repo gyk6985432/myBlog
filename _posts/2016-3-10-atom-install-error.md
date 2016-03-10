@@ -1,6 +1,6 @@
 ---
 layout: post
-title: atom编辑器安装插件的问题
+title: atom安装插件的问题
 ---
 
 今天终于准备装最近很火的[atom](https://atom.io/)了，据说比SublimeText还牛，这么牛的东西咱肯定得试试啊！下载安装很给力，一键安装，好在软件也不大，只有80+M，听说windows下可以使用apm安装插件，模仿的是大名鼎鼎的npm，那想必非常Diao。
