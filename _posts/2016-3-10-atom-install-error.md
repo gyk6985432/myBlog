@@ -9,7 +9,7 @@ title: atom安装插件的问题
 
 前段时间看到<开发者头条>上分享的“[atom酷炫打字效果](https://atom.io/packages/activate-power-mode)”，着实让人大开眼界。当然，最重要的是markdown支持要好，一边预览一边编辑，那真是飞一样的感觉~
 
-![init](/myBlog/images/atom1.jpg)
+![dialog](/myBlog/images/atom1.jpg)
 
 看看这界面是不是很帅？
 
