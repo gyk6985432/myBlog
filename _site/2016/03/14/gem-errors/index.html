@@ -11,7 +11,7 @@
 
   <title>
     
-      404: Page not found &middot; 高悦凯的博客
+      安装jekyll问题解决方案 &middot; 高悦凯的博客
     
   </title>
 
@@ -124,9 +124,90 @@
     </div>
 
       <div class="container content">
-        <div class="page">
-  <h1 class="page-title">404: Page not found</h1>
-  <p class="lead">Sorry, we've misplaced that URL or it's pointing to something that doesn't exist. <a href="http://gyk6985432.github.io/myBlog/">Head back home</a> to try finding it again.</p>
+        <div class="post">
+  <h1 class="post-title">安装jekyll问题解决方案</h1>
+  <span class="post-date">14 Mar 2016</span>
+  <p>最近忙于论文，更新博客有点少了。前两天写的博客push上来在博客页面也不显示，今天终于有时间弄一下了。
+由于这台电脑经常换系统，所以博客出问题也是情理之中，断定是jekyll出问题了。既然如此就充装一下jekyll，但过程却相当曲折，因为要有ruby环境，用gem安装却一直连不上源。</p>
+
+<p>国内现在比较推荐的是ruby.taobao.org，但我改了之后还是无法连接。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ gem sources -r https://rubygems.org/
+$ gem sources -a https://ruby.taobao.org/
+</code></pre>
+</div>
+
+<p><img src="/myBlog/images/gemError1.png" alt="rubyError1" /></p>
+
+<p>官方让加-V，似乎也不管用</p>
+
+<p><img src="/myBlog/images/gemError2.png" alt="rubyError2" /></p>
+
+<p>试了半天不管用，有换回原来的了：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ gem sources -r https://ruby.taobao.org/
+$ gem source -a http://rubygem.org/
+</code></pre>
+</div>
+
+<p>还是不行，又更新了一下<a href="http://rubygems.org/">rubygems</a>，开了代理后，终于大功告成了。</p>
+
+<p><img src="/myBlog/images/gemError3.png" alt="rubyError3" /></p>
+
+<p><img src="/myBlog/images/gemError4.png" alt="rubyError4" /></p>
+
+<p>真是要折腾死人啊。。。</p>
+
+</div>
+
+
+
+
+<!--插入的代码_disqus的评论
+<div id="disqus_thread"></div>
+<script>
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//gyk6985432.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+-->
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="http://gyk6985432.github.io/myBlog/2016/03/10/atom-install-error/">
+            atom安装插件的问题
+            <small>10 Mar 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="http://gyk6985432.github.io/myBlog/2016/01/23/story-of-ubuntu-and-me/">
+            与ubuntu一见钟情的故事
+            <small>23 Jan 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="http://gyk6985432.github.io/myBlog/2016/01/21/install-git-in-CentOS/">
+            CentOS6.7上安装git
+            <small>21 Jan 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
 </div>
 
 
