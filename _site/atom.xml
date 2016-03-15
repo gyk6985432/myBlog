@@ -4,7 +4,7 @@
  <title>高悦凯的博客</title>
  <link href="http://lanyon.getpoole.comhttp://gyk6985432.github.io/myBlog/atom.xml" rel="self"/>
  <link href="http://lanyon.getpoole.comhttp://gyk6985432.github.io/myBlog/"/>
- <updated>2016-03-15T11:21:59+08:00</updated>
+ <updated>2016-03-15T12:14:05+08:00</updated>
  <id>http://lanyon.getpoole.com</id>
  <author>
    <name>高悦凯</name>
@@ -27,11 +27,11 @@ $ gem sources -a https://ruby.taobao.org/
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;p&gt;&lt;img src=&quot;/myBlog/images/gemError1.png&quot; alt=&quot;rubyError1&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/myBlog/images/gemError1.PNG&quot; alt=&quot;rubyError1&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;官方让加-V，似乎也不管用&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/myBlog/images/gemError2.png&quot; alt=&quot;rubyError2&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/myBlog/images/gemError2.PNG&quot; alt=&quot;rubyError2&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;试了半天不管用，有换回原来的了：&lt;/p&gt;
 
@@ -42,9 +42,9 @@ $ gem source -a http://rubygem.org/
 
 &lt;p&gt;还是不行，又更新了一下&lt;a href=&quot;http://rubygems.org/&quot;&gt;rubygems&lt;/a&gt;，开了代理后，终于大功告成了。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/myBlog/images/gemError3.png&quot; alt=&quot;rubyError3&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/myBlog/images/gemError3.PNG&quot; alt=&quot;rubyError3&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/myBlog/images/gemError4.png&quot; alt=&quot;rubyError4&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/myBlog/images/gemError4.PNG&quot; alt=&quot;rubyError4&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;真是要折腾死人啊。。。&lt;/p&gt;
 </content>
@@ -57,7 +57,7 @@ $ gem source -a http://rubygem.org/
    <id>http://lanyon.getpoole.comhttp://gyk6985432.github.io/myBlog/2016/03/10/atom-install-error</id>
    <content type="html">&lt;p&gt;今天终于准备装最近很火的&lt;a href=&quot;https://atom.io/&quot;&gt;atom&lt;/a&gt;了，据说比SublimeText还牛，这么牛的东西咱肯定得试试啊！下载安装很给力，一键安装，好在软件也不大，只有80+M，听说windows下可以使用apm安装插件，模仿的是大名鼎鼎的npm，那想必非常Diao。&lt;/p&gt;
 
-&lt;p&gt;前段时间看到&lt;开发者头条&gt;上分享的“[atom酷炫打字效果](https://atom.io/packages/activate-power-mode)”，着实让人大开眼界。当然，最重要的是markdown支持要好，一边预览一边编辑，那真是飞一样的感觉~&lt;/开发者头条&gt;&lt;/p&gt;
+&lt;p&gt;前段时间看到&lt;开发者头条&gt;上分享的[atom酷炫打字效果](https://atom.io/packages/activate-power-mode/)，着实让人大开眼界。当然，最重要的是markdown支持要好，一边预览一边编辑，那真是飞一样的感觉~&lt;/开发者头条&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/myBlog/images/atom1.jpg&quot; alt=&quot;dialog&quot; /&gt;&lt;/p&gt;
 
