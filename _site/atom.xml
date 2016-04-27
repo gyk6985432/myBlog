@@ -1,22 +1,775 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
- <title>Home</title>
- <link href="http://gyk6985432.github.io//myBlog/atom.xml" rel="self"/>
- <link href="http://gyk6985432.github.io//myBlog/"/>
- <updated>2015-12-18T18:31:32+08:00</updated>
- <id>http://gyk6985432.github.io/</id>
+ <title>高悦凯的博客</title>
+ <link href="http://lanyon.getpoole.comhttp://gyk6985432.github.io/myBlog/atom.xml" rel="self"/>
+ <link href="http://lanyon.getpoole.comhttp://gyk6985432.github.io/myBlog/"/>
+ <updated>2016-03-15T12:14:05+08:00</updated>
+ <id>http://lanyon.getpoole.com</id>
  <author>
-   <name></name>
-   <email></email>
+   <name>高悦凯</name>
+   <email>gyk6985432@gmail.com</email>
  </author>
 
  
  <entry>
-   <title>My sites</title>
-   <link href="http://gyk6985432.github.io//2015/12/18/my-sites"/>
+   <title>安装jekyll问题解决方案</title>
+   <link href="http://lanyon.getpoole.com/2016/03/14/gem-errors/"/>
+   <updated>2016-03-14T00:00:00+08:00</updated>
+   <id>http://lanyon.getpoole.comhttp://gyk6985432.github.io/myBlog/2016/03/14/gem-errors</id>
+   <content type="html">&lt;p&gt;最近忙于论文，更新博客有点少了。前两天写的博客push上来在博客页面也不显示，今天终于有时间弄一下了。
+由于这台电脑经常换系统，所以博客出问题也是情理之中，断定是jekyll出问题了。既然如此就充装一下jekyll，但过程却相当曲折，因为要有ruby环境，用gem安装却一直连不上源。&lt;/p&gt;
+
+&lt;p&gt;国内现在比较推荐的是ruby.taobao.org，但我改了之后还是无法连接。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ gem sources -r https://rubygems.org/
+$ gem sources -a https://ruby.taobao.org/
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/myBlog/images/gemError1.PNG&quot; alt=&quot;rubyError1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;官方让加-V，似乎也不管用&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/myBlog/images/gemError2.PNG&quot; alt=&quot;rubyError2&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;试了半天不管用，有换回原来的了：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ gem sources -r https://ruby.taobao.org/
+$ gem source -a http://rubygem.org/
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;还是不行，又更新了一下&lt;a href=&quot;http://rubygems.org/&quot;&gt;rubygems&lt;/a&gt;，开了代理后，终于大功告成了。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/myBlog/images/gemError3.PNG&quot; alt=&quot;rubyError3&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/myBlog/images/gemError4.PNG&quot; alt=&quot;rubyError4&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;真是要折腾死人啊。。。&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>atom安装插件的问题</title>
+   <link href="http://lanyon.getpoole.com/2016/03/10/atom-install-error/"/>
+   <updated>2016-03-10T00:00:00+08:00</updated>
+   <id>http://lanyon.getpoole.comhttp://gyk6985432.github.io/myBlog/2016/03/10/atom-install-error</id>
+   <content type="html">&lt;p&gt;今天终于准备装最近很火的&lt;a href=&quot;https://atom.io/&quot;&gt;atom&lt;/a&gt;了，据说比SublimeText还牛，这么牛的东西咱肯定得试试啊！下载安装很给力，一键安装，好在软件也不大，只有80+M，听说windows下可以使用apm安装插件，模仿的是大名鼎鼎的npm，那想必非常Diao。&lt;/p&gt;
+
+&lt;p&gt;前段时间看到&lt;开发者头条&gt;上分享的[atom酷炫打字效果](https://atom.io/packages/activate-power-mode/)，着实让人大开眼界。当然，最重要的是markdown支持要好，一边预览一边编辑，那真是飞一样的感觉~&lt;/开发者头条&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/myBlog/images/atom1.jpg&quot; alt=&quot;dialog&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;看看这界面是不是很帅？&lt;/p&gt;
+
+&lt;p&gt;快捷键一大堆，看的人眼花缭乱，还好有很多是和SublimeText相同的，然并卵。&lt;/p&gt;
+
+&lt;p&gt;插件是个大坑啊，有的人顺利直接就装上了，可惜很多人没那么幸运，安装第一个插件就卡住了。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Compiler Tool not found!
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;居然说我没有安装python和visual studio！！怎么可能？？&lt;/p&gt;
+
+&lt;p&gt;网上解决方案并不多，终于找到一个解决方案，还在知乎回答了下这个问题：&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.zhihu.com/question/38098629/answer/90036256?from=profile_answer_card&quot;&gt;我在知乎回答&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;然而这种解决方式对我这样的强迫症并没有什么效果，解决不了？我跟你拼了！&lt;/p&gt;
+
+&lt;p&gt;所以？google啊！&lt;/p&gt;
+
+&lt;p&gt;综合各个论坛什么的，总结如下：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;apm代理问题&lt;/li&gt;
+  &lt;li&gt;node-gyp重定向&lt;/li&gt;
+  &lt;li&gt;环境变量设置问题&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;到底怎么解决呢？
+当然是开个代理了（自己找梯子），dos下设置代理&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ apm config set strict-ssl false
+$ apm config set http-proxy http://127.0.0.1:1080
+$ apm config set https-proxy http://127.0.0.1:1080
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;（具体可参考https://github.com/atom/apm）&lt;/p&gt;
+
+&lt;p&gt;这样应该解决了吧？什么？还不行？&lt;/p&gt;
+
+&lt;p&gt;参考下这篇文章中&lt;a href=&quot;https://github.com/atom/apm/issues/322&quot;&gt;@TedThiCo&lt;/a&gt;的回答。&lt;/p&gt;
+
+&lt;p&gt;这还差不多。。。&lt;/p&gt;
+
+&lt;p&gt;这个折腾好了，接下来使劲爽吧！！！&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>与ubuntu一见钟情的故事</title>
+   <link href="http://lanyon.getpoole.com/2016/01/23/story-of-ubuntu-and-me/"/>
+   <updated>2016-01-23T00:00:00+08:00</updated>
+   <id>http://lanyon.getpoole.comhttp://gyk6985432.github.io/myBlog/2016/01/23/story-of-ubuntu-and-me</id>
+   <content type="html">&lt;p&gt;前天重装的centOS系统经过一番折腾，果断还是放弃了，各种软件都装不上，感觉源都不行，加上本人也是linux小白，搞的不欢而散。&lt;/p&gt;
+
+&lt;p&gt;本来呢是想下载个盗版的windows10，在这台电脑上凑合用吧，不知是鬼使神差还是机缘巧合，windows10没下载下来，下了个ubuntu14.0.4……那好吧，先试试ubuntu好不好用吧。&lt;/p&gt;
+
+&lt;p&gt;也许真的是缘分，装系统时候连分区啥的都没找到，直接输了个用户名和密码，系统就装好了。紧接着，自带输入法跟shi一样，也不知道它是什么情况，打字各种出问题，经过一番百度，bing…好不容易装了个搜狗输入法，打字终于舒服了（这不是找虐吗？）。OK，接下来，在CentOS上没完成的，试试在ubuntu上能不能行，先装个为之笔记(wiznote)，事实证明，ubuntu上这些事情还是容易的多。在CentOS上想装个wiz的依赖，一夜没关电脑，第二天还是不行，真是受够了。ubuntu上很容易就成功了，看着我那一堆笔记，心里觉得好满足（咳咳）。&lt;/p&gt;
+
+&lt;p&gt;有了云笔记只够自恋的，怎么也得有个顺手的浏览器吧，linux都自带firefox，说实话firefox界面跟chrome比起来真的太丑了，总是没有chrome那种感觉，装这个chrome在CentOS上也没成功，老是提示Core dumped，各种google都没解决，妈的，我想要的软件一个都装不上，不要它也罢！在ubuntu上三句代码直接搞定。
+然而，有了chrome光能上百度也不行啊，sb百度搜啥啥没有，跟bing比起来都差远了，不信你上去搜和shadowsocks试试，连个毛都没有，google大法好啊！一搜一个准，五毛党再猖狂，我还是要抱google的大腿，谷歌身下死，做鬼也风流（别想多啊）～～
+要说架梯子，还是shadowsocks好，在windows下跟坐飞机一样爽，在女朋友的mac上也没听到一句抱怨，好了，该证明一下linux上的效果了。
+经过一番bing，终于配置好了，看到了GOOGLE的logo真的好满足好满足。
+哦对了，最后一个神器，git可不能少，有了这几样，终于可以端端正正地在ubuntu上冲浪编程了，就此开始了新的旅程，bless me……&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>CentOS6.7上安装git</title>
+   <link href="http://lanyon.getpoole.com/2016/01/21/install-git-in-CentOS/"/>
+   <updated>2016-01-21T00:00:00+08:00</updated>
+   <id>http://lanyon.getpoole.comhttp://gyk6985432.github.io/myBlog/2016/01/21/install-git-in-CentOS</id>
+   <content type="html">&lt;p&gt;昨天把原先用的电脑翻出来，发现还是WindowsXP，虽然换了新电脑，但也不能让旧的就压箱底吧，所以为了让它继续发挥价值，给它装个linux，也好让我多熟悉熟悉linux，以后说不定要用到呢，废话不多说了，制作启动U盘，装系统什么的直接略过，先给它武装一个神武器git，别的慢慢再说吧。&lt;/p&gt;
+
+&lt;p&gt;由于CentOS的默认源上没有git，改成国内最大的163源也还是没有.&lt;/p&gt;
+
+&lt;p&gt;1.进入目录&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cd /usr/local/src
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;2.安装git需要的依赖：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;yum install curl curl-devel zlib-devel openssl-devel perl cpio expat-devel gettext-devel
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;3.下载git包&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;wget http://git-core.googlecode.com/files/git-1.7.7.5.tar.gz
+autoconf
+./configure
+make
+make install
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;4.安装完成&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git --version
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>JVM中的四种引用</title>
+   <link href="http://lanyon.getpoole.com/2016/01/20/References-in-JVM/"/>
+   <updated>2016-01-20T00:00:00+08:00</updated>
+   <id>http://lanyon.getpoole.comhttp://gyk6985432.github.io/myBlog/2016/01/20/References-in-JVM</id>
+   <content type="html">&lt;p&gt;看过某些博客中看到，在面试中有时会问到“弱引用”的问题，很多面试者都答不上来，让我也一直很迷惑。在书中看到才真正理解了不同“引用”的作用，终于知道了finalize()方法的作用。&lt;/p&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;可达性分析算法&lt;/h2&gt;
+&lt;p&gt;主流语言包括Java、C#等都是通过可达性分析来判定对象是否应该继续存活。其基本思想是设置一系列的起始点（GC Roots）对象，沿着引用链（Reference Chain）向下搜索，当一个对象没有任何路径能够到达GC Roots时，说明对象是不可达的。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;四种引用&lt;/h2&gt;
+&lt;p&gt;JDK1.2中对引用的概念进行了扩充，分为：
+- 强引用（Strong Reference）
+- 软引用（Soft Reference）
+- 弱引用（Weak Reference）
+- 虚引用（Phantom Reference）&lt;/p&gt;
+
+&lt;p&gt;强引用是指在程序代码中普遍存在的“Object obj = new Object()”一类引用，垃圾回收器永远不会对有强引用的对象进行回收。&lt;/p&gt;
+
+&lt;p&gt;软引用描述的是有用但并非必需的对象，。系统在将要发生内存溢出异常之前，会把软引用的对象进行第二次回收，如果这次回收还没有足够的内存，才会抛出内存溢出异常。&lt;/p&gt;
+
+&lt;p&gt;弱引用也是描述非必需对象的，但它比软引用更弱，被弱引用关联的对象只能生存道下一次垃圾收集发生之前。无论当前内存是否足够，都会回收被弱引用关联的对象。&lt;/p&gt;
+
+&lt;p&gt;虚引用又称为幽灵引用或幻影引用，是最弱的一种引用关系。一个对象是否有虚引用，完全不影响其生存时间，也无法通过虚引用来生成一个对象实例。虚引用唯一的作用是，在对象被回收时会受到一个系统通知。&lt;/p&gt;
+
+&lt;h2 id=&quot;finalize&quot;&gt;finalize()方法&lt;/h2&gt;
+&lt;p&gt;当一个对象变得不可达时，系统并不会立即给它判死刑，且马上进行回收。在它死之前还会给它一次机会，也就是第一次给予严重警告，如果它不能自我救赎，第二次就了结它。那如何标记是第一次还是第二次呢？这就要借助finalize()方法了。
+如果一个对象没有实现finalize()方法，或者已经调用过finalize()方法，就认定它没有机会了，直接进行回收。如果它有finalize()方法并且没有执行过，就给它一次机会，这时此对象将被放置到一个叫做F-QUEUE的队列中，并在稍后由Finalizer线程去执行。Finalizer线程是由虚拟机自动建立、具有低优先级的一个线程。
+此时，虽然该对象的finalize()被执行了，但虚拟机并不会等待它结束，防止它执行缓慢或陷入死循环，让F-QUEUE中其他对象永久处于等待状态，导致整个内存回收系统崩溃。
+finalize()方法是对象逃过鬼门关的最后一次机会，稍后GC将对F-QUEUE中的对象进行第二次小规模标记，对象要成功地拯救自己，只有重新与引用链上的任何一个对象建立关联，这时它将不再是“即将”被回收的对象了。&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>粒子时钟</title>
+   <link href="http://lanyon.getpoole.com/2016/01/17/canvas-clock/"/>
+   <updated>2016-01-17T00:00:00+08:00</updated>
+   <id>http://lanyon.getpoole.comhttp://gyk6985432.github.io/myBlog/2016/01/17/canvas-clock</id>
+   <content type="html">在慕课网上学了个动态时钟，全部用canvas实现的。
+自己改成了一个粒子时钟，放上来玩玩。
+
+
+
+&lt;canvas id=&quot;canvas&quot;&gt;
+    您的浏览器不支持canvas，请更换浏览器
+&lt;/canvas&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+    digit =
+    [
+        [
+            [0,0,1,1,1,0,0],
+            [0,1,1,0,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,0,1,1,0],
+            [0,0,1,1,1,0,0]
+        ],//0
+        [
+            [0,0,0,1,1,0,0],
+            [0,1,1,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [1,1,1,1,1,1,1]
+        ],//1
+        [
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,0,1,1,0,0,0],
+            [0,1,1,0,0,0,0],
+            [1,1,0,0,0,0,0],
+            [1,1,0,0,0,1,1],
+            [1,1,1,1,1,1,1]
+        ],//2
+        [
+            [1,1,1,1,1,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//3
+        [
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,1,0],
+            [0,0,1,1,1,1,0],
+            [0,1,1,0,1,1,0],
+            [1,1,0,0,1,1,0],
+            [1,1,1,1,1,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,1,1]
+        ],//4
+        [
+            [1,1,1,1,1,1,1],
+            [1,1,0,0,0,0,0],
+            [1,1,0,0,0,0,0],
+            [1,1,1,1,1,1,0],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//5
+        [
+            [0,0,0,0,1,1,0],
+            [0,0,1,1,0,0,0],
+            [0,1,1,0,0,0,0],
+            [1,1,0,0,0,0,0],
+            [1,1,0,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//6
+        [
+            [1,1,1,1,1,1,1],
+            [1,1,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,1,1,0,0,0],
+            [0,0,1,1,0,0,0],
+            [0,0,1,1,0,0,0],
+            [0,0,1,1,0,0,0]
+        ],//7
+        [
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//8
+        [
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,1,1,0,0,0,0]
+        ],//9
+        [
+            [0,0,0,0],
+            [0,0,0,0],
+            [0,1,1,0],
+            [0,1,1,0],
+            [0,0,0,0],
+            [0,0,0,0],
+            [0,1,1,0],
+            [0,1,1,0],
+            [0,0,0,0],
+            [0,0,0,0]
+        ]//:
+    ];
+
+var WINDOW_WIDTH = 1024;
+var WINDOW_HEIGHT = 768;
+var RADIUS = 6;
+var DOT_RADIUS = Math.round(RADIUS/5);
+var MARGIN_TOP = 100;
+var MARGIN_LEFT = 200;
+var endTime = new Date();
+endTime.setTime(endTime.getTime() + 3600*1000);
+var currentShowTimeSeconds=0;
+
+var balls = [];
+//var colors = [&quot;#008000&quot;,&quot;#00ffff&quot;,&quot;#FF7F50&quot;,&quot;#DC143&quot;,&quot;#00008B&quot;,&quot;#DC143C&quot;,&quot;#FF8C00&quot;,&quot;#E9967A&quot;,&quot;#008000&quot;,&quot;##9ACD32&quot;];
+var colors = [&quot;#000000&quot;,&quot;#000000&quot;,&quot;#000000&quot;,&quot;#000000&quot;,&quot;#000000&quot;,&quot;#000000&quot;,&quot;#000000&quot;,&quot;#000000&quot;,&quot;#000000&quot;,&quot;##000000&quot;];
+
+window.onload = function(){
+
+    WINDOW_WIDTH = Math.round(document.body.clientWidth*1.5);
+    WINDOW_HEIGHT=Math.round(document.body.clientHeight*1.5);
+    //屏幕自适应
+    // WINDOW_WIDTH = document.getElementById(&quot;main&quot;).offsetWidth;
+    // WINDOW_HEIGHT=document.getElementById(&quot;main&quot;).offsetHeight;
+    // MARGIN_LEFT = Math.floor(WINDOW_WIDTH/10);
+    MARGIN_LEFT = 0;
+    MARGIN_TOP = Math.floor(WINDOW_HEIGHT/5);
+    //RADIUS = Math.floor(WINDOW_WIDTH*3/5/108)-1;
+    RADIUS=5;
+    DOT_RADIUS = Math.floor(RADIUS/5);
+
+    var canvas = document.getElementById(&quot;canvas&quot;);
+    var context = canvas.getContext(&quot;2d&quot;);
+
+    canvas.width = WINDOW_WIDTH;
+    canvas.height = WINDOW_HEIGHT;
+
+    currentShowTimeSeconds = getCurrentShowTimeSeconds();
+    setInterval(function(){
+        render(context);
+        update();
+    },50);
+}
+
+function render(cxt){
+    cxt.clearRect(0,0,WINDOW_WIDTH,WINDOW_HEIGHT);
+
+    var hour = parseInt(currentShowTimeSeconds/3600);
+    var minite = parseInt((currentShowTimeSeconds-hour*3600)/60);
+    var second = currentShowTimeSeconds%60;
+
+    renderDigit(MARGIN_LEFT,MARGIN_TOP,parseInt(hour/10),cxt);//位置，数字，cxt  parseInt(minite/10)
+    renderDigit(MARGIN_LEFT+15*(RADIUS+1),MARGIN_TOP,parseInt(hour%10),cxt);
+    renderDigit(MARGIN_LEFT+30*(RADIUS+1),MARGIN_TOP,10,cxt);
+    renderDigit(MARGIN_LEFT+39*(RADIUS+1),MARGIN_TOP,parseInt(minite/10),cxt);
+    renderDigit(MARGIN_LEFT+54*(RADIUS+1),MARGIN_TOP,parseInt(minite%10),cxt);
+    renderDigit(MARGIN_LEFT+69*(RADIUS+1),MARGIN_TOP,10,cxt);
+    renderDigit(MARGIN_LEFT+78*(RADIUS+1),MARGIN_TOP,parseInt(second/10),cxt);
+    renderDigit(MARGIN_LEFT+93*(RADIUS+1),MARGIN_TOP,parseInt(second%10),cxt);
+
+    for (var i = 0; i &lt; balls.length; i++) {
+        cxt.fillStyle=balls[i].color;
+        cxt.beginPath();
+        cxt.arc(balls[i].x,balls[i].y,balls[i].r,0,2*Math.PI);
+        cxt.closePath;
+        cxt.fill();
+    };
+}
+
+function renderDigit(x, y, num, cxt){       //centerX=x+j*2(R+1)+(R+1)      centerY = y+i*2(R+1)+(R+1)
+
+    cxt.fillStyle = &quot;rgb(0,0,0)&quot;;
+
+    for (var i = 0; i &lt; digit[num].length; i++) {
+        for (var j = 0; j &lt; digit[num][i].length; j++) {
+            if (digit[num][i][j]==1) {
+                for (var k = 0; k &lt; 5; k++) {
+                    for (var l = 0; l &lt; 5; l++) {
+                        cxt.beginPath();
+                        cxt.arc(x+j*2*(RADIUS+1)+(RADIUS+1)+l*2*(DOT_RADIUS+1)+(DOT_RADIUS+1),y+i*2*(RADIUS+1)+(RADIUS+1)+k*2*(DOT_RADIUS+1)+(DOT_RADIUS+1),DOT_RADIUS,0,2*Math.PI);
+                        cxt.closePath();
+                        cxt.fill();
+                    };
+                };
+                // cxt.beginPath();
+                // cxt.arc(x+j*2*(RADIUS+1)+(RADIUS+1),y+i*2*(RADIUS+1)+(RADIUS+1),RADIUS,0,2*Math.PI);
+                // cxt.closePath();
+                // cxt.fill();
+            };
+        };
+    };
+
+}
+
+function getCurrentShowTimeSeconds(){
+    var currTime = new Date();
+    //倒计时
+    // var ret = endTime.getTime() - currTime.getTime();
+    // ret = Math.round(ret/1000);
+    // return ret&gt;=0 ? ret : 0;
+
+    //时钟
+    var ret = currTime.getHours()*3600+currTime.getMinutes()*60+currTime.getSeconds();
+    return ret;
+}
+
+function update(){
+    var nextShowTimeSeconds = getCurrentShowTimeSeconds();
+
+    var nextHour = parseInt(nextShowTimeSeconds/3600);
+    var nextMinite = parseInt((nextShowTimeSeconds-nextHour*3600)/60);
+    var nextSecond = nextShowTimeSeconds%60;
+
+    var curHour = parseInt(currentShowTimeSeconds/3600);
+    var curMinite = parseInt((currentShowTimeSeconds-curHour*3600)/60);
+    var curSecond = currentShowTimeSeconds%60;
+
+    if (nextSecond != curSecond) {
+
+        if (parseInt(curHour/10) != parseInt(nextHour/10)) {
+            addBalls(MARGIN_LEFT,MARGIN_TOP,parseInt(curHour/10));
+        };
+        if (parseInt(curHour%10) != parseInt(nextHour%10)) {
+            addBalls(MARGIN_LEFT+15*(RADIUS+1),MARGIN_TOP,parseInt(curHour%10));
+        };
+        if (parseInt(curMinite/10) != parseInt(nextMinite/10)) {
+            addBalls(MARGIN_LEFT+39*(RADIUS+1),MARGIN_TOP,parseInt(curMinite/10));
+        };
+        if (parseInt(curMinite%10) != parseInt(nextMinite%10)) {
+            addBalls(MARGIN_LEFT+54*(RADIUS+1),MARGIN_TOP,parseInt(curMinite%10));
+        };
+        if (parseInt(curSecond/10) != parseInt(nextSecond/10)) {
+            addBalls(MARGIN_LEFT+78*(RADIUS+1),MARGIN_TOP,parseInt(curSecond/10));
+        };
+        if (parseInt(curSecond%10) != parseInt(nextSecond%10)) {
+            addBalls(MARGIN_LEFT+93*(RADIUS+1),MARGIN_TOP,parseInt(curSecond%10));
+        };
+        currentShowTimeSeconds = nextShowTimeSeconds;
+    };
+    updateBalls();
+}
+
+function addBalls(x,y,num){
+    for (var i = 0; i &lt; digit[num].length; i++) {
+        for (var j = 0; j &lt; digit[num][i].length; j++) {
+            if (digit[num][i][j]==1) {
+                for (var k = 0; k &lt; 10; k++) {
+                    var aBall={
+                    x:x+j*2*(RADIUS+1)+(RADIUS+1),
+                    y:y+i*2*(RADIUS+1)+(RADIUS+1),
+                    g:1.5+Math.random(),
+                    vx:Math.pow(-1,Math.ceil(Math.random()*1000))*Math.floor(Math.random()*30),
+                    vy:Math.pow(-1,Math.ceil(Math.random()*1000))*Math.floor(Math.random()*30),
+                    r:DOT_RADIUS,
+                    color: colors[Math.floor(Math.random()*colors.length)]
+                    };
+                    balls.push(aBall);
+                };
+            };
+        };
+    };
+}
+
+function updateBalls(){
+    //console.log(balls.length);
+
+    for (var i = 0; i &lt; balls.length; i++) {
+        balls[i].x += balls[i].vx;
+        balls[i].y += balls[i].vy;
+        balls[i].vy += balls[i].g;
+
+        if (balls[i].y &gt;= WINDOW_HEIGHT-RADIUS) {
+            balls[i].y=WINDOW_HEIGHT-RADIUS;
+            //balls[i].vy = -balls[i].vy*0.75;
+        };
+        if (balls[i].vx==0) {
+            balls[i].vx -= 5;
+        };
+    };
+
+    //删掉不在画面中的小球，提高性能
+    var cnt=0;
+    for (var i = 0; i &lt; balls.length; i++) {
+        if(balls[i].x+RADIUS &gt; 0 &amp;&amp; balls[i].x-RADIUS&lt;WINDOW_WIDTH){
+            balls[cnt++] = balls[i];
+        }
+    };
+
+    while(balls.length &gt; cnt){ //|| balls.length&gt;300){//Math.min(300,cnt)
+        balls.pop();
+    }
+}
+&lt;/script&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>JVM内存区域及作用</title>
+   <link href="http://lanyon.getpoole.com/2016/01/14/JVM-memory-distr/"/>
+   <updated>2016-01-14T00:00:00+08:00</updated>
+   <id>http://lanyon.getpoole.comhttp://gyk6985432.github.io/myBlog/2016/01/14/JVM memory distr</id>
+   <content type="html">&lt;p&gt;最近在看《深入理解JAVA虚拟机》，刚看到内存区域划分及其所管理的内容。虽然在其他博客上也看过类似的文章，但书里介绍的还是更加详尽透彻。这些区域不太好记，容易遗忘，写篇博客常常回来温习一下也好。&lt;/p&gt;
+
+&lt;h3 id=&quot;section&quot;&gt;运行时数据区域&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/myBlog/images/Java VM structure.png&quot; alt=&quot;Alt text&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;program-counter-register&quot;&gt;程序计数器（Program Counter Register）&lt;/h4&gt;
+&lt;p&gt;程序计数器是一块较小的内存空间，可看作当前线程执行的字节码的行号指示器。用来给&lt;em&gt;字节码解释器&lt;/em&gt;进行选取字节码指令，以及分支、循环、跳转、异常处理、线程恢复等功能。
+为了线程切换后能恢复到正确的执行位置，需要给每条线程都创建一个程序计数器，因而也叫“线程私有”的内存。如果线程执行的java方法，该计数器指向的是正在执行的字节码地址，若是Native方法，则指向空（Undefined）。
+此内存区域是java虚拟机唯一一个没有规定任何OutOfMemoryError的区域。&lt;/p&gt;
+
+&lt;h4 id=&quot;javajava-virtual-machine-stacks&quot;&gt;Java虚拟机栈（Java Virtual Machine Stacks）&lt;/h4&gt;
+&lt;p&gt;这块区域也是线程私有的，其生命周期与线程相同。
+虚拟机栈是给&lt;strong&gt;执行java方法&lt;/strong&gt;服务的。每个java方法执行时都会创建一个&lt;strong&gt;栈帧(Stack Frame)&lt;/strong&gt;，用于存储局部变量表、操作数栈、动态链接、方法出口等。java方法的调用的过程对应着一个栈帧在虚拟机栈中入栈到出栈的过程。
+如果线程请求的栈深度大于虚拟机所允许的深度，将抛出StackOverflowError异常；若虚拟机栈可以动态扩展，如果扩展时无法申请到足够的内存，就会抛出OutOfMemoryError异常。&lt;/p&gt;
+
+&lt;h4 id=&quot;native-method-stack&quot;&gt;本地方法栈（Native Method Stack）&lt;/h4&gt;
+&lt;p&gt;本地方法栈和虚拟机栈的区别在于它是为Native方法服务的。虚拟机规范对本地方法栈中使用的语言、使用方式和数据结构没有强制规定，不同虚拟机可自由实现。而虚拟机栈中用到的boolean、byte、char、int、double、对象引用的内存分配都在编译时候分配完成，进入一个方法时栈帧的局部变量空间是完全确定的，运行期间不会改变。&lt;/p&gt;
+
+&lt;h4 id=&quot;javajava-heap&quot;&gt;Java堆（Java Heap）&lt;/h4&gt;
+&lt;p&gt;java堆是内存中最大的部分，所有线程所共享的，虚拟机启动时创建，用来存放对象实例和数组。内存回收也是主要针对这部分，为了便于回收，java堆会被分成Eden、From Survivor、To Survivor等，这部分内容以后进行介绍。
+如果堆中没有内存分配给实例，并且堆也无法扩展时将会抛出OutOfMemoryError异常。&lt;/p&gt;
+
+&lt;h4 id=&quot;method-area&quot;&gt;方法区（Method Area）&lt;/h4&gt;
+&lt;p&gt;方法区也是所有线程共享的区域，用来存储已被虚拟机加载的类信息、常量、静态变量、即时编译器编译后的代码等。方法区也是java堆的逻辑部分，但为了与java堆有所区别，也叫&lt;em&gt;非堆(Non-Heap)&lt;/em&gt;。虽然有些称方法区为“永久代”，但这却不是绝对的，垃圾回收器主要对这部分中的常量池的进行回收和类型的卸载，防止某些时候出现的内存泄漏。。
+虚拟机规范规定，方法区无法满足内存分配需求时，将抛出OutOfMemoryError异常。&lt;/p&gt;
+
+&lt;h4 id=&quot;runtime-constant-pool&quot;&gt;运行时常量池（Runtime Constant Pool）&lt;/h4&gt;
+&lt;p&gt;运行时常量池是方法区的一部分，Class文件中除了类的信息、字段、方法、接口等外，还有一项&lt;em&gt;常量池（Constant Pool Table）&lt;/em&gt;用于存放编译期生成的各种字面量和符号引用，这部分内容要放到运行时常量池中存放。
+但是运行时常量池不仅可以存放编译期生成的常量部分，也可在运行时将新的常量放入池中，，具有动态存储的特性。如String的intern()方法。
+运行时长两次无法申请到内存时会抛出OutOfMemoryError异常。&lt;/p&gt;
+
+&lt;h4 id=&quot;section-1&quot;&gt;直接内存&lt;/h4&gt;
+&lt;p&gt;这部分不是运行时数据区的一部分，也不是虚拟机规范中定义的内存区域，但由于会经常使用，也应该予以关注。
+JDK1.4中新加入的NIO类，引入了基于通道（channel）与缓冲区（Buffer）的I/O方式，可以使用Native函数库直接分配堆外内存，通过DirectByteBuffer对象作为这块内存的引用进行操作。这种方法能显著提高性能，避免了java堆和Native堆中来回复制数据。
+在配置虚拟机参数时，要兼顾这部分直接内存，保证总内存大于各内存区域总和，防止导致出现OutOfMemoryError异常。&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>作家的33项写作技巧</title>
+   <link href="http://lanyon.getpoole.com/2015/12/22/33TipsToBeGoodWriter/"/>
+   <updated>2015-12-22T00:00:00+08:00</updated>
+   <id>http://lanyon.getpoole.comhttp://gyk6985432.github.io/myBlog/2015/12/22/33TipsToBeGoodWriter</id>
+   <content type="html">&lt;p&gt;在这个互联网时代，&lt;strong&gt;每个人都要懂点写作&lt;/strong&gt;。文科出身的还好，大多理工科出身的完全不懂怎么写才会吸引读者，怎么写才能表达清楚，让读者能看的懂，看的有意思，还能感悟到一些东西。因此跟作家学学写作的一些技巧吧。&lt;/p&gt;
+
+&lt;p&gt;作家&lt;strong&gt;James Altucher&lt;/strong&gt;在部落格上整理了他的33个独门建议，分享他对于写作的技巧与看法！&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/myBlog/images/33-Unusual-Tips-To-Being-A-Better-Writer.jpg&quot; alt=&quot;33tips of writing&quot; /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;写作不需要別人批准。不要说「我的看法是ooxx」。大家都知道是你的看法。文章就你写的呀。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;把想到的全部写下來。然后把第一段跟最后一段拿掉。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;每天都要好好大便。身体流畅了，思路才会流畅。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;第一句话就要帶出感情。让读者感受到活生生的人，而不只是死板板的文章。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;大量写作。联系永远会让你进步一点点。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;大量阅读。你一定要先读进去東西才写得出東西。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;动笔之前要先阅读。读最高品质的作品，让你的写作水平跟著提升。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;咖啡。不喝咖啡，就不会有創造力。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;別管物理法则。文字是沒有时间观念的。不需要凡事照順序写。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;标题要能震惊別人。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;说真话。把所有人都在想，但是沒人敢讲的東西写出來。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;別为了红而攻击別人。別当这种小人。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;睡满八小时。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;当一个很有意见的人。若你对事情不是很有意见，那谁管你在想什么。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;把所有多余的句子部拿掉。有点多余就拿掉。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;跟风吧。找找現在有什么话題热门，就跟著谈阅吧。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;让观众掉眼泪。让他們想起那永不复返的曾经。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;谈一些社会上的真实故事。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;时间观念治愈一切。都过那么久了，把你那不堪回首的往事写出來吧。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;不要打安全牌了。把想讲的全部写出來，写到你不敢公开文章为止。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;好笑一点。好笑第一法则：北烂的人都很好笑。让自己越北烂越好。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;多用句点。少用逗号、頓号、分号。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;让自己满脑都是想法。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;不要刻意去激怒某个人。让那个人也变成你的读者吧。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;用你讲话的语气去写作。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;你写的每一个句子都要內含价值。就算只是网上发动态也一样。除此之外，就保持安靜。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;搞懂大家在想什么，然后去探索、提出反面看法。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;每天都写東西。写作是一种精神修行。探索自己的內在，清掉一切的杂质。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;让文章的最后一句整个炸开來。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;不要害怕別人怎么想。你每担心一个人，文章品质就降低1%。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;用「说」就好，別用其他字。不要用「他建议…」、「他咆哮著…」。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;多画画。让其他和创意有关的部位都保持运动。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;睡一觉再说。不管你在写什么，暂停下來、睡一觉再说。之后再看过一次。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;原创：http://www.jamesaltucher.com/2011/03/33-unusual-tips-to-being-a-better-writer/
+翻译：http://feed.wordcorp.net/blog/post/33-writing-tips&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>博客中添加社会化评论的方法</title>
+   <link href="http://lanyon.getpoole.com/2015/12/20/comment/"/>
+   <updated>2015-12-20T00:00:00+08:00</updated>
+   <id>http://lanyon.getpoole.comhttp://gyk6985432.github.io/myBlog/2015/12/20/comment</id>
+   <content type="html">&lt;p&gt;&lt;strong&gt;“社会化评论”&lt;/strong&gt;也叫第三方评论，“社会化”听着很奇怪，难以理解，第三方评论就可以顾名思义，就是在自己的网站中加入评论的部分，但是这并不需要建立用户的注册系统以及相关的数据库，而是用QQ、微博等账号登录即可进行评论，给游客带来很多方便，而引入又极其方便，因此有简单省事的东西不拿来用简直对不起自己。&lt;/p&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;常用的评论系统有&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;友言&lt;/li&gt;
+  &lt;li&gt;畅言&lt;/li&gt;
+  &lt;li&gt;多说&lt;/li&gt;
+  &lt;li&gt;灯鹭&lt;/li&gt;
+  &lt;li&gt;亦云&lt;/li&gt;
+  &lt;li&gt;评论啦&lt;/li&gt;
+  &lt;li&gt;贝米&lt;/li&gt;
+  &lt;li&gt;Disqus&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;在墙外活动的朋友可以试试Disqus，毕竟人家在全世界应用广泛，Google+，Facebook，Twitter账户都可以用，还是很方便的。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;用法&lt;/h2&gt;
+
+&lt;p&gt;具体用法我就拿Disqus和友言来说吧，Disqus稍稍麻烦一点。&lt;/p&gt;
+
+&lt;h3 id=&quot;disqus&quot;&gt;Disqus&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;进入&lt;a href=&quot;https://disqus.com/&quot;&gt;Disqus官方网站&lt;/a&gt;，没账户的先注册一个。&lt;/li&gt;
+  &lt;li&gt;按指示的完成注册并登录后，随便关注三个community，也可以选选自己喜欢的。&lt;/li&gt;
+  &lt;li&gt;点击右上角的setting-&amp;gt;Admin-&amp;gt;Edit Settings&lt;/li&gt;
+  &lt;li&gt;左边栏里选择Installation，按照你的网站的类型选择，实在不知道就选Universal Code。&lt;/li&gt;
+  &lt;li&gt;把那段代码复制，并粘贴到你的模板中即可。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;是的，这样就可以了。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-2&quot;&gt;友言&lt;/h3&gt;
+
+&lt;p&gt;这个就更简单啦，&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;直接到&lt;a href=&quot;http://www.uyan.cc/&quot;&gt;官网&lt;/a&gt;，注册。&lt;/li&gt;
+  &lt;li&gt;获取代码-&amp;gt;选择网站类型&lt;/li&gt;
+  &lt;li&gt;复制代码，粘贴到模板中，一般放在&amp;lt;/body&amp;gt;或&lt;strong&gt;“content”&lt;/strong&gt;之后.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;大功告成。&lt;/p&gt;
+
+&lt;p&gt;至于各个评论哪个好，这个见仁见智，自己测试一下也不麻烦，简单大方最重要。&lt;/p&gt;
+
+&lt;p&gt;有用的话帮忙点个赞之类的，欢迎探讨。&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>中转站</title>
+   <link href="http://lanyon.getpoole.com/2015/12/18/my-sites/"/>
    <updated>2015-12-18T00:00:00+08:00</updated>
-   <id>http://gyk6985432.github.io//myBlog/2015/12/18/my sites</id>
+   <id>http://lanyon.getpoole.comhttp://gyk6985432.github.io/myBlog/2015/12/18/my sites</id>
    <content type="html">&lt;p&gt;刚搭建好博客，自然得放点东西，不然总觉得空空的好难受。好吧，那就把我箱底的东西翻腾翻腾吧~`(&lt;em&gt;∩_∩&lt;/em&gt;)′~
 首先上点导航，把这当成个中转站，否则长时间不上，万一给忘了这个地方可咋整，嗯？&lt;/p&gt;
 
@@ -52,11 +805,7 @@
 &lt;h2 id=&quot;section-1&quot;&gt;经典导航&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://gate.guokr.com/&quot;&gt;果壳任意门&lt;/a&gt;
-&lt;a href=&quot;http://1nami.com/&quot;&gt;1纳米学习&lt;/a&gt;
-[]()
-[]()
-[]()
-[]()&lt;/p&gt;
+&lt;a href=&quot;http://1nami.com/&quot;&gt;1纳米学习&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;section-2&quot;&gt;网盘&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;http://www.wangpansou.cn/&quot;&gt;网盘搜&lt;/a&gt;
@@ -71,16 +820,23 @@
 &lt;a href=&quot;http://wiki.jikexueyuan.com/project/bootstrap4/&quot;&gt;bootstrap4&lt;/a&gt;
 &lt;a href=&quot;https://developer.mozilla.org/zh-CN/&quot;&gt;Mozilla开发者网络&lt;/a&gt;
 &lt;a href=&quot;http://jingxuan.io/markdown/&quot;&gt;markdown&lt;/a&gt;
-&lt;a href=&quot;https://repo.spring.io/webapp/#/artifacts/browse/tree/General/libs-release-local/org/springframework/spring/4.2.3.RELEASE/spring-framework-4.2.3.RELEASE-docs.zip&quot;&gt;spring下载&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;https://repo.spring.io/webapp/#/artifacts/browse/tree/General/libs-release-local/org/springframework/spring/4.2.3.RELEASE/spring-framework-4.2.3.RELEASE-docs.zip&quot;&gt;spring下载&lt;/a&gt;
+&lt;a href=&quot;http://mvnrepository.com/&quot;&gt;maven库&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;section-5&quot;&gt;程序员的后院&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.livecoding.tv/&quot;&gt;编程在线&lt;/a&gt;
+&lt;p&gt;&lt;a href=&quot;http://drops.wooyun.org/&quot;&gt;乌云知识库&lt;/a&gt;
+&lt;a href=&quot;https://www.livecoding.tv/&quot;&gt;编程在线&lt;/a&gt;
 &lt;a href=&quot;http://info.9iphp.com/&quot;&gt;程序员资源网&lt;/a&gt;
 &lt;a href=&quot;http://www.aliyun.com/&quot;&gt;阿里云&lt;/a&gt;
 &lt;a href=&quot;http://www.apcow.com/&quot;&gt;远程工作者&lt;/a&gt;
 &lt;a href=&quot;http://www.vertex42.com/&quot;&gt;表格大全&lt;/a&gt;
 &lt;a href=&quot;https://ttt.tt/&quot;&gt;通天塔&lt;/a&gt;
-&lt;a href=&quot;http://bbs.pediy.com/index.php&quot;&gt;看雪安全&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;http://bbs.pediy.com/index.php&quot;&gt;看雪安全&lt;/a&gt;
+&lt;a href=&quot;http://www.freebuf.com/&quot;&gt;freebuf&lt;/a&gt;
+&lt;a href=&quot;https://nmap.org/&quot;&gt;nmap&lt;/a&gt;
+&lt;a href=&quot;http://jekyll.bootcss.com/docs/posts/&quot;&gt;jekyll文档&lt;/a&gt;
+&lt;a href=&quot;https://shimo.im/&quot;&gt;石墨文档&lt;/a&gt;
+&lt;a href=&quot;https://docs.google.com/&quot;&gt;谷歌文档&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;section-6&quot;&gt;学院&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;http://mooc.guokr.com/&quot;&gt;mooc学院&lt;/a&gt;
@@ -100,21 +856,22 @@
 
 &lt;h2 id=&quot;section-7&quot;&gt;购物&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;http://www.buytong.com/&quot;&gt;百通物流&lt;/a&gt;
-&lt;a href=&quot;www.taobao.com&quot;&gt;淘宝&lt;/a&gt;
-&lt;a href=&quot;www.jd.com&quot;&gt;京东&lt;/a&gt;
-&lt;a href=&quot;www.amazon.cn&quot;&gt;亚马逊&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;https://www.taobao.com/&quot;&gt;淘宝&lt;/a&gt;
+&lt;a href=&quot;http://www.jd.com/&quot;&gt;京东&lt;/a&gt;
+&lt;a href=&quot;http://www.amazon.cn/&quot;&gt;亚马逊&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;section-8&quot;&gt;文艺青年&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;http://www.asknature.org/&quot;&gt;问自然&lt;/a&gt;
 &lt;a href=&quot;http://get.yousician.com/&quot;&gt;学吉他&lt;/a&gt;
 &lt;a href=&quot;http://www.popiano.org/piano/index.htm&quot;&gt;钢琴谱&lt;/a&gt;
-&lt;a href=&quot;http://www.mosh.cn/&quot;&gt;魔时&lt;/a&gt;
+&lt;a href=&quot;http://www.mosh.cn/&quot;&gt;魔时同城&lt;/a&gt;
 &lt;a href=&quot;http://www.rubik.com.cn/&quot;&gt;魔方小站&lt;/a&gt;
 &lt;a href=&quot;http://www.ximalaya.com/&quot;&gt;喜马拉雅电台&lt;/a&gt;
 &lt;a href=&quot;https://www.chesscademy.com/&quot;&gt;ChessCademy&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;section-9&quot;&gt;设计&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;http://www.uisdc.com/&quot;&gt;优设&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.uisdc.com/&quot;&gt;优设&lt;/a&gt;
+&lt;a href=&quot;http://www.splitshire.com/&quot;&gt;splitshire&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;section-10&quot;&gt;个人网站&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;http://www.ruanyifeng.com/blog/&quot;&gt;阮一峰&lt;/a&gt;
@@ -125,32 +882,33 @@
 &lt;a href=&quot;http://linuxtools-rst.readthedocs.org/&quot;&gt;Linux快速教程&lt;/a&gt;
 &lt;a href=&quot;http://mindhacks.cn/&quot;&gt;刘未鹏&lt;/a&gt;
 &lt;a href=&quot;http://greengerong.com/&quot;&gt;破狼&lt;/a&gt;
-&lt;a href=&quot;http://prog-notes.yuanbin.me/index.html&quot;&gt;编程笔记billryan&lt;/a&gt;
-&lt;a href=&quot;http://ffffound.sinaapp.com/&quot;&gt;狗的笔记&lt;/a&gt;
+&lt;a href=&quot;http://prog-notes.yuanbin.me/index.html&quot;&gt;billryan&lt;/a&gt;
+&lt;a href=&quot;http://ffffound.sinaapp.com/&quot;&gt;dog&lt;/a&gt;
 &lt;a href=&quot;http://zh.lucida.me/&quot;&gt;lucida&lt;/a&gt;
 &lt;a href=&quot;http://darkhouse.com.cn/blog/list&quot;&gt;darkhouse&lt;/a&gt;
 &lt;a href=&quot;http://www.cnblogs.com/givebest/&quot;&gt;givebest&lt;/a&gt;
-&lt;a href=&quot;http://bbear.me/&quot;&gt;bbear&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;http://bbear.me/&quot;&gt;bbear&lt;/a&gt;
+&lt;a href=&quot;http://www.blogjava.net/&quot;&gt;blogjava&lt;/a&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;section-11&quot;&gt;翻墙&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://bandwagonhost.com/&quot;&gt;搬瓦工&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;section-11&quot;&gt;墙外&lt;/h2&gt;
 
-&lt;h2 id=&quot;section-12&quot;&gt;墙外&lt;/h2&gt;
-
-&lt;h2 id=&quot;section-13&quot;&gt;学术&lt;/h2&gt;
+&lt;h2 id=&quot;section-12&quot;&gt;学术&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;http://ieeexplore.ieee.org/&quot;&gt;IEEE&lt;/a&gt;
 &lt;a href=&quot;http://wiki.opencv.org.cn&quot;&gt;OpenCV&lt;/a&gt;
 &lt;a href=&quot;http://bbs.elecfans.com/&quot;&gt;电子发烧友&lt;/a&gt;
 &lt;a href=&quot;http://xyclade.github.io/MachineLearning/&quot;&gt;MachineLearning&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;先放一部分吧，慢慢再找。欢迎补充~~&lt;/p&gt;
 </content>
  </entry>
  
  <entry>
    <title>Welcome to my blog</title>
-   <link href="http://gyk6985432.github.io//2015/12/18/A-New-Tutorial"/>
+   <link href="http://lanyon.getpoole.com/2015/12/18/A-New-Tutorial/"/>
    <updated>2015-12-18T00:00:00+08:00</updated>
-   <id>http://gyk6985432.github.io//myBlog/2015/12/18/A-New-Tutorial</id>
-   <content type="html">&lt;p&gt;Through one day and a half, I finish this blog finally. This is tough…
+   <id>http://lanyon.getpoole.comhttp://gyk6985432.github.io/myBlog/2015/12/18/A-New-Tutorial</id>
+   <content type="html">&lt;p&gt;&lt;img src=&quot;/myBlog/images/SplitShire_9573.jpg&quot; alt=&quot;Alt text&quot; /&gt;
+Through one day and a half, I finish this blog finally. This is tough…
 I hope I can share my experience about coding and learning process.&lt;/p&gt;
 
 &lt;p&gt;Please look forward~~&lt;/p&gt;

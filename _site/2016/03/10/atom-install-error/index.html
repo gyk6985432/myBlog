@@ -11,7 +11,7 @@
 
   <title>
     
-      404: Page not found &middot; 高悦凯的博客
+      atom安装插件的问题 &middot; 高悦凯的博客
     
   </title>
 
@@ -124,9 +124,112 @@
     </div>
 
       <div class="container content">
-        <div class="page">
-  <h1 class="page-title">404: Page not found</h1>
-  <p class="lead">Sorry, we've misplaced that URL or it's pointing to something that doesn't exist. <a href="http://gyk6985432.github.io/myBlog/">Head back home</a> to try finding it again.</p>
+        <div class="post">
+  <h1 class="post-title">atom安装插件的问题</h1>
+  <span class="post-date">10 Mar 2016</span>
+  <p>今天终于准备装最近很火的<a href="https://atom.io/">atom</a>了，据说比SublimeText还牛，这么牛的东西咱肯定得试试啊！下载安装很给力，一键安装，好在软件也不大，只有80+M，听说windows下可以使用apm安装插件，模仿的是大名鼎鼎的npm，那想必非常Diao。</p>
+
+<p>前段时间看到<开发者头条>上分享的[atom酷炫打字效果](https://atom.io/packages/activate-power-mode/)，着实让人大开眼界。当然，最重要的是markdown支持要好，一边预览一边编辑，那真是飞一样的感觉~</开发者头条></p>
+
+<p><img src="/myBlog/images/atom1.jpg" alt="dialog" /></p>
+
+<p>看看这界面是不是很帅？</p>
+
+<p>快捷键一大堆，看的人眼花缭乱，还好有很多是和SublimeText相同的，然并卵。</p>
+
+<p>插件是个大坑啊，有的人顺利直接就装上了，可惜很多人没那么幸运，安装第一个插件就卡住了。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Compiler Tool not found!
+</code></pre>
+</div>
+
+<p>居然说我没有安装python和visual studio！！怎么可能？？</p>
+
+<p>网上解决方案并不多，终于找到一个解决方案，还在知乎回答了下这个问题：</p>
+
+<p><a href="https://www.zhihu.com/question/38098629/answer/90036256?from=profile_answer_card">我在知乎回答</a></p>
+
+<p>然而这种解决方式对我这样的强迫症并没有什么效果，解决不了？我跟你拼了！</p>
+
+<p>所以？google啊！</p>
+
+<p>综合各个论坛什么的，总结如下：</p>
+
+<ul>
+  <li>apm代理问题</li>
+  <li>node-gyp重定向</li>
+  <li>环境变量设置问题</li>
+</ul>
+
+<p>到底怎么解决呢？
+当然是开个代理了（自己找梯子），dos下设置代理</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ apm config set strict-ssl false
+$ apm config set http-proxy http://127.0.0.1:1080
+$ apm config set https-proxy http://127.0.0.1:1080
+</code></pre>
+</div>
+
+<p>（具体可参考https://github.com/atom/apm）</p>
+
+<p>这样应该解决了吧？什么？还不行？</p>
+
+<p>参考下这篇文章中<a href="https://github.com/atom/apm/issues/322">@TedThiCo</a>的回答。</p>
+
+<p>这还差不多。。。</p>
+
+<p>这个折腾好了，接下来使劲爽吧！！！</p>
+
+</div>
+
+
+
+
+<!--插入的代码_disqus的评论
+<div id="disqus_thread"></div>
+<script>
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//gyk6985432.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+-->
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="http://gyk6985432.github.io/myBlog/2016/03/14/gem-errors/">
+            安装jekyll问题解决方案
+            <small>14 Mar 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="http://gyk6985432.github.io/myBlog/2016/01/23/story-of-ubuntu-and-me/">
+            与ubuntu一见钟情的故事
+            <small>23 Jan 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="http://gyk6985432.github.io/myBlog/2016/01/21/install-git-in-CentOS/">
+            CentOS6.7上安装git
+            <small>21 Jan 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
 </div>
 
 

@@ -51,7 +51,11 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -.025rem;
 }
 
-
+.toTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+}
 /*
  * Wrapper
  *
@@ -59,12 +63,11 @@ h1, h2, h3, h4, h5, h6 {
  * use an outter wrap to position the sidebar without interferring with the
  * regular page content.
  */
-
+/*页面顶端部分*/
 .wrap {
   position: relative;
   width: 100%;
 }
-
 
 /*
  * Container
@@ -310,6 +313,9 @@ a.sidebar-nav-item:focus {
 .page,
 .post {
   margin-bottom: 4em;
+  border: 1px solid #ccc;
+  padding: 10px;
+  font-size: 16px;  /*字体大小*/
 }
 
 /* Blog post or page title */
@@ -321,6 +327,7 @@ a.sidebar-nav-item:focus {
 .page-title,
 .post-title {
   margin-top: 0;
+  font-size: 24px;    /*标题大小*/
 }
 
 /* Meta data line below post title */
@@ -356,6 +363,37 @@ a.sidebar-nav-item:focus {
   color: inherit;
 }
 
+
+/*页内链接*/
+.links{
+  position: absolute;
+  width: 200px;
+  padding: 10px;
+  font-size: 15px;
+  white-space: normal;
+  top: 160px;
+  left:50%;
+  margin-left:19rem;
+  /*font-weight: 250;*/
+  background-color: #DCDCDC;
+}
+
+
+.links .box{
+  margin-bottom:5px;
+}
+
+/*
+.links .box a{
+  float: left;
+  width: 150px;
+  overflow: hidden;
+}
+
+.links .box .linkDate{
+  float:right;
+}
+*/
 
 /*
  * Pagination

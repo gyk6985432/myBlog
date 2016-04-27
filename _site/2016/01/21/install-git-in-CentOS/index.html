@@ -11,7 +11,7 @@
 
   <title>
     
-      404: Page not found &middot; 高悦凯的博客
+      CentOS6.7上安装git &middot; 高悦凯的博客
     
   </title>
 
@@ -124,9 +124,92 @@
     </div>
 
       <div class="container content">
-        <div class="page">
-  <h1 class="page-title">404: Page not found</h1>
-  <p class="lead">Sorry, we've misplaced that URL or it's pointing to something that doesn't exist. <a href="http://gyk6985432.github.io/myBlog/">Head back home</a> to try finding it again.</p>
+        <div class="post">
+  <h1 class="post-title">CentOS6.7上安装git</h1>
+  <span class="post-date">21 Jan 2016</span>
+  <p>昨天把原先用的电脑翻出来，发现还是WindowsXP，虽然换了新电脑，但也不能让旧的就压箱底吧，所以为了让它继续发挥价值，给它装个linux，也好让我多熟悉熟悉linux，以后说不定要用到呢，废话不多说了，制作启动U盘，装系统什么的直接略过，先给它武装一个神武器git，别的慢慢再说吧。</p>
+
+<p>由于CentOS的默认源上没有git，改成国内最大的163源也还是没有.</p>
+
+<p>1.进入目录</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>cd /usr/local/src
+</code></pre>
+</div>
+
+<p>2.安装git需要的依赖：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>yum install curl curl-devel zlib-devel openssl-devel perl cpio expat-devel gettext-devel
+</code></pre>
+</div>
+
+<p>3.下载git包</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>wget http://git-core.googlecode.com/files/git-1.7.7.5.tar.gz
+autoconf
+./configure
+make
+make install
+</code></pre>
+</div>
+
+<p>4.安装完成</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>git --version
+</code></pre>
+</div>
+
+
+</div>
+
+
+
+
+<!--插入的代码_disqus的评论
+<div id="disqus_thread"></div>
+<script>
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//gyk6985432.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+-->
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="http://gyk6985432.github.io/myBlog/2016/03/14/gem-errors/">
+            安装jekyll问题解决方案
+            <small>14 Mar 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="http://gyk6985432.github.io/myBlog/2016/03/10/atom-install-error/">
+            atom安装插件的问题
+            <small>10 Mar 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="http://gyk6985432.github.io/myBlog/2016/01/23/story-of-ubuntu-and-me/">
+            与ubuntu一见钟情的故事
+            <small>23 Jan 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
 </div>
 
 
