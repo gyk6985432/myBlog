@@ -1,6 +1,6 @@
 ---
 layout: post
-title: locate: can not stat () `/var/lib/mlocate/mlocate.db': No such file or directory
+title: locate: /var/lib/mlocate/mlocate.db'
 ---
 
 今天在CentOS里使用`locate`命令时候，报错了：
