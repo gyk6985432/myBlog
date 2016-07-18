@@ -317,7 +317,8 @@ function updateBalls(){
         balls[i].vy += balls[i].g;
 
         if (balls[i].y >= WINDOW_HEIGHT-RADIUS) {
-            balls[i].y=WINDOW_HEIGHT-RADIUS;
+            //暂时删掉这句
+            //balls[i].y=WINDOW_HEIGHT-RADIUS;
             //balls[i].vy = -balls[i].vy*0.75;
         };
         if (balls[i].vx==0) {
@@ -328,12 +329,12 @@ function updateBalls(){
     //删掉不在画面中的小球，提高性能
     var cnt=0;
     for (var i = 0; i < balls.length; i++) {
-        if(balls[i].x+RADIUS > 0 && balls[i].x-RADIUS<WINDOW_WIDTH){
+        if(balls[i].x+RADIUS > 0 && balls[i].x-RADIUS<WINDOW_WIDTH ){
             balls[cnt++] = balls[i];
         }
     };
 
-    while(balls.length > cnt|| balls.length>300){
+    while(balls.length > cnt ){//|| balls.length>500
         //Math.min(300,cnt)
         balls.pop();
     }
