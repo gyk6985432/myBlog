@@ -149,7 +149,7 @@ title: 粒子时钟
     ];
 
 var WINDOW_WIDTH = 1024;
-var WINDOW_HEIGHT = 500;
+var WINDOW_HEIGHT = 768;
 var RADIUS = 6;
 var DOT_RADIUS = Math.round(RADIUS/5);
 var MARGIN_TOP = 100;
@@ -334,7 +334,7 @@ function updateBalls(){
         }
     };
 
-    while(balls.length > cnt ){//|| balls.length>500
+    while(balls.length > cnt || balls.length>1000){
         //Math.min(300,cnt)
         balls.pop();
     }
