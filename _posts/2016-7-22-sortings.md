@@ -182,4 +182,67 @@ public class InsertSorting{
 ```
 
 ## 希尔排序法
-希尔排序法是D.L.Shell 于1959年7月发明的一种排序方法。
+希尔排序法是D.L.Shell 于1959年7月发明的一种排序方法。排序的基本思想是将数据分为一定间隔的若干组，采用插入排序法对组内元素排序后，逐渐减小间隔，重复上述过程。
+虽然在组内排序采用的是插入排序法，但不同的分组中若含有相同元素，在排列后合并就可能使原来次序改变，因此希尔排序法是不稳定排序。
+
+复杂度分析：时间复杂度随增量选择不同而不同，希尔增量的时间复杂度为O(n^2)，而Hibbard增量的时间复杂度为O(n^1.5)。空间复杂度为O(1)。有人提倡几乎任何排序工作在开始时都可以用希尔排序，若在实际使用中证明它不够快，再改成快速排序这样更高级的排序算法。希尔排序比直接插入排序快的原因：当n值很大时数据项每一趟排序需要的个数很少，但数据项的距离很长。当n值减小时每一趟需要移动的数据增多，此时已经接近于它们排序后的最终位置。正是这两种情况的结合才使希尔排序效率比插入排序高很多。
+
+```
+//希尔排序法
+
+import java.io.*;
+
+public class ShellSorting{
+	int data[] = new int[8];
+	int size = 8;
+
+	public static void main(String[] args) {
+		ShellSorting test = new ShellSorting();
+		test.inputarr();
+		System.out.println("您输入的原始数据为：");
+		test.showData();
+		test.shell();	
+	}
+
+	public void inputarr(){
+		int i = 0;
+		for (i=0;i<size;i++) {
+			System.out.print("请输入第"+(i+1)+"个元素：");
+			try{
+				InputStreamReader isr = new InputStreamReader(System.in);
+				BufferedReader br = new BufferedReader(isr);
+				data[i]=Integer.parseInt(br.readLine());
+			}catch(Exception e){
+				System.out.println("输入有误！");
+			}
+		}
+	}
+
+	public void showData(){
+		for (int i=0;i<size;i++) {
+			System.out.print(data[i]+" ");
+		}
+		System.out.println();
+	}
+
+	public void shell(){
+		int i,j,temp,jmp,k;
+		k=1;
+		jmp = size/2;
+		while(jmp>0){
+			for (i=jmp;i<size;i++) {
+				temp = data[i];
+				j=i-jmp;
+				while(j>=0 && data[j]>temp){
+					data[j+jmp] = data[j];
+					j = j-jmp;
+				}
+				data[j+jmp] = temp;
+			}
+			System.out.print("第"+(k++)+"次排序：");
+			showData();
+			jmp = jmp/2;
+		}
+	}
+}
+```
