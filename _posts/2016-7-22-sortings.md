@@ -201,7 +201,7 @@ public class ShellSorting{
         test.inputarr();
         System.out.println("您输入的原始数据为：");
         test.showData();
-        test.shell();   
+        test.shell();
     }
 
     public void inputarr(){
@@ -248,4 +248,119 @@ public class ShellSorting{
 ```
 
 ## 快速排序
-快速排序是公认的最佳排序法，其基本思想是在数据中找一个中间值，把比它小的放在左边，比它大的放在右边，对相邻的数据重复上述过程。
+快速排序是公认的最佳排序法，其基本思想是在数据中找一个中间值，把比它小的放在左边，比它大的放在右边，对相邻的数据重复上述过程。快速排序的步骤为：
+
+1. 取K为第一个键值
+2. 由左向右找出键值Ki使得Ki>K
+3. 由右向左找出键值Kj使得Kj<K
+4. 若i<j，则Ki和Kj交换，并跳到步骤2
+5. 若i>=j，则将K和Kj交换，以j为基准点将数据分为左右两部分，对左右两部分重复上述过程。
+
+快速排序是不稳定排序
+
+复杂度分析：最快情况和平均情况下，时间复杂度为O(nlogn)。最差情况为序列已经排好序，时间复杂度为O(n^2)。最佳情况下空间复杂度为O(logn)，最差情况为O(n)。
+
+```
+//快速排序法
+
+import java.io.*;
+import java.util.*;
+
+public class QuickSorting{
+    int size;
+    int process=0;
+    int[] data = new int[100];
+
+    public static void main(String[] args){
+        QuickSorting test = new QuickSorting();
+
+        System.out.println("请输入数组大小（100以内）:");
+        try{
+            InputStreamReader isr = new InputStreamReader(System.in);
+            BufferedReader br = new BufferedReader(isr);
+            test.size = Integer.parseInt(br.readLine());
+        }catch(Exception e){
+            System.out.println("输入有误");
+        }
+        test.inputarr();
+        System.out.print("原始数据为：");
+        test.showData();
+        test.quick(test.data,test.size,0,test.size-1);
+        System.out.print("排序结果为：");
+        test.showData();
+    }
+
+    void inputarr(){
+        //随机方式输入
+        Random rand = new Random();
+        for (int i=0;i<size;i++) {
+            data[i] = Math.abs(rand.nextInt(99))+1;
+        }
+    }
+
+    void showData(){
+        for (int i=0;i<size;i++) {
+            System.out.print(data[i] + " ");
+        }
+        System.out.println();
+    }
+
+    void quick(int[] d, int size, int lf, int rg){
+        int first,temp;
+        int lf_idx;
+        int rg_idx;
+        int t;
+
+
+        if (lf<rg) {
+            lf_idx = lf+1;
+            rg_idx = rg;
+
+            //取出第一个元素K
+            first = d[lf];
+            while(true){
+
+                System.out.print("第"+(process++)+"次处理过程：");
+                for (t=0;t<size;t++) {
+                    System.out.print(d[t]+" ");
+                }
+                System.out.println();
+
+                //从左向右找出第一个大于K的元素Ki
+                for (int i=lf+1;i<rg;i++) {
+                    if (d[i]>first) {
+                        lf_idx=i;
+                        break;
+                    }
+                    lf_idx++;
+                }
+                //从右向左找出第一个小于K的元素Kj
+                for (int j=rg; j>=lf+1;j--) {
+                    if (d[j]<=first) {
+                        rg_idx=j;
+                        break;
+                    }
+                    rg_idx--;
+                }
+                //若i<j，则Ki和Kj交换
+                if (lf_idx<rg_idx) {
+                    temp = d[lf_idx];
+                    d[lf_idx] = d[rg_idx];
+                    d[rg_idx] = temp;
+                }else{
+                    break;
+                }
+            }
+            //若i>=j，则K和Kj交换
+            if (lf_idx>=rg_idx) {
+                temp = d[lf];
+                d[lf] = d[rg_idx];
+                d[rg_idx] = temp;
+                //对分开的两部分各自递归
+                quick(d,size,lf,rg_idx-1);
+                quick(d,size,rg_idx+1,rg);
+            }
+        }
+    }
+}
+```
