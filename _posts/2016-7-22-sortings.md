@@ -364,3 +364,83 @@ public class QuickSorting{
     }
 }
 ```
+
+## 堆排序
+堆排序是基于二叉堆原理，二叉堆分为最小二叉堆和最大二叉堆。以最大二叉堆为例，它有三个特点：
+1. 它是一个完全二叉树
+2. 所有节点的值都大于或等于它左右子节点的值
+3. 树根的值是最大的
+排序的基本思想是，利用上面第三个特征，将原有数据构建成一个二叉堆，取出其树根元素，将剩下的数据继续构建二叉堆，重复上述过程。
+
+在算法的实现中，需要一个构建二叉堆的方法，一个把剩余元素调整为二叉堆的方法。
+
+复杂度分析：任何情况下时间复杂度为O(nlogn)，空间复杂度为O(1)。元素交换时是在父子节点间进行的，相邻节点顺序会被打乱，因此不是稳定排序。
+```
+//堆排序法
+
+public class HeapSorting{
+    public static void main(String[] args){
+        int size,i;
+        size = 9;
+        int[] data = {0,5,6,4,8,3,2,7,1};
+        System.out.print("原始数据为：");
+        for (i=1;i<size;i++) {
+            System.out.print(data[i]+" ");
+        }
+        System.out.println();
+        HeapSorting.heap(data,size);
+        System.out.print("排序结果：");
+        for (i=1;i<size;i++) {
+            System.out.print(data[i]+" ");
+        }
+        System.out.println();
+    }
+
+    public static void heap(int[] data, int size){
+        int i,j,temp;
+        for (i=(size/2);i>0;i--) {
+            HeapSorting.adjustHeap(data,i,size-1);
+        }
+        System.out.print("堆中元素：");
+        for (i=1;i<size;i++) {
+            System.out.print(data[i]+" ");
+        }
+        System.out.println();
+
+        for (i=size-2;i>0;i--) {
+            temp = data[i+1];       //将调整过的数据的根元素与最后一个元素交换
+            data[i+1] = data[1];
+            data[1] = temp;
+            HeapSorting.adjustHeap(data,1,i);   //除去最后一个元素，对剩余元素进行调整
+            System.out.print("处理过程：");
+            for (j=1;j<size;j++) {
+            System.out.print(data[j]+" ");
+            }
+            System.out.println();
+        }
+    }
+
+    public static void adjustHeap(int[] data, int i, int size){
+        int j,temp,post;
+        j = 2 * i;
+        temp = data[i];     //将根元素暂存
+        post = 0;
+        while (j<=size && post==0) {
+            if (j<size) {
+                if (data[j]<data[j+1]) {   //若左孩子小于右孩子，寻找比当前节点大的孩子节点
+                    j++;
+                }
+            }
+            if (temp>data[j]) {         //若根元素大于较大的孩子，直接跳出
+                post = 1;
+            }else{                   //若根元素小于较大的孩子，将该孩子节点向上浮动
+                data[j/2] = data[j];
+                j = 2*j;
+            }
+        }
+        data[j/2] = temp;       //将原来根元素放到较大的孩子的位置
+    }
+
+}
+```
+
