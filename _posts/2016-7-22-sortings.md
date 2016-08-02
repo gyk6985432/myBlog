@@ -444,4 +444,71 @@ public class HeapSorting{
 
 }
 ```
+## 基数排序法
+基数排序法也叫桶排序法，是分配方式的一种，基本思想是将数据先后按个位、十位、百位…排序，得到最终结果。
 
+复杂度分析：任何情况下时间复杂度均为O(nlog_p^k)，k是原始数据的最大值。空间复杂度为O(n*p)，n是原始数据的个数，p是最大位数。
+
+```
+//基数排序法
+
+import java.io.*;
+import java.util.*;
+
+public class BucketSorting{
+
+    int size;
+    int[] data = new int[100];
+
+    public static void main(String[] args) {
+        BucketSorting test= new BucketSorting();
+        System.out.print("请输入数组大小（<100）：");
+        try{
+            InputStreamReader isr = new InputStreamReader(System.in);
+            BufferedReader br =  new BufferedReader(isr);
+            test.size = Integer.parseInt(br.readLine());
+        }catch(Exception e){
+            System.out.print("输入有误");
+        }
+        test.inputarr();
+        System.out.println("原始数据为：");
+        test.showData();
+        test.bucket();
+    }
+
+    public void showData(){
+        for (int i=0;i<size;i++) {
+            System.out.print(data[i]+" ");
+        }
+        System.out.println();
+    }
+
+    public void inputarr(){
+        Random r = new Random();
+        for (int i=0;i<size;i++) {
+            data[i] = Math.abs(r.nextInt(999))+1;;
+        }
+    }
+
+    public void bucket(){
+        for (int n=1;n<=100;n*=10) {
+            int[][] temp = new int[10][100];
+            for (int i=0;i<size;i++) {
+                int m = (data[i]/n)%10;
+                temp[m][i] = data[i];
+            }
+            int k=0;
+            for (int i=0;i<10;i++) {
+                for (int j=0;j<size;j++) {
+                    if (temp[i][j] != 0) {
+                        data[k] = temp[i][j];
+                        k++;
+                    }
+                }
+            }
+            System.out.print(n+"位数排序结果：");
+            showData();
+        }
+    }
+}
+```
