@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>life plan</title>
+    <script type="text/javascript">
+        function display() {
+            var m = document.getElementById('main');
+            for (var i = 0; i < 80; i++) {
+                var col = document.createElement('div');
+                col.className = 'col';
+                for (var j = 0; j < 52; j++) {
+                    var child = document.createElement('div');
+                    child.className = 'item';
+                    col.appendChild(child);
+                }
+                m.appendChild(col);
+            }
+        }
+
+        function clear(){
+            var col0 = document.getElementsByClassName('col')[0];
+            for (var i = 0; i < 80; i++) {
+                var e = col0.firstChild;
+                for (var j = 0; j < 52; j++) {
+                    e.className = 'item';
+                    e = e.nextSibling;
+                }
+                col0 = col0.nextSibling;
+            }
+        }
+
+        function count(){
+            clear();
+            var today = new Date();
+            var birth = document.getElementById('birth').value.split('-');
+            var birthdate = new Date(birth[0], birth[1]-1, birth[2]);
+            var weeks = Math.floor((today - birthdate)/(1000*60*60*24*7));
+            var old = parseInt(weeks/52, 10);
+            var c = weeks%52;
+            var col0 = document.getElementsByClassName('col')[0];
+            for (var i = 0; i < old; i++) {
+                var e = col0.firstChild;
+                for (var j = 0; j < 52; j++) {
+                    e.className = 'pass';
+                    e = e.nextSibling;
+                }
+                col0 = col0.nextSibling;
+            }
+            var e = col0.firstChild;
+            for (var i = 0; i < c; i++) {
+                e.className = 'pass';
+                e = e.nextSibling;
+            }
+            var p = document.getElementsByTagName('p')[0];
+            var more = 4160 - weeks;
+            p.innerText = '在人有限的一生中，假如平平安安活到80岁，那么你已经度过了'+ weeks +'个星期，如今' + old +
+                            '岁的你在余下的' + more + '个星期还有什么梦想要实现呢，也该好好计划一下了';
+        }
+
+    </script>
+    <style type="text/css">
+        .main {
+            width: 100%;
+            height: 100%;
+        }
+        .col {
+            float: left;
+        }
+        .item {
+            margin: 3px;
+            width: 8px;
+            height: 8px;
+            background-color: #cceecc;
+        }
+        .pass {
+            margin: 3px;
+            width: 8px;
+            height: 8px;
+            background-color: #ff0000;
+        }
+        p {
+            margin: 40px auto;
+            font-size: 16px;
+            font-family: "Microsoft YaHei";
+        }
+    </style>
+</head>
+<body onload="display()">
+    <label onclick="clear()">birthday(xxxx-xx-xx): </label>
+    <input type="text" width="50px;" id="birth" onchange="count()" />
+    <input type="button" onclick="count()" value="go">
+    <div class="main" id="main"></div>
+    <p style="clear: both;"></p>
+</body>
+</html>
