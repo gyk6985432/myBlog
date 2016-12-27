@@ -3,13 +3,47 @@ layout: post
 title: 人生计划
 ---
 
+    <style type="text/css">
+        .mymain {
+            width: 100%;
+            height: 100%;
+        }
+        .mycol {
+            float: left;
+        }
+        .item {
+            margin: 3px;
+            width: 8px;
+            height: 8px;
+            background-color: #cceecc;
+        }
+        .pass {
+            margin: 3px;
+            width: 8px;
+            height: 8px;
+            background-color: #ff0000;
+        }
+        p {
+            margin: 40px auto;
+            font-size: 16px;
+            font-family: "Microsoft YaHei";
+        }
+    </style>
+
+    <label onclick="clear()">生日birthday(xxxx-xx-xx): </label>
+    <input type="text" width="50px;" id="birth" onchange="count()" />
+    <input type="button" onclick="count()" value="go">
+    {{ excerpt_separator}}
+    <div class="mymain" id="mymain"></div>
+    <p style="clear: both;"></p>
+
     <script type="text/javascript">
         display()；
         function display() {
-            var m = document.getElementById('main');
+            var m = document.getElementById('mymain');
             for (var i = 0; i < 80; i++) {
                 var col = document.createElement('div');
-                col.className = 'col';
+                col.className = 'mycol';
                 for (var j = 0; j < 52; j++) {
                     var child = document.createElement('div');
                     child.className = 'item';
@@ -39,7 +73,7 @@ title: 人生计划
             var weeks = Math.floor((today - birthdate)/(1000*60*60*24*7));
             var old = parseInt(weeks/52, 10);
             var c = weeks%52;
-            var col0 = document.getElementsByClassName('col')[0];
+            var col0 = document.getElementsByClassName('mycol')[0];
             for (var i = 0; i < old; i++) {
                 var e = col0.firstChild;
                 for (var j = 0; j < 52; j++) {
@@ -60,37 +94,3 @@ title: 人生计划
         }
 
     </script>
-
-    <style type="text/css">
-        .main {
-            width: 100%;
-            height: 100%;
-        }
-        .col {
-            float: left;
-        }
-        .item {
-            margin: 3px;
-            width: 8px;
-            height: 8px;
-            background-color: #cceecc;
-        }
-        .pass {
-            margin: 3px;
-            width: 8px;
-            height: 8px;
-            background-color: #ff0000;
-        }
-        p {
-            margin: 40px auto;
-            font-size: 16px;
-            font-family: "Microsoft YaHei";
-        }
-    </style>
-
-    <label onclick="clear()">生日birthday(xxxx-xx-xx): </label>
-    <input type="text" width="50px;" id="birth" onchange="count()" />
-    <input type="button" onclick="count()" value="go">
-    {{ excerpt_separator}}
-    <div class="main" id="main"></div>
-    <p style="clear: both;"></p>
