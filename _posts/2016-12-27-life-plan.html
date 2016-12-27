@@ -3,94 +3,94 @@ layout: post
 title: 人生计划
 ---
 
-    <style type="text/css">
-        .mymain {
-            width: 100%;
-            height: 100%;
-        }
-        .mycol {
-            float: left;
-        }
-        .item {
-            margin: 3px;
-            width: 8px;
-            height: 8px;
-            background-color: #cceecc;
-        }
-        .pass {
-            margin: 3px;
-            width: 8px;
-            height: 8px;
-            background-color: #ff0000;
-        }
-        p {
-            margin: 40px auto;
-            font-size: 16px;
-            font-family: "Microsoft YaHei";
-        }
-    </style>
+<label onclick="clear()">生日birthday(xxxx-xx-xx): </label>
+<input type="text" width="50px;" id="birth" onchange="count()" />
+<input type="button" onclick="count()" value="go">
+{{ excerpt_separator}}
+<div class="mymain" id="mymain"></div>
+<p style="clear: both;"></p>
 
-    <label onclick="clear()">生日birthday(xxxx-xx-xx): </label>
-    <input type="text" width="50px;" id="birth" onchange="count()" />
-    <input type="button" onclick="count()" value="go">
-    {{ excerpt_separator}}
-    <div class="mymain" id="mymain"></div>
-    <p style="clear: both;"></p>
-
-    <script type="text/javascript">
-        window.onload = display();
-        function display() {
-            var m = document.getElementById('mymain');
-            for (var i = 0; i < 80; i++) {
-                var col = document.createElement('div');
-                col.className = 'mycol';
-                for (var j = 0; j < 52; j++) {
-                    var child = document.createElement('div');
-                    child.className = 'item';
-                    col.appendChild(child);
-                }
-                m.appendChild(col);
+<script type="text/javascript">
+    window.onload = display();
+    function display() {
+        var m = document.getElementById('mymain');
+        for (var i = 0; i < 80; i++) {
+            var col = document.createElement('div');
+            col.className = 'mycol';
+            for (var j = 0; j < 52; j++) {
+                var child = document.createElement('div');
+                child.className = 'item';
+                col.appendChild(child);
             }
+            m.appendChild(col);
         }
+    }
 
-        function clear(){
-            var col0 = document.getElementsByClassName('col')[0];
-            for (var i = 0; i < 80; i++) {
-                var e = col0.firstChild;
-                for (var j = 0; j < 52; j++) {
-                    e.className = 'item';
-                    e = e.nextSibling;
-                }
-                col0 = col0.nextSibling;
-            }
-        }
-
-        function count(){
-            clear();
-            var today = new Date();
-            var birth = document.getElementById('birth').value.split('-');
-            var birthdate = new Date(birth[0], birth[1]-1, birth[2]);
-            var weeks = Math.floor((today - birthdate)/(1000*60*60*24*7));
-            var old = parseInt(weeks/52, 10);
-            var c = weeks%52;
-            var col0 = document.getElementsByClassName('mycol')[0];
-            for (var i = 0; i < old; i++) {
-                var e = col0.firstChild;
-                for (var j = 0; j < 52; j++) {
-                    e.className = 'pass';
-                    e = e.nextSibling;
-                }
-                col0 = col0.nextSibling;
-            }
+    function clear(){
+        var col0 = document.getElementsByClassName('col')[0];
+        for (var i = 0; i < 80; i++) {
             var e = col0.firstChild;
-            for (var i = 0; i < c; i++) {
+            for (var j = 0; j < 52; j++) {
+                e.className = 'item';
+                e = e.nextSibling;
+            }
+            col0 = col0.nextSibling;
+        }
+    }
+
+    function count(){
+        clear();
+        var today = new Date();
+        var birth = document.getElementById('birth').value.split('-');
+        var birthdate = new Date(birth[0], birth[1]-1, birth[2]);
+        var weeks = Math.floor((today - birthdate)/(1000*60*60*24*7));
+        var old = parseInt(weeks/52, 10);
+        var c = weeks%52;
+        var col0 = document.getElementsByClassName('mycol')[0];
+        for (var i = 0; i < old; i++) {
+            var e = col0.firstChild;
+            for (var j = 0; j < 52; j++) {
                 e.className = 'pass';
                 e = e.nextSibling;
             }
-            var p = document.getElementsByTagName('p')[0];
-            var more = 4160 - weeks;
-            p.innerText = '在人有限的一生中，假如平平安安活到80岁，那么你已经度过了'+ weeks +'个星期，如今' + old +
-                            '岁的你在余下的' + more + '个星期还有什么梦想要实现呢，也该好好计划一下了';
+            col0 = col0.nextSibling;
         }
+        var e = col0.firstChild;
+        for (var i = 0; i < c; i++) {
+            e.className = 'pass';
+            e = e.nextSibling;
+        }
+        var p = document.getElementsByTagName('p')[0];
+        var more = 4160 - weeks;
+        p.innerText = '在人有限的一生中，假如平平安安活到80岁，那么你已经度过了'+ weeks +'个星期，如今' + old +
+                        '岁的你在余下的' + more + '个星期还有什么梦想要实现呢，也该好好计划一下了';
+    }
 
-    </script>
+</script>
+
+<style type="text/css">
+    .mymain {
+        width: 100%;
+        height: 100%;
+    }
+    .mycol {
+        float: left;
+    }
+    .item {
+        margin: 3px;
+        width: 8px;
+        height: 8px;
+        background-color: #cceecc;
+    }
+    .pass {
+        margin: 3px;
+        width: 8px;
+        height: 8px;
+        background-color: #ff0000;
+    }
+    p {
+        margin: 40px auto;
+        font-size: 16px;
+        font-family: "Microsoft YaHei";
+    }
+</style>
