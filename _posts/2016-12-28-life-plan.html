@@ -3,7 +3,8 @@ layout: post
 title: 人生周计划
 ---
 
-<label onclick="clear()">输入你的生日(xxxx-xx-xx): </label>
+
+输入你的生日(xxxx-xx-xx): 
 <input type="text" width="50px;" id="birth" onchange="count()" />
 <input type="button" onclick="count()" value="go">
 {{ excerpt_separator}}
@@ -62,8 +63,7 @@ title: 人生周计划
         }
         var p = document.getElementsByTagName('p')[0];
         var more = 4160 - weeks;
-        p.innerText = '在人有限的一生中，假如平平安安活到80岁，那么你已经度过了'+ weeks +'个星期，如今' + old +
-                        '岁的你在余下的' + more + '个星期还有什么梦想要实现呢，也该好好计划一下了';
+        p.innerText = '人的一生是短暂的，从出生到少年时期不懂得时间的宝贵，转眼长大成人。学业的重负耗尽了青春的时光，步入中年又因儿女的成长而两鬓斑白，最后步入老年常常疾病缠身。其中有多少时光是有意义的，有多少时光是白白浪费的，有多少是陪伴亲人度过的，又有多少时光是独自漂泊在外的。假如平平安安活到80岁，那么你已经度过了'+ weeks +'个星期，如今' + old + '岁的你在余下的' + more + '个星期还有什么梦想要实现呢，不要再拖延，不要再等了，马上行动才能防止时间在不经意间溜走。';
     }
 
 </script>
@@ -89,7 +89,7 @@ title: 人生周计划
         background-color: #ff0000;
     }
     p {
-        margin: 40px auto;
+        margin: 30px auto;
         font-size: 16px;
         font-family: "Microsoft YaHei";
     }
