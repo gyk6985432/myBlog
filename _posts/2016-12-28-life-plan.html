@@ -41,6 +41,12 @@
         clear();
         var today = new Date();
         var birth = document.getElementById('birth').value.split('-');
+	if (birth[0]>today.getFullYear() || birth[0] < today.getFullYear()-80
+                || birth[1] > 12 || birth[1] < 1
+                || birth[1] > 31 || birth[2] < 1) {
+                alert("时间不符合要求，重新输入");
+                return;
+        }
         var birthdate = new Date(birth[0], birth[1]-1, birth[2]);
         var weeks = Math.floor((today - birthdate)/(1000*60*60*24*7));
         var old = parseInt(weeks/52, 10);
