@@ -10,11 +10,13 @@ python ***.py
 ```
 
 另外一种执行python文件的方式是在.py文件中指定python程序所在路径:
+
 ```
 #!/usr/bin/python
 ```
 
 但是在最新的win10的bashonwindows上面要指定python.exe或在其他bash下执行.py文件时，指定方式要改为：
+
 ```
 #!/c/Python27/python.exe
 ```
