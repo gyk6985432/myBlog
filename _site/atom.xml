@@ -4,7 +4,7 @@
  <title>高悦凯的博客</title>
  <link href="http://lanyon.getpoole.comhttp://gyk6985432.github.io/myBlog/atom.xml" rel="self"/>
  <link href="http://lanyon.getpoole.comhttp://gyk6985432.github.io/myBlog/"/>
- <updated>2017-02-15T15:51:19+08:00</updated>
+ <updated>2017-02-15T15:53:05+08:00</updated>
  <id>http://lanyon.getpoole.com</id>
  <author>
    <name>高悦凯</name>
@@ -71,10 +71,10 @@ python ***.py
    <link href="http://lanyon.getpoole.com/2016/12/28/life-plan/"/>
    <updated>2016-12-28T00:00:00+08:00</updated>
    <id>http://lanyon.getpoole.comhttp://gyk6985432.github.io/myBlog/2016/12/28/life-plan</id>
-   <content type="html">﻿&lt;h1 style=&quot;margin: 0 auto;&quot;&gt;人生周计划&lt;/h1&gt;&lt;br&gt;
+   <content type="html">﻿&lt;h3 style=&quot;margin: 0 auto;&quot;&gt;人生周计划&lt;/h1&gt;&lt;br&gt;&lt;br&gt;
 
 
-输入你的生日(xxxx-xx-xx): 
+输入你的生日(xxxx-xx-xx):
 &lt;input type=&quot;text&quot; width=&quot;50px;&quot; id=&quot;birth&quot; onchange=&quot;count()&quot; /&gt;
 &lt;input type=&quot;button&quot; onclick=&quot;count()&quot; value=&quot;go&quot;&gt;
 
