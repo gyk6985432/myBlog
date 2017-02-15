@@ -12,6 +12,7 @@ description:         '走在编程的大路上……'
 url:                 http://lanyon.getpoole.com
 baseurl:             'http://gyk6985432.github.io/myBlog'
 paginate:            5
+excerpt_separator:   'excerpt_separator'
 
 # About/contact
 author:

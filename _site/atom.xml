@@ -4,7 +4,7 @@
  <title>高悦凯的博客</title>
  <link href="http://lanyon.getpoole.comhttp://gyk6985432.github.io/myBlog/atom.xml" rel="self"/>
  <link href="http://lanyon.getpoole.comhttp://gyk6985432.github.io/myBlog/"/>
- <updated>2017-02-15T14:29:30+08:00</updated>
+ <updated>2017-02-15T15:06:45+08:00</updated>
  <id>http://lanyon.getpoole.com</id>
  <author>
    <name>高悦凯</name>
@@ -13,11 +13,16 @@
 
  
  <entry>
-   <title>bash on window10中core dump解决方案</title>
+   <title>Coredump In Matplotlib</title>
    <link href="http://lanyon.getpoole.com/2017/02/10/coredump-in-matplotlib/"/>
    <updated>2017-02-10T00:00:00+08:00</updated>
    <id>http://lanyon.getpoole.comhttp://gyk6985432.github.io/myBlog/2017/02/10/coredump-in-matplotlib</id>
-   <content type="html">&lt;p&gt;在bash on windows10使用python的数据处理模块pandas时，无法画图并报错：&lt;/p&gt;
+   <content type="html">&lt;p&gt;﻿—
+layout: post
+title: bash on window10中core dump解决方案
+—&lt;/p&gt;
+
+&lt;p&gt;在bash on windows10使用python的数据处理模块pandas时，无法画图并报错：&lt;/p&gt;
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
 OMP: Error #100: Fatal system error detected.
@@ -349,7 +354,7 @@ sudo ldconfig
 &lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;最后一句千万不能少，否则后面会发生错误。
-&lt;img src=&quot;/myBlog/images/kali1.jpg&quot; alt=&quot;这里写图片描述&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;/images/kali1.jpg&quot; alt=&quot;这里写图片描述&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;获取osmocom-bb：&lt;/strong&gt;&lt;/p&gt;
 
@@ -389,7 +394,7 @@ lsusb
 &lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;如果显示有CP210x，那说明是没问题了。
-&lt;img src=&quot;/myBlog/images/kali2.jpg&quot; alt=&quot;这里写图片描述&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;/images/kali2.jpg&quot; alt=&quot;这里写图片描述&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;接下来打开四个终端A、B、C、D。
 A中输入：&lt;/p&gt;
@@ -405,7 +410,7 @@ cd osmocombb/osmocom-bb/src/host/osmocon/&lt;/p&gt;
 这种情况很可能是USBTOTTL有问题，也可能是没插好，如果有备件的话就换一个试试，我这里没有，只能各种xxx了。。。&lt;/p&gt;
 
 &lt;p&gt;如果正常的话，在A中如图：
-&lt;img src=&quot;/myBlog/images/kali3.jpg&quot; alt=&quot;这里写图片描述&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;/images/kali3.jpg&quot; alt=&quot;这里写图片描述&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;去B中输入：&lt;/p&gt;
 
@@ -416,7 +421,7 @@ cd osmcombb/osmocom-bb/src/host/layer23/src/misc/
 
 &lt;p&gt;注：大欧，O
 扫描可用的ARFCN。查阅相关资料，移动占用890～909/935～954MHz，ARFCN：1-95；联通占用909～915/954～960MHz，ARFCN：96-124。测试后发现移动32，34能接受到的比较多一些。联通124接收到的比较多一些。
-&lt;img src=&quot;/myBlog/images/kali4.jpg&quot; alt=&quot;这里写图片描述&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;/images/kali4.jpg&quot; alt=&quot;这里写图片描述&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;在C中，输入：&lt;/p&gt;
 
@@ -433,7 +438,7 @@ wireshark -k -i lo -f &#39;port 4729&#39;
 &lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;打开wireshark，修改过滤器为gsm_sms。点击apply就可以接受到gsm_sms协议的短信了。在最后一行的TP-USER-DATA中，可以看到短信内容，发送者的还有电话号码。
-&lt;img src=&quot;/myBlog/images/kali5.jpg&quot; alt=&quot;这里写图片描述&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;/images/kali5.jpg&quot; alt=&quot;这里写图片描述&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;就到这里罢。&lt;/p&gt;
 </content>
@@ -1005,7 +1010,7 @@ public void bucket(){
 locate: can not stat () `/var/lib/mlocate/mlocate.db&#39;: No such file or directory
 &lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/myBlog/images/locateError.jpg&quot; alt=&quot;locate&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/locateError.jpg&quot; alt=&quot;locate&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;原因是找不到&lt;code class=&quot;highlighter-rouge&quot;&gt;mlocate.db&lt;/code&gt;数据库文件，因为使用&lt;code class=&quot;highlighter-rouge&quot;&gt;locate&lt;/code&gt;命令时候不是通过遍历文件目录下所有文件来查找的，而是通过数据库进行搜索，这样大大提升了搜索速度。&lt;/p&gt;
 
@@ -1017,7 +1022,7 @@ sudo yum install mlocate&lt;/p&gt;
 &lt;p&gt;sudo updatedb
 ```&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/myBlog/images/updateDB.jpg&quot; alt=&quot;locate&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/updateDB.jpg&quot; alt=&quot;locate&quot; /&gt;&lt;/p&gt;
 </content>
  </entry>
  
@@ -1045,7 +1050,7 @@ export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib
 export PATH=${JAVA_HOME}/bin:$PATH
 &lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/myBlog/images/javaversion.JPG&quot; alt=&quot;Alt text&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/javaversion.JPG&quot; alt=&quot;Alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;解压jdk8源码包后，进入该文件夹&lt;/p&gt;
 
@@ -1055,7 +1060,7 @@ sudo bash ./configure
 
 &lt;p&gt;根据提示安装需要的依赖，其中要求安装ccache，在163源里没找到，没有安装也没事，然后直接make即可。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/myBlog/images/finishJDK.JPG&quot; alt=&quot;Alt text&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/finishJDK.JPG&quot; alt=&quot;Alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;当然中间省略了很多书中介绍到的命令，本人linux玩的不熟练，那些命令大多都是用来优化编译速度的，也无关紧要。。。&lt;/p&gt;
 
@@ -1080,11 +1085,11 @@ $ gem sources -r https://rubygems.org/
 $ gem sources -a https://ruby.taobao.org/
 &lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/myBlog/images/gemError1.PNG&quot; alt=&quot;rubyError1&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/gemError1.PNG&quot; alt=&quot;rubyError1&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;官方让加-V，似乎也不管用&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/myBlog/images/gemError2.PNG&quot; alt=&quot;rubyError2&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/gemError2.PNG&quot; alt=&quot;rubyError2&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;试了半天不管用，有换回原来的了：&lt;/p&gt;
 
@@ -1095,9 +1100,9 @@ $ gem source -a http://rubygem.org/
 
 &lt;p&gt;还是不行，又更新了一下&lt;a href=&quot;http://rubygems.org/&quot;&gt;rubygems&lt;/a&gt;，开了代理后，终于大功告成了。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/myBlog/images/gemError3.PNG&quot; alt=&quot;rubyError3&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/gemError3.PNG&quot; alt=&quot;rubyError3&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/myBlog/images/gemError4.PNG&quot; alt=&quot;rubyError4&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/gemError4.PNG&quot; alt=&quot;rubyError4&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;真是要折腾死人啊。。。&lt;/p&gt;
 </content>
@@ -1112,7 +1117,7 @@ $ gem source -a http://rubygem.org/
 
 &lt;p&gt;前段时间看到&lt;开发者头条&gt;上分享的[atom酷炫打字效果](https://atom.io/packages/activate-power-mode/)，着实让人大开眼界。当然，最重要的是markdown支持要好，一边预览一边编辑，那真是飞一样的感觉~&lt;/开发者头条&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/myBlog/images/atom1.jpg&quot; alt=&quot;dialog&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/atom1.jpg&quot; alt=&quot;dialog&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;看看这界面是不是很帅？&lt;/p&gt;
 
@@ -1610,7 +1615,7 @@ function updateBalls(){
 
 &lt;h3 id=&quot;section&quot;&gt;运行时数据区域&lt;/h3&gt;
 
-&lt;p&gt;&lt;img src=&quot;/myBlog/images/Java VM structure.png&quot; alt=&quot;Alt text&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/Java VM structure.png&quot; alt=&quot;Alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;program-counter-register&quot;&gt;程序计数器（Program Counter Register）&lt;/h4&gt;
 &lt;p&gt;程序计数器是一块较小的内存空间，可看作当前线程执行的字节码的行号指示器。用来给&lt;em&gt;字节码解释器&lt;/em&gt;进行选取字节码指令，以及分支、循环、跳转、异常处理、线程恢复等功能。
@@ -1655,7 +1660,7 @@ JDK1.4中新加入的NIO类，引入了基于通道（channel）与缓冲区（B
 
 &lt;p&gt;作家&lt;strong&gt;James Altucher&lt;/strong&gt;在部落格上整理了他的33个独门建议，分享他对于写作的技巧与看法！&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/myBlog/images/33-Unusual-Tips-To-Being-A-Better-Writer.jpg&quot; alt=&quot;33tips of writing&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/33-Unusual-Tips-To-Being-A-Better-Writer.jpg&quot; alt=&quot;33tips of writing&quot; /&gt;&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;
@@ -1962,7 +1967,7 @@ JDK1.4中新加入的NIO类，引入了基于通道（channel）与缓冲区（B
    <link href="http://lanyon.getpoole.com/2015/12/18/A-New-Tutorial/"/>
    <updated>2015-12-18T00:00:00+08:00</updated>
    <id>http://lanyon.getpoole.comhttp://gyk6985432.github.io/myBlog/2015/12/18/A-New-Tutorial</id>
-   <content type="html">&lt;p&gt;&lt;img src=&quot;/myBlog/images/SplitShire_9573.jpg&quot; alt=&quot;Alt text&quot; /&gt;
+   <content type="html">&lt;p&gt;&lt;img src=&quot;/images/SplitShire_9573.jpg&quot; alt=&quot;Alt text&quot; /&gt;
 Through one day and a half, I finish this blog finally. This is tough…
 I hope I can share my experience about coding and learning process.&lt;/p&gt;
 

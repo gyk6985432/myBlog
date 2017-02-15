@@ -237,7 +237,7 @@ sudo ldconfig
 </code></p>
 
 <p>最后一句千万不能少，否则后面会发生错误。
-<img src="/myBlog/images/kali1.jpg" alt="这里写图片描述" /></p>
+<img src="/images/kali1.jpg" alt="这里写图片描述" /></p>
 
 <p><strong>获取osmocom-bb：</strong></p>
 
@@ -277,7 +277,7 @@ lsusb
 </code></p>
 
 <p>如果显示有CP210x，那说明是没问题了。
-<img src="/myBlog/images/kali2.jpg" alt="这里写图片描述" /></p>
+<img src="/images/kali2.jpg" alt="这里写图片描述" /></p>
 
 <p>接下来打开四个终端A、B、C、D。
 A中输入：</p>
@@ -293,7 +293,7 @@ cd osmocombb/osmocom-bb/src/host/osmocon/</p>
 这种情况很可能是USBTOTTL有问题，也可能是没插好，如果有备件的话就换一个试试，我这里没有，只能各种xxx了。。。</p>
 
 <p>如果正常的话，在A中如图：
-<img src="/myBlog/images/kali3.jpg" alt="这里写图片描述" /></p>
+<img src="/images/kali3.jpg" alt="这里写图片描述" /></p>
 
 <p>去B中输入：</p>
 
@@ -304,7 +304,7 @@ cd osmcombb/osmocom-bb/src/host/layer23/src/misc/
 
 <p>注：大欧，O
 扫描可用的ARFCN。查阅相关资料，移动占用890～909/935～954MHz，ARFCN：1-95；联通占用909～915/954～960MHz，ARFCN：96-124。测试后发现移动32，34能接受到的比较多一些。联通124接收到的比较多一些。
-<img src="/myBlog/images/kali4.jpg" alt="这里写图片描述" /></p>
+<img src="/images/kali4.jpg" alt="这里写图片描述" /></p>
 
 <p>在C中，输入：</p>
 
@@ -321,7 +321,7 @@ wireshark -k -i lo -f 'port 4729'
 </code></p>
 
 <p>打开wireshark，修改过滤器为gsm_sms。点击apply就可以接受到gsm_sms协议的短信了。在最后一行的TP-USER-DATA中，可以看到短信内容，发送者的还有电话号码。
-<img src="/myBlog/images/kali5.jpg" alt="这里写图片描述" /></p>
+<img src="/images/kali5.jpg" alt="这里写图片描述" /></p>
 
 <p>就到这里罢。</p>
 
@@ -350,7 +350,7 @@ s.setAttribute('data-timestamp', +new Date());
       <li>
         <h3>
           <a href="http://gyk6985432.github.io/myBlog/2017/02/10/coredump-in-matplotlib/">
-            bash on window10中core dump解决方案
+            Coredump In Matplotlib
             <small>10 Feb 2017</small>
           </a>
         </h3>
