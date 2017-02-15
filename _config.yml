@@ -3,7 +3,7 @@
 # Use of `relative_permalinks` ensures post links from the index work properly.
 gems:                [jekyll-paginate]
 permalink:           pretty
-
+excerpt_separator:   "\n\n"
 
 # Setup
 title:               高悦凯的博客
@@ -12,7 +12,6 @@ description:         '走在编程的大路上……'
 url:                 http://lanyon.getpoole.com
 baseurl:             'http://gyk6985432.github.io/myBlog'
 paginate:            5
-excerpt_separator:   'excerpt_separator'
 
 # About/contact
 author:
