@@ -147,7 +147,7 @@ lsusb
 ```
 
 如果显示有CP210x，那说明是没问题了。
-![这里写图片描述](/myBlog/images/kali2.jpg)
+![这里写图片描述](/images/kali2.jpg)
 
 接下来打开四个终端A、B、C、D。
 A中输入：
