@@ -4,7 +4,7 @@
  <title>高悦凯的博客</title>
  <link href="http://lanyon.getpoole.comhttp://gyk6985432.github.io/myBlog/atom.xml" rel="self"/>
  <link href="http://lanyon.getpoole.comhttp://gyk6985432.github.io/myBlog/"/>
- <updated>2017-02-15T15:58:27+08:00</updated>
+ <updated>2017-02-15T16:00:13+08:00</updated>
  <id>http://lanyon.getpoole.com</id>
  <author>
    <name>高悦凯</name>
@@ -22,8 +22,7 @@ layout: post
 title: bash on window10中core dump解决方案
 —&lt;/p&gt;
 
-&lt;p&gt;在bash on windows10使用python的数据处理模块pandas时，无法画图并报错：
-\n\n&lt;/p&gt;
+&lt;p&gt;在bash on windows10使用python的数据处理模块pandas时，无法画图并报错：&lt;/p&gt;
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
 OMP: Error #100: Fatal system error detected.
