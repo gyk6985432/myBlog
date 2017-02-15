@@ -7,7 +7,7 @@ layout: post
 
 作家**James Altucher**在部落格上整理了他的33个独门建议，分享他对于写作的技巧与看法！
 
-![33tips of writing](/myBlog/images/33-Unusual-Tips-To-Being-A-Better-Writer.jpg)
+![33tips of writing](/images/33-Unusual-Tips-To-Being-A-Better-Writer.jpg)
 
 1. 写作不需要別人批准。不要说「我的看法是ooxx」。大家都知道是你的看法。文章就你写的呀。
 

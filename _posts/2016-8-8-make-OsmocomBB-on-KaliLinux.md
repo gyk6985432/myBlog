@@ -109,7 +109,7 @@ sudo ldconfig
 ```
 
 最后一句千万不能少，否则后面会发生错误。
-![这里写图片描述](/myBlog/images/kali1.jpg)
+![这里写图片描述](/images/kali1.jpg)
 
 **获取osmocom-bb：**
 
@@ -163,7 +163,7 @@ cd osmocombb/osmocom-bb/src/host/osmocon/
 这种情况很可能是USBTOTTL有问题，也可能是没插好，如果有备件的话就换一个试试，我这里没有，只能各种xxx了。。。
 
 如果正常的话，在A中如图：
-![这里写图片描述](/myBlog/images/kali3.jpg)
+![这里写图片描述](/images/kali3.jpg)
 
 去B中输入：
 
@@ -174,7 +174,7 @@ cd osmcombb/osmocom-bb/src/host/layer23/src/misc/
 
 注：大欧，O
 扫描可用的ARFCN。查阅相关资料，移动占用890～909/935～954MHz，ARFCN：1-95；联通占用909～915/954～960MHz，ARFCN：96-124。测试后发现移动32，34能接受到的比较多一些。联通124接收到的比较多一些。
-![这里写图片描述](/myBlog/images/kali4.jpg)
+![这里写图片描述](/images/kali4.jpg)
 
 在C中，输入：
 
@@ -191,6 +191,6 @@ wireshark -k -i lo -f 'port 4729'
 ```
 
 打开wireshark，修改过滤器为gsm_sms。点击apply就可以接受到gsm_sms协议的短信了。在最后一行的TP-USER-DATA中，可以看到短信内容，发送者的还有电话号码。
-![这里写图片描述](/myBlog/images/kali5.jpg)
+![这里写图片描述](/images/kali5.jpg)
 
 就到这里罢。

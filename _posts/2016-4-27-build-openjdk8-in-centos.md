@@ -22,7 +22,7 @@ export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib
 export PATH=${JAVA_HOME}/bin:$PATH
 ```
 
-![Alt text](/myBlog/images/javaversion.JPG)
+![Alt text](/images/javaversion.JPG)
 
 解压jdk8源码包后，进入该文件夹
 
@@ -32,7 +32,7 @@ sudo bash ./configure
 
 根据提示安装需要的依赖，其中要求安装ccache，在163源里没找到，没有安装也没事，然后直接make即可。
 
-![Alt text](/myBlog/images/finishJDK.JPG)
+![Alt text](/images/finishJDK.JPG)
 
 当然中间省略了很多书中介绍到的命令，本人linux玩的不熟练，那些命令大多都是用来优化编译速度的，也无关紧要。。。
 

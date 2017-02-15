@@ -13,11 +13,11 @@ $ gem sources -r https://rubygems.org/
 $ gem sources -a https://ruby.taobao.org/
 ```
 
-![rubyError1](/myBlog/images/gemError1.PNG)
+![rubyError1](/images/gemError1.PNG)
 
 官方让加-V，似乎也不管用
 
-![rubyError2](/myBlog/images/gemError2.PNG)
+![rubyError2](/images/gemError2.PNG)
 
 试了半天不管用，有换回原来的了：
 
@@ -28,8 +28,8 @@ $ gem source -a http://rubygem.org/
 
 还是不行，又更新了一下[rubygems]( http://rubygems.org/)，开了代理后，终于大功告成了。
 
-![rubyError3](/myBlog/images/gemError3.PNG)
+![rubyError3](/images/gemError3.PNG)
 
-![rubyError4](/myBlog/images/gemError4.PNG)
+![rubyError4](/images/gemError4.PNG)
 
 真是要折腾死人啊。。。
