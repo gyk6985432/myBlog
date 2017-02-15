@@ -11,7 +11,7 @@
 
   <title>
     
-      JVM内存区域及作用 &middot; 高悦凯的博客
+      垃圾收集器及垃圾收集算法 &middot; 高悦凯的博客
     
   </title>
 
@@ -129,45 +129,69 @@
 
       <div class="container content">
         <div class="post">
-  <h1 class="post-title">JVM内存区域及作用</h1>
-  <span class="post-date">14 Jan 2016</span>
-  <p>最近在看《深入理解JAVA虚拟机》，刚看到内存区域划分及其所管理的内容。虽然在其他博客上也看过类似的文章，但书里介绍的还是更加详尽透彻。这些区域不太好记，容易遗忘，写篇博客常常回来温习一下也好。</p>
+  <h1 class="post-title">垃圾收集器及垃圾收集算法</h1>
+  <span class="post-date">06 Sep 2016</span>
+  <p>垃圾收集技术经历过很长时间的发展，已经不需要像C++语言里让每个程序员都要分出一部分精力来处理内存的分配和回收这种繁杂的事情了。在我的理解中，程序或计算机的发展趋势就是用机器来代替人做一些重复的劳动，让人从中解放出来，垃圾回收器也正是这样一种机制。</p>
 
-<h3 id="section">运行时数据区域</h3>
+<h1 id="section">一 垃圾回收算法</h1>
 
-<p><img src="/myBlog/images/Java VM structure.png" alt="Alt text" /></p>
+<p>垃圾回收算法有：标记-清除算法、复制算法、标记-整理算法和分代收集算法。</p>
 
-<h4 id="program-counter-register">程序计数器（Program Counter Register）</h4>
-<p>程序计数器是一块较小的内存空间，可看作当前线程执行的字节码的行号指示器。用来给<em>字节码解释器</em>进行选取字节码指令，以及分支、循环、跳转、异常处理、线程恢复等功能。
-为了线程切换后能恢复到正确的执行位置，需要给每条线程都创建一个程序计数器，因而也叫“线程私有”的内存。如果线程执行的java方法，该计数器指向的是正在执行的字节码地址，若是Native方法，则指向空（Undefined）。
-此内存区域是java虚拟机唯一一个没有规定任何OutOfMemoryError的区域。</p>
+<h2 id="section-1">1 标记-清除算法</h2>
+<p>该算法分为两个阶段，首先标记出所有需要回收的对象，标记完成后统一回收所有被标记的对象。
+&gt;一个对象在回收前通常要经历两次标记的过程，如果对象在进行可达性分析后发现没有与GC Roots相连接的引用链，则它将会被第一次标记并进行第一次筛选，筛选的条件是此对象是否有必要执行finalize()方法，当对象没有重写finalize()方法或finalize()已经被虚拟机调用过，则判定为“没有必要执行”。finalize()是对象逃脱死亡命运的最后一次机会。</p>
 
-<h4 id="javajava-virtual-machine-stacks">Java虚拟机栈（Java Virtual Machine Stacks）</h4>
-<p>这块区域也是线程私有的，其生命周期与线程相同。
-虚拟机栈是给<strong>执行java方法</strong>服务的。每个java方法执行时都会创建一个<strong>栈帧(Stack Frame)</strong>，用于存储局部变量表、操作数栈、动态链接、方法出口等。java方法的调用的过程对应着一个栈帧在虚拟机栈中入栈到出栈的过程。
-如果线程请求的栈深度大于虚拟机所允许的深度，将抛出StackOverflowError异常；若虚拟机栈可以动态扩展，如果扩展时无法申请到足够的内存，就会抛出OutOfMemoryError异常。</p>
+<p>接着GC会对F-Queue中的对象执行第二次标记，如果对象通过finalize()方法与引用链相连接，则不会被回收，否则对象将被回收。</p>
 
-<h4 id="native-method-stack">本地方法栈（Native Method Stack）</h4>
-<p>本地方法栈和虚拟机栈的区别在于它是为Native方法服务的。虚拟机规范对本地方法栈中使用的语言、使用方式和数据结构没有强制规定，不同虚拟机可自由实现。而虚拟机栈中用到的boolean、byte、char、int、double、对象引用的内存分配都在编译时候分配完成，进入一个方法时栈帧的局部变量空间是完全确定的，运行期间不会改变。</p>
+<p>标记-清除算法存在两个不足：标记和清除两个过程的效率都不高，而且标记清除后产生大量的内存碎片。</p>
 
-<h4 id="javajava-heap">Java堆（Java Heap）</h4>
-<p>java堆是内存中最大的部分，所有线程所共享的，虚拟机启动时创建，用来存放对象实例和数组。内存回收也是主要针对这部分，为了便于回收，java堆会被分成Eden、From Survivor、To Survivor等，这部分内容以后进行介绍。
-如果堆中没有内存分配给实例，并且堆也无法扩展时将会抛出OutOfMemoryError异常。</p>
+<p>其他所有算法都是针对这两个问题进行了改进而产生的。</p>
 
-<h4 id="method-area">方法区（Method Area）</h4>
-<p>方法区也是所有线程共享的区域，用来存储已被虚拟机加载的类信息、常量、静态变量、即时编译器编译后的代码等。方法区也是java堆的逻辑部分，但为了与java堆有所区别，也叫<em>非堆(Non-Heap)</em>。虽然有些称方法区为“永久代”，但这却不是绝对的，垃圾回收器主要对这部分中的常量池的进行回收和类型的卸载，防止某些时候出现的内存泄漏。。
-虚拟机规范规定，方法区无法满足内存分配需求时，将抛出OutOfMemoryError异常。</p>
+<h2 id="section-2">2 复制算法</h2>
+<p>复制算法是为解决“效率”问题出现的，它将内存分为两块，每次使用其中一块，当使用的一块用完时，将存活的对象复制到另外一块，然后将原来的空间清理掉，同时解决了内存碎片化的问题。
+通常商业虚拟机将内存分为一块Eden和两块Survivor，大小比例为8:1:1，每次使用Eden和其中一块Survivor，将存活对象复制到另一块Survivor上面。
+这样做避免了内存空间的浪费，当存活对象较多时，会依赖老年代来进行分配担保。</p>
 
-<h4 id="runtime-constant-pool">运行时常量池（Runtime Constant Pool）</h4>
-<p>运行时常量池是方法区的一部分，Class文件中除了类的信息、字段、方法、接口等外，还有一项<em>常量池（Constant Pool Table）</em>用于存放编译期生成的各种字面量和符号引用，这部分内容要放到运行时常量池中存放。
-但是运行时常量池不仅可以存放编译期生成的常量部分，也可在运行时将新的常量放入池中，，具有动态存储的特性。如String的intern()方法。
-运行时长两次无法申请到内存时会抛出OutOfMemoryError异常。</p>
+<h2 id="section-3">3 标记-整理算法</h2>
+<p>复制算法要进行多次复制操作，效率可能会变低，另外分配担保也存在风险，老年代不适合采用这种方法。
+标记-整理算法的标记过程与上述过程一样，但并不是直接清理对象，而是让存活的对象向一端移动，清理掉边界以外的内存。</p>
 
-<h4 id="section-1">直接内存</h4>
-<p>这部分不是运行时数据区的一部分，也不是虚拟机规范中定义的内存区域，但由于会经常使用，也应该予以关注。
-JDK1.4中新加入的NIO类，引入了基于通道（channel）与缓冲区（Buffer）的I/O方式，可以使用Native函数库直接分配堆外内存，通过DirectByteBuffer对象作为这块内存的引用进行操作。这种方法能显著提高性能，避免了java堆和Native堆中来回复制数据。
-在配置虚拟机参数时，要兼顾这部分直接内存，保证总内存大于各内存区域总和，防止导致出现OutOfMemoryError异常。</p>
+<h2 id="section-4">4 分代收集算法</h2>
+<p>分代收集就是根据对象存活的时间不同，将Java堆分为新生代和老年代，针对不同的对象采用不同的回收算法。</p>
 
+<h1 id="section-5">二 垃圾回收器</h1>
+
+<p>新生代收集器有：Serial、ParNew、ParallelScavenge。
+老年代收集器有：CMS、SerialOld、ParallelOld。
+最新收集器：G1。</p>
+
+<h2 id="serial">1 Serial收集器</h2>
+<p>Serial是单线程收集器，采用复制算法，在进行垃圾收集时，必须停止其他工作线程，即Stop The World(STW)。它是虚拟机在Client模式下的默认新生代收集器。
+在桌面应用程序中，虚拟机内存一般为几十兆到几百兆，停顿时间大概为几十毫秒到一百多毫秒的范围内，对一般应用程序来说是可以接受的。</p>
+
+<h2 id="parnew">2 ParNew收集器</h2>
+<p>ParNew是Serial收集器的多线程版，也存在Stop The World的问题，除了是多线程的实现外，并没有很多的创新之处。因此ParNew通常运行在Server模式下的新生代收集器。
+另外它只能与CMS收集器配合使用。</p>
+
+<h2 id="parallel-scavenge">3 Parallel Scavenge收集器</h2>
+<p>Parallel Scavenge收集器是新生代收集器，采用的是复制算法，其目标是达到一个可控制的吞吐量(Throughput)，即运行用户代码时间/(运行用户代码时间+垃圾收集时间)，因此也被称为“吞吐量优先收集器”。</p>
+
+<h2 id="serial-old">4 Serial Old收集器</h2>
+<p>Serial Old收集器是Serial收集器的老年代版本，也是单线程运行的使用了“标记-整理算法”，以供在Client模式下运行，但在Server模式下可以与Parallel Scavenge收集器配合使用，也可以作为CMS的备选方案。</p>
+
+<h2 id="parallel-old">5 Parallel Old收集器</h2>
+<p>Parallel Old是Parallel Scavenge收集器的老年代版本，使用“标记-整理算法”，在注重吞吐量的场合可以使用Parallel Old和Parallel Scavenge的组合。</p>
+
+<h2 id="cms">6 CMS收集器</h2>
+<p>CMS全称为Concurrent Mark Sweep收集器，可以看出采用的是“标记-清除算法”，其目标是获得最短停顿时间，通常应用在网站或B/S服务器上，以期获得最短停顿时间和最快的响应速度。从总体上说，CMS收集器是与用户线程一起并发执行的，虽然其中也有Stop The World，但相对时间很短。因此也称为“并发低停顿收集器”。
+CMS不足之处在于在服务器上工作时会占用一部分线程，使吞吐量降低。另外CMS无法处理浮动垃圾(同时运行的用户线程时产生的新垃圾)。最后使用标记清除算法会产生大量的空间碎片，出现虽然还有内存但无法分配大对象的情况。</p>
+
+<h2 id="g1">7 G1收集器</h2>
+<p>有关G1收集器的原理可参照文章http://www.importnew.com/15311.html</p>
+
+<p>reference：
+1. 深入理解Java虚拟机
+2. <a href="http://jbutton.iteye.com/blog/1569746">JVM垃圾回收机制</a></p>
 
 </div>
 

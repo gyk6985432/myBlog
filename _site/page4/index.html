@@ -11,7 +11,7 @@
 
   <title>
     
-      CentOS6.7上安装git &middot; 高悦凯的博客
+      高悦凯的博客 &middot; 后端为主，前端为辅
     
   </title>
 
@@ -128,93 +128,105 @@
     </div>
 
       <div class="container content">
-        <div class="post">
-  <h1 class="post-title">CentOS6.7上安装git</h1>
-  <span class="post-date">21 Jan 2016</span>
-  <p>昨天把原先用的电脑翻出来，发现还是WindowsXP，虽然换了新电脑，但也不能让旧的就压箱底吧，所以为了让它继续发挥价值，给它装个linux，也好让我多熟悉熟悉linux，以后说不定要用到呢，废话不多说了，制作启动U盘，装系统什么的直接略过，先给它武装一个神武器git，别的慢慢再说吧。</p>
+        <div class="posts">
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://gyk6985432.github.io/myBlog/2015/12/22/33TipsToBeGoodWriter/">
+        作家的33项写作技巧
+      </a>
+    </h1>
 
-<p>由于CentOS的默认源上没有git，改成国内最大的163源也还是没有.</p>
+    <span class="post-date">22 Dec 2015</span>
 
-<p>1.进入目录</p>
-
-<p><code class="highlighter-rouge">
-cd /usr/local/src
-</code></p>
-
-<p>2.安装git需要的依赖：</p>
-
-<p><code class="highlighter-rouge">
-yum install curl curl-devel zlib-devel openssl-devel perl cpio expat-devel gettext-devel
-</code></p>
-
-<p>3.下载git包</p>
-
-<p><code class="highlighter-rouge">
-wget http://git-core.googlecode.com/files/git-1.7.7.5.tar.gz
-autoconf
-./configure
-make
-make install
-</code></p>
-
-<p>4.安装完成</p>
-
-<p><code class="highlighter-rouge">
-git --version
-</code></p>
+    <p>在这个互联网时代，<strong>每个人都要懂点写作</strong>。文科出身的还好，大多理工科出身的完全不懂怎么写才会吸引读者，怎么写才能表达清楚，让读者能看的懂，看的有意思，还能感悟到一些东西。因此跟作家学学写作的一些技巧吧。</p>
 
 
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://gyk6985432.github.io/myBlog/2015/12/20/comment/">
+        博客中添加社会化评论的方法
+      </a>
+    </h1>
+
+    <span class="post-date">20 Dec 2015</span>
+
+    <p><strong>“社会化评论”</strong>也叫第三方评论，“社会化”听着很奇怪，难以理解，第三方评论就可以顾名思义，就是在自己的网站中加入评论的部分，但是这并不需要建立用户的注册系统以及相关的数据库，而是用QQ、微博等账号登录即可进行评论，给游客带来很多方便，而引入又极其方便，因此有简单省事的东西不拿来用简直对不起自己。</p>
+
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://gyk6985432.github.io/myBlog/2015/12/18/my-sites/">
+        中转站
+      </a>
+    </h1>
+
+    <span class="post-date">18 Dec 2015</span>
+
+    <p>刚搭建好博客，自然得放点东西，不然总觉得空空的好难受。好吧，那就把我箱底的东西翻腾翻腾吧~`(<em>∩_∩</em>)′~
+首先上点导航，把这当成个中转站，否则长时间不上，万一给忘了这个地方可咋整，嗯？</p>
+
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://gyk6985432.github.io/myBlog/2015/12/18/A-New-Tutorial/">
+        Welcome to my blog
+      </a>
+    </h1>
+
+    <span class="post-date">18 Dec 2015</span>
+
+    <p><img src="/myBlog/images/SplitShire_9573.jpg" alt="Alt text" />
+Through one day and a half, I finish this blog finally. This is tough…
+I hope I can share my experience about coding and learning process.</p>
+
+
+  </div>
+  
+
+    <div class="links">
+      <h6>文章列表</h6>
+      
+        <div class="box">
+            <a href="http://gyk6985432.github.io/myBlog/2015/12/22/33TipsToBeGoodWriter/">作家的33项写作技巧</a>
+            <div class="linkDate">22 Dec 2015</div>
+        </div>
+      
+        <div class="box">
+            <a href="http://gyk6985432.github.io/myBlog/2015/12/20/comment/">博客中添加社会化评论的方法</a>
+            <div class="linkDate">20 Dec 2015</div>
+        </div>
+      
+        <div class="box">
+            <a href="http://gyk6985432.github.io/myBlog/2015/12/18/my-sites/">中转站</a>
+            <div class="linkDate">18 Dec 2015</div>
+        </div>
+      
+        <div class="box">
+            <a href="http://gyk6985432.github.io/myBlog/2015/12/18/A-New-Tutorial/">Welcome to my blog</a>
+            <div class="linkDate">18 Dec 2015</div>
+        </div>
+      
+    </div>
 </div>
 
-
-
-
-<!--插入的代码_disqus的评论
-<div id="disqus_thread"></div>
-<script>
-(function() { // DON'T EDIT BELOW THIS LINE
-var d = document, s = d.createElement('script');
-s.src = '//gyk6985432.disqus.com/embed.js';
-s.setAttribute('data-timestamp', +new Date());
-(d.head || d.body).appendChild(s);
-})();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
--->
-
-<div class="related">
-  <h2>Related Posts</h2>
-  <ul class="related-posts">
+<div class="pagination">
+  
+    <span class="pagination-item older">Older</span>
+  
+  
     
-      <li>
-        <h3>
-          <a href="http://gyk6985432.github.io/myBlog/2017/02/10/coredump-in-matplotlib/">
-            bash on window10中core dump解决方案
-            <small>10 Feb 2017</small>
-          </a>
-        </h3>
-      </li>
+      <a class="pagination-item newer" href="http://gyk6985432.github.io/myBlog/page3">Newer</a>
     
-      <li>
-        <h3>
-          <a href="http://gyk6985432.github.io/myBlog/2017/01/02/python-bash/">
-            Windows下指定python所在目录
-            <small>02 Jan 2017</small>
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <h3>
-          <a href="http://gyk6985432.github.io/myBlog/2016/12/28/life-plan/">
-            Life Plan
-            <small>28 Dec 2016</small>
-          </a>
-        </h3>
-      </li>
-    
-  </ul>
+  
 </div>
+
 
 
         <!--友言评论-->

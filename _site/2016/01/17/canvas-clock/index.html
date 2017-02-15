@@ -91,6 +91,10 @@
         
       
     
+      
+        
+      
+    
 
     <span class="sidebar-nav-item" href="">gyk6985432@gmail.com</span>
     <a class="sidebar-nav-item" href="https://twitter.com/gyk6985432">Twitter</a>
@@ -101,7 +105,7 @@
 
   <div class="sidebar-item">
     <p>
-      gyk6985432&copy; 2016. All rights reserved.
+      gyk6985432&copy; 2017. All rights reserved.
     </p>
   </div>
 </div>
@@ -128,7 +132,7 @@
   <h1 class="post-title">粒子时钟</h1>
   <span class="post-date">17 Jan 2016</span>
   在慕课网上学了个动态时钟，全部用canvas实现的。
-自己改成了一个粒子时钟，放上来玩玩。
+自己改成了一个粒子时钟，放上来玩玩。屏幕拉动太快了，容易崩掉，对粒子数目限制了一下，稍稍好一些。也可以设置成彩色的，不过还是黑白的好看～～可以直接另存页面下载下来，改成自己喜欢的样子。
 
 
 
@@ -441,7 +445,8 @@ function updateBalls(){
         balls[i].vy += balls[i].g;
 
         if (balls[i].y >= WINDOW_HEIGHT-RADIUS) {
-            balls[i].y=WINDOW_HEIGHT-RADIUS;
+            //暂时删掉这句
+            //balls[i].y=WINDOW_HEIGHT-RADIUS;
             //balls[i].vy = -balls[i].vy*0.75;
         };
         if (balls[i].vx==0) {
@@ -452,12 +457,13 @@ function updateBalls(){
     //删掉不在画面中的小球，提高性能
     var cnt=0;
     for (var i = 0; i < balls.length; i++) {
-        if(balls[i].x+RADIUS > 0 && balls[i].x-RADIUS<WINDOW_WIDTH){
+        if(balls[i].x+RADIUS > 0 && balls[i].x-RADIUS<WINDOW_WIDTH ){
             balls[cnt++] = balls[i];
         }
     };
 
-    while(balls.length > cnt){ //|| balls.length>300){//Math.min(300,cnt)
+    while(balls.length > cnt || balls.length>900){
+        //Math.min(300,cnt)
         balls.pop();
     }
 }
@@ -487,27 +493,27 @@ s.setAttribute('data-timestamp', +new Date());
     
       <li>
         <h3>
-          <a href="http://gyk6985432.github.io/myBlog/2016/03/14/gem-errors/">
-            安装jekyll问题解决方案
-            <small>14 Mar 2016</small>
+          <a href="http://gyk6985432.github.io/myBlog/2017/02/10/coredump-in-matplotlib/">
+            bash on window10中core dump解决方案
+            <small>10 Feb 2017</small>
           </a>
         </h3>
       </li>
     
       <li>
         <h3>
-          <a href="http://gyk6985432.github.io/myBlog/2016/03/10/atom-install-error/">
-            atom安装插件的问题
-            <small>10 Mar 2016</small>
+          <a href="http://gyk6985432.github.io/myBlog/2017/01/02/python-bash/">
+            Windows下指定python所在目录
+            <small>02 Jan 2017</small>
           </a>
         </h3>
       </li>
     
       <li>
         <h3>
-          <a href="http://gyk6985432.github.io/myBlog/2016/01/23/story-of-ubuntu-and-me/">
-            与ubuntu一见钟情的故事
-            <small>23 Jan 2016</small>
+          <a href="http://gyk6985432.github.io/myBlog/2016/12/28/life-plan/">
+            Life Plan
+            <small>28 Dec 2016</small>
           </a>
         </h3>
       </li>

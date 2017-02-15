@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      8种排序法（Java实现） &middot; 高悦凯的博客
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="http://gyk6985432.github.io/myBlog/css/poole.css">
+  <link rel="stylesheet" href="http://gyk6985432.github.io/myBlog/css/syntax.css">
+  <link rel="stylesheet" href="http://gyk6985432.github.io/myBlog/css/lanyon.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"><!--icon-->
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://gyk6985432.github.io/myBlog/images/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="http://gyk6985432.github.io/myBlog/images/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+<!--插入的代码_百度统计-->
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?9ab1df26e131dafc619a1e9f8cff0170";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+<!--插入的代码_谷歌统计-->
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-71637553-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</head>
+
+
+  <body>
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <img src="http://gyk6985432.github.io/myBlog/images/apple-touch-icon-precomposed.png">
+    <p>走在编程的大路上……</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="http://gyk6985432.github.io/myBlog/">Home</a>
+
+    
+
+    
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+
+    <span class="sidebar-nav-item" href="">gyk6985432@gmail.com</span>
+    <a class="sidebar-nav-item" href="https://twitter.com/gyk6985432">Twitter</a>
+    <a class="sidebar-nav-item" href="https://www.facebook.com/profile.php?id=100009369283784">Facebook</a>
+
+    <span class="sidebar-nav-item">Template：lanyon</span>
+  </nav>
+
+  <div class="sidebar-item">
+    <p>
+      gyk6985432&copy; 2017. All rights reserved.
+    </p>
+  </div>
+</div>
+
+
+    <!--回到顶端-->
+    <a name="toTop" href="top"></a>
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h2 class="masthead-title">
+            <a href="http://gyk6985432.github.io/myBlog/" title="Home">高悦凯的博客</a>
+            <small>后端为主，前端为辅</small>
+          </h2>
+        </div>
+      </div>
+    </div>
+
+      <div class="container content">
+        <div class="post">
+  <h1 class="post-title">8种排序法（Java实现）</h1>
+  <span class="post-date">22 Jul 2016</span>
+  <p>内部排序法有8种：冒泡排序法、选择排序法、插入排序法、合并排序法、快速排序法、堆排序法、希尔排序法和基数排序法。</p>
+
+<blockquote>
+  <p>排序的稳定性：数据经过排序后，两个相同键值的记录仍然保持原来的次序。</p>
+</blockquote>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">排序方法</th>
+      <th style="text-align: center">稳定性</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">冒泡排序法</td>
+      <td style="text-align: center">稳定</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">选择排序法</td>
+      <td style="text-align: center">不稳定</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">插入排序法</td>
+      <td style="text-align: center">稳定</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">希尔排序法</td>
+      <td style="text-align: center">不稳定</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">归并排序法</td>
+      <td style="text-align: center">稳定</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">快速排序法</td>
+      <td style="text-align: center">不稳定</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">堆积排序法</td>
+      <td style="text-align: center">不稳定</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">基数排序法</td>
+      <td style="text-align: center">稳定</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>前四种都是简单的排序，后三种较为复杂。</p>
+
+<h2 id="section">冒泡排序法</h2>
+<p>冒泡排序法为交换排序法的一种，基本思想是从第一个元素开始，与后面一个的元素比较，若顺序有误则二者交换。然后对下一个位置的元素重复上述过程。这样完成一次扫描后，最后一个元素位置是正确的。继续第二次扫描，确定倒数第二个元素，以此类推。
+由于只是对相邻元素进行交换，所以是稳定排序。</p>
+
+<p>复杂度分析：最坏情况需要比较的次数为(n-1)+(n-2)+(n-3)+…+3+2+1=n(n-1)/2，时间复杂度为O(n^2)。最好情况为n-1次比较，时间复杂度为O(n)。只需要一个额外空间，空间复杂度为O(1)。
+适用于数据量小或部分数据已经排过序的情况。</p>
+
+<p>```
+//冒泡排序法(Bubble Sort)</p>
+
+<p>public class BubbleSorting {
+    public static void main(String[] args){
+        int i,j,tmp;
+        int data[] = {6,5,9,7,2,8};  //原始数据</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>    System.out.println("冒泡排序法：");
+    System.out.print("原始数据为：");
+    for(i=0;i&lt;6;i++){
+        System.out.print(data[i]+" ");
+    }
+    System.out.println();
+
+    for(i=5;i&gt;0;i--){   //扫描次数
+        for(j=0;j&lt;i;j++){   //比较、交换次数
+            if(data[j]&gt;data[j+1]){
+                tmp = data[j];
+                data[j] = data[j+1];
+                data[j+1] = tmp;
+            }
+        }
+
+        //打印各次扫描结果
+        for(j=0;j&lt;6;j++){
+            System.out.print(data[j]+" ");
+        }
+        System.out.println();
+    }
+
+    System.out.println("排序结果为：");
+    for(i=0;i&lt;6;i++){
+            System.out.print(data[i]+" ");
+    }
+System.out.println();
+} } ```
+</code></pre>
+</div>
+
+<h2 id="section-1">选择排序法</h2>
+<p>对于由小到大排序的情况，进行第一次扫描，从第一个位置开始，在其后依次寻找比它小的元素，从而将最小的元素放在第一个位置。第二次扫描，从第二个位置开始，重复上面的过程。
+由于排序时要直接和最前面的元素交换，因此有可能会使原来的次序改变，所以它是不稳定的排序法。</p>
+
+<p>复杂度分析：每一次扫描过程中都要找到最小元素，然后进行交换，因此比较的次数总是(n-1)+(n-2)+(n-3)+…+3+2+1=n(n-1)/2，时间复杂度为O(n^2)。
+此方法适用于数据量小或部分数据已经排过序的情况。</p>
+
+<p>```
+//选择排序法
+public class SelectionSorting{</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>int data[] = new int[]{9,7,5,3,4,6};
+public static void main(String[] args){
+    System.out.print("原始数据为：");
+    SelectionSorting test = new SelectionSorting();
+    test.showData();
+    test.select();
+}
+
+public void showData(){
+    int i;
+    for (i=0;i&lt;6;i++) {
+        System.out.print(data[i]+" ");
+    }
+    System.out.println();
+}
+
+public void select(){
+    int i,j,temp;
+    for (i=0;i&lt;5;i++) {
+        for (j=i+1;j&lt;6;j++) {
+            if (data[i]&gt;data[j]) {
+                temp=data[i];
+                data[i]=data[j];
+                data[j]=temp;
+            }
+        }
+        System.out.print("第"+(i+1)+"次排序：");
+        for (j=0;j&lt;6;j++) {
+            System.out.print(data[j]+" ");
+        }
+        System.out.println();
+    }
+    System.out.println();
+} } ```
+</code></pre>
+</div>
+
+<h2 id="section-2">插入排序法</h2>
+<p>第一次扫描时，从第二个元素开始，与已经排好序的每个元素比较，将其插入到合适的位置。第二次扫描从第三个元素开始，重复上述过程。
+由于将某一个元素插入到合适位置的过程中，元素是逐个依次往后移动，所以是稳定排序。</p>
+
+<p>复杂性分析：最坏情况需要比较的次数为(n-1)+(n-2)+(n-3)+…+3+2+1=n(n-1)/2，时间复杂度为O(n^2)。最好情况为O(n)。
+插入排序法适用于大部分已经排过序，或已排序的数据中新增数据后进行排序的情况。
+插入排序中会有大量的数据移动，因此最好在链表上操作。</p>
+
+<p>```
+//插入排序法</p>
+
+<p>import java.io.*;</p>
+
+<p>public class InsertSorting{
+    int data[] = new int[6];
+    int size = 6;</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>public static void main(String[] args) {
+    InsertSorting test = new InsertSorting();
+    test.inputarr();
+    System.out.print("您输入的原始数据为： ");
+    test.showData();
+    test.insert();
+}
+
+public void inputarr(){
+    int i;
+    for (i=0;i&lt;size;i++) {
+        System.out.print("请输入第"+(i+1)+"个元素");
+        try{
+            InputStreamReader isr = new InputStreamReader(System.in);
+            BufferedReader br = new BufferedReader(isr);
+            data[i]=Integer.parseInt(br.readLine());
+        }catch(Exception e){
+            System.out.println("输入有误！");
+        }
+    }
+}
+
+public void showData(){
+    int i;
+    for (i=0;i&lt;size;i++) {
+        System.out.print(data[i]+" ");
+    }
+    System.out.println();
+}
+
+public void insert(){
+    int i,j,temp;
+    for (i=1;i&lt;size;i++) {
+        temp = data[i];
+        j=i-1;
+        while(j&gt;=0 &amp;&amp; temp&lt;data[j]){
+            data[j+1]=data[j];
+            j--;
+        }
+        data[j+1]=temp;
+        System.out.print("第"+i+"次扫描：");
+        showData();
+    }
+} } ```
+</code></pre>
+</div>
+
+<h2 id="section-3">希尔排序法</h2>
+<p>希尔排序法是D.L.Shell 于1959年7月发明的一种排序方法。排序的基本思想是将数据分为一定间隔的若干组，采用插入排序法对组内元素排序后，逐渐减小间隔，重复上述过程。
+虽然在组内排序采用的是插入排序法，但不同的分组中若含有相同元素，在排列后合并就可能使原来次序改变，因此希尔排序法是不稳定排序。</p>
+
+<p>复杂度分析：时间复杂度随增量选择不同而不同，希尔增量的时间复杂度为O(n^2)，而Hibbard增量的时间复杂度为O(n^1.5)。空间复杂度为O(1)。有人提倡几乎任何排序工作在开始时都可以用希尔排序，若在实际使用中证明它不够快，再改成快速排序这样更高级的排序算法。希尔排序比直接插入排序快的原因：当n值很大时数据项每一趟排序需要的个数很少，但数据项的距离很长。当n值减小时每一趟需要移动的数据增多，此时已经接近于它们排序后的最终位置。正是这两种情况的结合才使希尔排序效率比插入排序高很多。</p>
+
+<p>```
+//希尔排序法</p>
+
+<p>import java.io.*;</p>
+
+<p>public class ShellSorting{
+    int data[] = new int[8];
+    int size = 8;</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>public static void main(String[] args) {
+    ShellSorting test = new ShellSorting();
+    test.inputarr();
+    System.out.println("您输入的原始数据为：");
+    test.showData();
+    test.shell();
+}
+
+public void inputarr(){
+    int i = 0;
+    for (i=0;i&lt;size;i++) {
+        System.out.print("请输入第"+(i+1)+"个元素：");
+        try{
+            InputStreamReader isr = new InputStreamReader(System.in);
+            BufferedReader br = new BufferedReader(isr);
+            data[i]=Integer.parseInt(br.readLine());
+        }catch(Exception e){
+            System.out.println("输入有误！");
+        }
+    }
+}
+
+public void showData(){
+    for (int i=0;i&lt;size;i++) {
+        System.out.print(data[i]+" ");
+    }
+    System.out.println();
+}
+
+public void shell(){
+    int i,j,temp,jmp,k;
+    k=1;
+    jmp = size/2;
+    while(jmp&gt;0){
+        for (i=jmp;i&lt;size;i++) {
+            temp = data[i];
+            j=i-jmp;
+            while(j&gt;=0 &amp;&amp; data[j]&gt;temp){
+                data[j+jmp] = data[j];
+                j = j-jmp;
+            }
+            data[j+jmp] = temp;
+        }
+        System.out.print("第"+(k++)+"次排序：");
+        showData();
+        jmp = jmp/2;
+    }
+} } ```
+</code></pre>
+</div>
+
+<h2 id="section-4">快速排序</h2>
+<p>快速排序是公认的最佳排序法，其基本思想是在数据中找一个中间值，把比它小的放在左边，比它大的放在右边，对相邻的数据重复上述过程。快速排序的步骤为：</p>
+
+<ol>
+  <li>取K为第一个键值</li>
+  <li>由左向右找出键值Ki使得Ki&gt;K</li>
+  <li>由右向左找出键值Kj使得Kj&lt;K</li>
+  <li>若i&lt;j，则Ki和Kj交换，并跳到步骤2</li>
+  <li>若i&gt;=j，则将K和Kj交换，以j为基准点将数据分为左右两部分，对左右两部分重复上述过程。</li>
+</ol>
+
+<p>快速排序是不稳定排序</p>
+
+<p>复杂度分析：最快情况和平均情况下，时间复杂度为O(nlogn)。最差情况为序列已经排好序，时间复杂度为O(n^2)。最佳情况下空间复杂度为O(logn)，最差情况为O(n)。</p>
+
+<p>```
+//快速排序法</p>
+
+<p>import java.io.<em>;
+import java.util.</em>;</p>
+
+<p>public class QuickSorting{
+    int size;
+    int process=0;
+    int[] data = new int[100];</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>public static void main(String[] args){
+    QuickSorting test = new QuickSorting();
+
+    System.out.println("请输入数组大小（100以内）:");
+    try{
+        InputStreamReader isr = new InputStreamReader(System.in);
+        BufferedReader br = new BufferedReader(isr);
+        test.size = Integer.parseInt(br.readLine());
+    }catch(Exception e){
+        System.out.println("输入有误");
+    }
+    test.inputarr();
+    System.out.print("原始数据为：");
+    test.showData();
+    test.quick(test.data,test.size,0,test.size-1);
+    System.out.print("排序结果为：");
+    test.showData();
+}
+
+void inputarr(){
+    //随机方式输入
+    Random rand = new Random();
+    for (int i=0;i&lt;size;i++) {
+        data[i] = Math.abs(rand.nextInt(99))+1;
+    }
+}
+
+void showData(){
+    for (int i=0;i&lt;size;i++) {
+        System.out.print(data[i] + " ");
+    }
+    System.out.println();
+}
+
+void quick(int[] d, int size, int lf, int rg){
+    int first,temp;
+    int lf_idx;
+    int rg_idx;
+    int t;
+
+
+    if (lf&lt;rg) {
+        lf_idx = lf+1;
+        rg_idx = rg;
+
+        //取出第一个元素K
+        first = d[lf];
+        while(true){
+
+            System.out.print("第"+(process++)+"次处理过程：");
+            for (t=0;t&lt;size;t++) {
+                System.out.print(d[t]+" ");
+            }
+            System.out.println();
+
+            //从左向右找出第一个大于K的元素Ki
+            for (int i=lf+1;i&lt;rg;i++) {
+                if (d[i]&gt;first) {
+                    lf_idx=i;
+                    break;
+                }
+                lf_idx++;
+            }
+            //从右向左找出第一个小于K的元素Kj
+            for (int j=rg; j&gt;=lf+1;j--) {
+                if (d[j]&lt;=first) {
+                    rg_idx=j;
+                    break;
+                }
+                rg_idx--;
+            }
+            //若i&lt;j，则Ki和Kj交换
+            if (lf_idx&lt;rg_idx) {
+                temp = d[lf_idx];
+                d[lf_idx] = d[rg_idx];
+                d[rg_idx] = temp;
+            }else{
+                break;
+            }
+        }
+        //若i&gt;=j，则K和Kj交换
+        if (lf_idx&gt;=rg_idx) {
+            temp = d[lf];
+            d[lf] = d[rg_idx];
+            d[rg_idx] = temp;
+            //对分开的两部分各自递归
+            quick(d,size,lf,rg_idx-1);
+            quick(d,size,rg_idx+1,rg);
+        }
+    }
+} } ```
+</code></pre>
+</div>
+
+<h2 id="section-5">堆排序</h2>
+<p>堆排序是基于二叉堆原理，二叉堆分为最小二叉堆和最大二叉堆。以最大二叉堆为例，它有三个特点：
+1. 它是一个完全二叉树
+2. 所有节点的值都大于或等于它左右子节点的值
+3. 树根的值是最大的
+排序的基本思想是，利用上面第三个特征，将原有数据构建成一个二叉堆，取出其树根元素，将剩下的数据继续构建二叉堆，重复上述过程。</p>
+
+<p>在算法的实现中，需要一个构建二叉堆的方法，一个把剩余元素调整为二叉堆的方法。</p>
+
+<p>复杂度分析：任何情况下时间复杂度为O(nlogn)，空间复杂度为O(1)。元素交换时是在父子节点间进行的，相邻节点顺序会被打乱，因此不是稳定排序。</p>
+
+<p>```
+//堆排序法</p>
+
+<p>public class HeapSorting{
+    public static void main(String[] args){
+        int size,i;
+        size = 9;
+        int[] data = {0,5,6,4,8,3,2,7,1};
+        System.out.print(“原始数据为：”);
+        for (i=1;i&lt;size;i++) {
+            System.out.print(data[i]+” “);
+        }
+        System.out.println();
+        HeapSorting.heap(data,size);
+        System.out.print(“排序结果：”);
+        for (i=1;i&lt;size;i++) {
+            System.out.print(data[i]+” “);
+        }
+        System.out.println();
+    }</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>public static void heap(int[] data, int size){
+    int i,j,temp;
+    for (i=(size/2);i&gt;0;i--) {
+        HeapSorting.adjustHeap(data,i,size-1);
+    }
+    System.out.print("堆中元素：");
+    for (i=1;i&lt;size;i++) {
+        System.out.print(data[i]+" ");
+    }
+    System.out.println();
+
+    for (i=size-2;i&gt;0;i--) {
+        temp = data[i+1];       //将调整过的数据的根元素与最后一个元素交换
+        data[i+1] = data[1];
+        data[1] = temp;
+        HeapSorting.adjustHeap(data,1,i);   //除去最后一个元素，对剩余元素进行调整
+        System.out.print("处理过程：");
+        for (j=1;j&lt;size;j++) {
+        System.out.print(data[j]+" ");
+        }
+        System.out.println();
+    }
+}
+
+public static void adjustHeap(int[] data, int i, int size){
+    int j,temp,post;
+    j = 2 * i;
+    temp = data[i];     //将根元素暂存
+    post = 0;
+    while (j&lt;=size &amp;&amp; post==0) {
+        if (j&lt;size) {
+            if (data[j]&lt;data[j+1]) {   //若左孩子小于右孩子，寻找比当前节点大的孩子节点
+                j++;
+            }
+        }
+        if (temp&gt;data[j]) {         //若根元素大于较大的孩子，直接跳出
+            post = 1;
+        }else{                   //若根元素小于较大的孩子，将该孩子节点向上浮动
+            data[j/2] = data[j];
+            j = 2*j;
+        }
+    }
+    data[j/2] = temp;       //将原来根元素放到较大的孩子的位置
+}
+</code></pre>
+</div>
+
+<p>}
+```</p>
+
+<h2 id="section-6">基数排序法</h2>
+
+<p>基数排序法也叫桶排序法，是分配方式的一种，基本思想是将数据先后按个位、十位、百位…排序，得到最终结果。</p>
+
+<p>复杂度分析：任何情况下时间复杂度均为O(nlog_p^k)，k是原始数据的最大值。空间复杂度为O(n*p)，n是原始数据的个数，p是最大位数。</p>
+
+<p>```
+//基数排序法</p>
+
+<p>import java.io.<em>;
+import java.util.</em>;</p>
+
+<p>public class BucketSorting{</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>int size;
+int[] data = new int[100];
+
+public static void main(String[] args) {
+    BucketSorting test= new BucketSorting();
+    System.out.print("请输入数组大小（&lt;100）：");
+    try{
+        InputStreamReader isr = new InputStreamReader(System.in);
+        BufferedReader br =  new BufferedReader(isr);
+        test.size = Integer.parseInt(br.readLine());
+    }catch(Exception e){
+        System.out.print("输入有误");
+    }
+    test.inputarr();
+    System.out.println("原始数据为：");
+    test.showData();
+    test.bucket();
+}
+
+public void showData(){
+    for (int i=0;i&lt;size;i++) {
+        System.out.print(data[i]+" ");
+    }
+    System.out.println();
+}
+
+public void inputarr(){
+    Random r = new Random();
+    for (int i=0;i&lt;size;i++) {
+        data[i] = Math.abs(r.nextInt(999))+1;;
+    }
+}
+
+public void bucket(){
+    for (int n=1;n&lt;=100;n*=10) {
+        int[][] temp = new int[10][100];
+        for (int i=0;i&lt;size;i++) {
+            int m = (data[i]/n)%10;
+            temp[m][i] = data[i];
+        }
+        int k=0;
+        for (int i=0;i&lt;10;i++) {
+            for (int j=0;j&lt;size;j++) {
+                if (temp[i][j] != 0) {
+                    data[k] = temp[i][j];
+                    k++;
+                }
+            }
+        }
+        System.out.print(n+"位数排序结果：");
+        showData();
+    }
+} } ```
+</code></pre>
+</div>
+
+</div>
+
+
+
+
+<!--插入的代码_disqus的评论
+<div id="disqus_thread"></div>
+<script>
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//gyk6985432.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+-->
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="http://gyk6985432.github.io/myBlog/2017/02/10/coredump-in-matplotlib/">
+            bash on window10中core dump解决方案
+            <small>10 Feb 2017</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="http://gyk6985432.github.io/myBlog/2017/01/02/python-bash/">
+            Windows下指定python所在目录
+            <small>02 Jan 2017</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="http://gyk6985432.github.io/myBlog/2016/12/28/life-plan/">
+            Life Plan
+            <small>28 Dec 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+
+
+        <!--友言评论-->
+        <div id="uyan_frame"></div>
+        <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2077210"></script>
+        </div>
+
+        <div class="toTop">
+          <a name="top" href="#toTop"><i class="fa fa-chevron-up"></i></a>
+        </div>
+      </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+
+    <script>
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+
+          if(!checkbox.checked ||
+             sidebar.contains(target) ||
+             (target === checkbox || target === toggle)) return;
+
+          checkbox.checked = false;
+        }, false);
+      })(document);
+    </script>
+  </body>
+</html>

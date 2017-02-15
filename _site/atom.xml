@@ -4,13 +4,1066 @@
  <title>高悦凯的博客</title>
  <link href="http://lanyon.getpoole.comhttp://gyk6985432.github.io/myBlog/atom.xml" rel="self"/>
  <link href="http://lanyon.getpoole.comhttp://gyk6985432.github.io/myBlog/"/>
- <updated>2016-03-15T12:14:05+08:00</updated>
+ <updated>2017-02-15T14:29:30+08:00</updated>
  <id>http://lanyon.getpoole.com</id>
  <author>
    <name>高悦凯</name>
    <email>gyk6985432@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>bash on window10中core dump解决方案</title>
+   <link href="http://lanyon.getpoole.com/2017/02/10/coredump-in-matplotlib/"/>
+   <updated>2017-02-10T00:00:00+08:00</updated>
+   <id>http://lanyon.getpoole.comhttp://gyk6985432.github.io/myBlog/2017/02/10/coredump-in-matplotlib</id>
+   <content type="html">&lt;p&gt;在bash on windows10使用python的数据处理模块pandas时，无法画图并报错：&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
+OMP: Error #100: Fatal system error detected.
+OMP: System error #22: Invalid argument
+Aborted (core dumped)
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;解决方案为：
+&lt;a href=&quot;https://github.com/Microsoft/BashOnWindows/issues/785&quot;&gt;export KMP_AFFINITY=disabled&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;由于bash on windows仅仅是一个bash, 无法运行画图程序。&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Windows下指定python所在目录</title>
+   <link href="http://lanyon.getpoole.com/2017/01/02/python-bash/"/>
+   <updated>2017-01-02T00:00:00+08:00</updated>
+   <id>http://lanyon.getpoole.comhttp://gyk6985432.github.io/myBlog/2017/01/02/python-bash</id>
+   <content type="html">&lt;p&gt;一般在安装python时要设置python的环境变量，运行.py文件：&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
+python ***.py
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;另外一种执行python文件的方式是在.py文件中指定python程序所在路径:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
+&lt;span class=&quot;c&quot;&gt;#!/usr/bin/python&lt;/span&gt;
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;但是在最新的win10的bashonwindows上面要指定python.exe或在其他bash下执行.py文件时，指定方式要改为：&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
+#!/c/Python27/python.exe
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;这样就可以直接执行了。&lt;/p&gt;
+
+&lt;p&gt;一个小坑:)&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Life Plan</title>
+   <link href="http://lanyon.getpoole.com/2016/12/28/life-plan/"/>
+   <updated>2016-12-28T00:00:00+08:00</updated>
+   <id>http://lanyon.getpoole.comhttp://gyk6985432.github.io/myBlog/2016/12/28/life-plan</id>
+   <content type="html">﻿&lt;h1 style=&quot;margin: 0 auto;&quot;&gt;人生周计划&lt;/h1&gt;&lt;br&gt;
+
+
+输入你的生日(xxxx-xx-xx): 
+&lt;input type=&quot;text&quot; width=&quot;50px;&quot; id=&quot;birth&quot; onchange=&quot;count()&quot; /&gt;
+&lt;input type=&quot;button&quot; onclick=&quot;count()&quot; value=&quot;go&quot;&gt;
+
+
+&lt;div class=&quot;mymain&quot; id=&quot;mymain&quot;&gt;&lt;/div&gt;
+&lt;p style=&quot;clear: both;&quot;&gt;&lt;/p&gt;
+
+&lt;script type=&quot;text/javascript&quot;&gt;
+    window.onload = display();
+    function display() {
+        var m = document.getElementById(&#39;mymain&#39;);
+        for (var i = 0; i &lt; 80; i++) {
+            var col = document.createElement(&#39;div&#39;);
+            col.className = &#39;mycol&#39;;
+            for (var j = 0; j &lt; 52; j++) {
+                var child = document.createElement(&#39;div&#39;);
+                child.className = &#39;item&#39;;
+                col.appendChild(child);
+            }
+            m.appendChild(col);
+        }
+    }
+
+    function clear(){
+        var col0 = document.getElementsByClassName(&#39;mycol&#39;)[0];
+        for (var i = 0; i &lt; 80; i++) {
+            var e = col0.firstChild;
+            for (var j = 0; j &lt; 52; j++) {
+                e.className = &#39;item&#39;;
+                e = e.nextSibling;
+            }
+            col0 = col0.nextSibling;
+        }
+    }
+
+    function count(){
+        clear();
+        var today = new Date();
+        var birth = document.getElementById(&#39;birth&#39;).value.split(&#39;-&#39;);
+	if (birth[0]&gt;today.getFullYear() || birth[0] &lt; today.getFullYear()-80
+                || birth[1] &gt; 12 || birth[1] &lt; 1
+                || birth[1] &gt; 31 || birth[2] &lt; 1) {
+                alert(&quot;时间不符合要求，重新输入&quot;);
+                return;
+        }
+        var birthdate = new Date(birth[0], birth[1]-1, birth[2]);
+        var weeks = Math.floor((today - birthdate)/(1000*60*60*24*7));
+        var old = parseInt(weeks/52, 10);
+        var c = weeks%52;
+        var col0 = document.getElementsByClassName(&#39;mycol&#39;)[0];
+        for (var i = 0; i &lt; old; i++) {
+            var e = col0.firstChild;
+            for (var j = 0; j &lt; 52; j++) {
+                e.className = &#39;pass&#39;;
+                e = e.nextSibling;
+            }
+            col0 = col0.nextSibling;
+        }
+        var e = col0.firstChild;
+        for (var i = 0; i &lt; c; i++) {
+            e.className = &#39;pass&#39;;
+            e = e.nextSibling;
+        }
+        var p = document.getElementsByTagName(&#39;p&#39;)[0];
+        var more = 4160 - weeks;
+        p.innerText = &#39;人的一生是短暂的，从出生到少年时期不懂得时间的宝贵，转眼长大成人。学业的重负耗尽了青春的时光，步入中年又因儿女的成长而两鬓斑白，最后步入老年常常疾病缠身。其中有多少时光是有意义的，有多少时光是白白浪费的，有多少是陪伴亲人度过的，又有多少时光是独自漂泊在外的。假如平平安安活到80岁，那么你已经度过了&#39;+ weeks +&#39;个星期，如今&#39; + old + &#39;岁的你在余下的&#39; + more + &#39;个星期还有什么梦想要实现呢，不要再拖延，不要再等了，马上行动才能防止时间在不经意间溜走。&#39;;
+    }
+
+&lt;/script&gt;
+
+&lt;style type=&quot;text/css&quot;&gt;
+    .mymain {
+        /*width: 100%;*/
+	width: 1120px;
+    }
+    .mycol {
+        float: left;
+    }
+    .item {
+        margin: 3px;
+        width: 8px;
+        height: 8px;
+        background-color: #cceecc;
+    }
+    .pass {
+        margin: 3px;
+        width: 8px;
+        height: 8px;
+        background-color: #ff0000;
+    }
+    p {
+        margin: 30px auto;
+        font-size: 16px;
+        font-family: &quot;Microsoft YaHei&quot;;
+    }
+&lt;/style&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>垃圾收集器及垃圾收集算法</title>
+   <link href="http://lanyon.getpoole.com/2016/09/06/algorithm-of-garbage-collection/"/>
+   <updated>2016-09-06T00:00:00+08:00</updated>
+   <id>http://lanyon.getpoole.comhttp://gyk6985432.github.io/myBlog/2016/09/06/algorithm-of-garbage-collection</id>
+   <content type="html">&lt;p&gt;垃圾收集技术经历过很长时间的发展，已经不需要像C++语言里让每个程序员都要分出一部分精力来处理内存的分配和回收这种繁杂的事情了。在我的理解中，程序或计算机的发展趋势就是用机器来代替人做一些重复的劳动，让人从中解放出来，垃圾回收器也正是这样一种机制。&lt;/p&gt;
+
+&lt;h1 id=&quot;section&quot;&gt;一 垃圾回收算法&lt;/h1&gt;
+
+&lt;p&gt;垃圾回收算法有：标记-清除算法、复制算法、标记-整理算法和分代收集算法。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;1 标记-清除算法&lt;/h2&gt;
+&lt;p&gt;该算法分为两个阶段，首先标记出所有需要回收的对象，标记完成后统一回收所有被标记的对象。
+&amp;gt;一个对象在回收前通常要经历两次标记的过程，如果对象在进行可达性分析后发现没有与GC Roots相连接的引用链，则它将会被第一次标记并进行第一次筛选，筛选的条件是此对象是否有必要执行finalize()方法，当对象没有重写finalize()方法或finalize()已经被虚拟机调用过，则判定为“没有必要执行”。finalize()是对象逃脱死亡命运的最后一次机会。&lt;/p&gt;
+
+&lt;p&gt;接着GC会对F-Queue中的对象执行第二次标记，如果对象通过finalize()方法与引用链相连接，则不会被回收，否则对象将被回收。&lt;/p&gt;
+
+&lt;p&gt;标记-清除算法存在两个不足：标记和清除两个过程的效率都不高，而且标记清除后产生大量的内存碎片。&lt;/p&gt;
+
+&lt;p&gt;其他所有算法都是针对这两个问题进行了改进而产生的。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;2 复制算法&lt;/h2&gt;
+&lt;p&gt;复制算法是为解决“效率”问题出现的，它将内存分为两块，每次使用其中一块，当使用的一块用完时，将存活的对象复制到另外一块，然后将原来的空间清理掉，同时解决了内存碎片化的问题。
+通常商业虚拟机将内存分为一块Eden和两块Survivor，大小比例为8:1:1，每次使用Eden和其中一块Survivor，将存活对象复制到另一块Survivor上面。
+这样做避免了内存空间的浪费，当存活对象较多时，会依赖老年代来进行分配担保。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-3&quot;&gt;3 标记-整理算法&lt;/h2&gt;
+&lt;p&gt;复制算法要进行多次复制操作，效率可能会变低，另外分配担保也存在风险，老年代不适合采用这种方法。
+标记-整理算法的标记过程与上述过程一样，但并不是直接清理对象，而是让存活的对象向一端移动，清理掉边界以外的内存。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-4&quot;&gt;4 分代收集算法&lt;/h2&gt;
+&lt;p&gt;分代收集就是根据对象存活的时间不同，将Java堆分为新生代和老年代，针对不同的对象采用不同的回收算法。&lt;/p&gt;
+
+&lt;h1 id=&quot;section-5&quot;&gt;二 垃圾回收器&lt;/h1&gt;
+
+&lt;p&gt;新生代收集器有：Serial、ParNew、ParallelScavenge。
+老年代收集器有：CMS、SerialOld、ParallelOld。
+最新收集器：G1。&lt;/p&gt;
+
+&lt;h2 id=&quot;serial&quot;&gt;1 Serial收集器&lt;/h2&gt;
+&lt;p&gt;Serial是单线程收集器，采用复制算法，在进行垃圾收集时，必须停止其他工作线程，即Stop The World(STW)。它是虚拟机在Client模式下的默认新生代收集器。
+在桌面应用程序中，虚拟机内存一般为几十兆到几百兆，停顿时间大概为几十毫秒到一百多毫秒的范围内，对一般应用程序来说是可以接受的。&lt;/p&gt;
+
+&lt;h2 id=&quot;parnew&quot;&gt;2 ParNew收集器&lt;/h2&gt;
+&lt;p&gt;ParNew是Serial收集器的多线程版，也存在Stop The World的问题，除了是多线程的实现外，并没有很多的创新之处。因此ParNew通常运行在Server模式下的新生代收集器。
+另外它只能与CMS收集器配合使用。&lt;/p&gt;
+
+&lt;h2 id=&quot;parallel-scavenge&quot;&gt;3 Parallel Scavenge收集器&lt;/h2&gt;
+&lt;p&gt;Parallel Scavenge收集器是新生代收集器，采用的是复制算法，其目标是达到一个可控制的吞吐量(Throughput)，即运行用户代码时间/(运行用户代码时间+垃圾收集时间)，因此也被称为“吞吐量优先收集器”。&lt;/p&gt;
+
+&lt;h2 id=&quot;serial-old&quot;&gt;4 Serial Old收集器&lt;/h2&gt;
+&lt;p&gt;Serial Old收集器是Serial收集器的老年代版本，也是单线程运行的使用了“标记-整理算法”，以供在Client模式下运行，但在Server模式下可以与Parallel Scavenge收集器配合使用，也可以作为CMS的备选方案。&lt;/p&gt;
+
+&lt;h2 id=&quot;parallel-old&quot;&gt;5 Parallel Old收集器&lt;/h2&gt;
+&lt;p&gt;Parallel Old是Parallel Scavenge收集器的老年代版本，使用“标记-整理算法”，在注重吞吐量的场合可以使用Parallel Old和Parallel Scavenge的组合。&lt;/p&gt;
+
+&lt;h2 id=&quot;cms&quot;&gt;6 CMS收集器&lt;/h2&gt;
+&lt;p&gt;CMS全称为Concurrent Mark Sweep收集器，可以看出采用的是“标记-清除算法”，其目标是获得最短停顿时间，通常应用在网站或B/S服务器上，以期获得最短停顿时间和最快的响应速度。从总体上说，CMS收集器是与用户线程一起并发执行的，虽然其中也有Stop The World，但相对时间很短。因此也称为“并发低停顿收集器”。
+CMS不足之处在于在服务器上工作时会占用一部分线程，使吞吐量降低。另外CMS无法处理浮动垃圾(同时运行的用户线程时产生的新垃圾)。最后使用标记清除算法会产生大量的空间碎片，出现虽然还有内存但无法分配大对象的情况。&lt;/p&gt;
+
+&lt;h2 id=&quot;g1&quot;&gt;7 G1收集器&lt;/h2&gt;
+&lt;p&gt;有关G1收集器的原理可参照文章http://www.importnew.com/15311.html&lt;/p&gt;
+
+&lt;p&gt;reference：
+1. 深入理解Java虚拟机
+2. &lt;a href=&quot;http://jbutton.iteye.com/blog/1569746&quot;&gt;JVM垃圾回收机制&lt;/a&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>在Kali Linux上编译OsmocomBB</title>
+   <link href="http://lanyon.getpoole.com/2016/08/08/make-OsmocomBB-on-KaliLinux/"/>
+   <updated>2016-08-08T00:00:00+08:00</updated>
+   <id>http://lanyon.getpoole.comhttp://gyk6985432.github.io/myBlog/2016/08/08/make-OsmocomBB-on-KaliLinux</id>
+   <content type="html">&lt;p&gt;在虚拟机上装了kali Linux很久了，一直没整点成果出来，突发奇想看看试试看手机能不能被窃听。于是上网搜GSM Sniffing，折腾了一天，终于可以了。参考的文章如下（有需要的童鞋请参考大神们的成果）：&lt;/p&gt;
+
+&lt;p&gt;http://www.blogjava.net/baicker/archive/2013/11/13/406293.html
+http://holmesian.org/GSM-SMS-Sniffing
+http://bbs.acehat.com/forum.php?mod=viewthread&amp;amp;tid=6877&amp;amp;page=1
+http://www.evil0x.com/posts/492.html
+http://iluck.org/212.html
+http://bbs.pediy.com/showthread.php?p=1319244
+https://bb.osmocom.org/trac/wiki/Software/GettingStarted?redirectedfrom=GettingStarted
+http://bb.osmocom.org/trac/wiki/GnuArmToolchain&lt;/p&gt;
+
+&lt;p&gt;（后面两篇是官方的，参考一下还可以）&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;软件环境搭建&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Linux版本：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Linux kali 3.18.0-kali1-586 #1 Debian 3.18.3-1~kali4 (2015-01-22) i686 GNU/Linux&lt;/p&gt;
+
+&lt;p&gt;开始&lt;/p&gt;
+
+&lt;p&gt;打开一个终端，获得root权限，如果不想获得，后面某些语句加 sudo也可以。&lt;/p&gt;
+
+&lt;p&gt;用vm编辑器或leafpad打开/etc/apt/sources.list文件，把下面三行加在后面&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
+deb http://mirrors.ustc.edu.cn/kali kali main non-free contrib
+deb-src http://mirrors.ustc.edu.cn/kali kali main non-free contrib
+deb http://mirrors.ustc.edu.cn/kali-security kali/updates main contrib non-free
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;执行这两句&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
+apt-get update
+aptitude install libtool shtool autoconf git-core pkg-config make gcc
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;在根目录下创建一个文件夹&lt;/p&gt;
+
+&lt;p&gt;```
+    mkdir osmcombb&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cd osmcombb ```
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;安装交叉编译环境&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
+sudo apt-get install build-essential libgmp3-dev libmpfr-dev libx11-6 libx11-dev texinfo flex bison libncurses5  libncurses5-dbg libncurses5-dev libncursesw5 libncursesw5-dbg libncursesw5-dev libpcsclite-dev zlibc zlib1g-dev libmpfr4 libmpc-dev
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
+aptitude install libtool shtool automake autoconf git-core pkg-config make gcc
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;```
+wget http://bb.osmocom.org/trac/raw-attachment/wiki/GnuArmToolchain/gnu-arm-build.2.sh&lt;/p&gt;
+
+&lt;p&gt;chmod +x gnu-arm-build.2.sh
+```&lt;/p&gt;
+
+&lt;p&gt;在osmcombb下创建三个文件夹install，build，src。&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
+mkdir build install src
+cd src/
+wget http://ftp.gnu.org/gnu/gcc/gcc-4.5.2/gcc-4.5.2.tar.bz2
+wget http://ftp.gnu.org/gnu/binutils/binutils-2.21.1a.tar.bz2
+wget ftp://sources.redhat.com/pub/newlib/newlib-1.19.0.tar.g
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;（上面三个文件中，有些大神用的那个链接太久远了，文件损坏了，4.5.2是可以用的。）&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
+cd ..
+./gnu-arm-build.2.sh
+export PATH=$PATH:/root/osmcombb/install/bin
+(路径最好写成绝对路径。)
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;最好检查一下上面PATH语句有没有加到bashrc中。&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
+vim ~/.bashrc
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;在最后一行如果没有export那句话，请手动加上。经过这么长时间的折腾，终于可以进入下一阶段了。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;先来获取libosmocore：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
+git clone git://git.osmocom.org/libosmocore.git
+cd libosmocore/
+autoreconf -i
+./configure
+make
+sudo make install
+cd ..
+sudo ldconfig
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;最后一句千万不能少，否则后面会发生错误。
+&lt;img src=&quot;/myBlog/images/kali1.jpg&quot; alt=&quot;这里写图片描述&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;获取osmocom-bb：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
+git clone git://git.osmocom.org/osmocom-bb.git
+cd osmocom-bb
+git pull --rebase
+git checkout --track origin/luca/gsmmap
+cd src
+make
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;硬件设备搭建&lt;/h2&gt;
+
+&lt;p&gt;经过多天的等待，硬件终于配齐了。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;C118手机一部&lt;/li&gt;
+  &lt;li&gt;USB TO TTL接口一个&lt;/li&gt;
+  &lt;li&gt;C118数据线一根。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;注：某宝卖的USBTOTTL接口并不太稳定，建议多买一个做备份。上面帖子中有些自己DIY数据线，这个2.5mm的耳机线不太好找，还是直接买一根比较方便。本文只能接收到下行短信，如果某些童鞋要接收上行短信，建议买两个C118手机，防止改装的时候弄坏模块接口。&lt;/p&gt;
+
+&lt;p&gt;设备都有了，剩下就很快啦。&lt;/p&gt;
+
+&lt;p&gt;首先肯定是把设备都查上啦，不过在查上之前，得确保接线正确。数据线三根线分别是红、白、黑。&lt;/p&gt;
+
+&lt;p&gt;红-&amp;gt;TXD
+白-&amp;gt;RXD
+黑-&amp;gt;GND&lt;/p&gt;
+
+&lt;p&gt;插上后，USBTOTTL应该是亮的，我这个只买了一个，有时候亮有时候不亮，很郁闷。打开一个终端，输入：&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
+lsusb
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;如果显示有CP210x，那说明是没问题了。
+&lt;img src=&quot;/myBlog/images/kali2.jpg&quot; alt=&quot;这里写图片描述&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;接下来打开四个终端A、B、C、D。
+A中输入：&lt;/p&gt;
+
+&lt;p&gt;```
+cd osmocombb/osmocom-bb/src/host/osmocon/&lt;/p&gt;
+
+&lt;p&gt;./osmocon -m c123xor -p /dev/ttyUSB0../../target/firmware/board/compal_e88/layer1.compalram.bin
+```&lt;/p&gt;
+
+&lt;p&gt;按一下手机上的红色按键，可能会出现异常：
+&lt;em&gt;Received FTMTOOL from phone ,ramloder has aborted。&lt;/em&gt;
+这种情况很可能是USBTOTTL有问题，也可能是没插好，如果有备件的话就换一个试试，我这里没有，只能各种xxx了。。。&lt;/p&gt;
+
+&lt;p&gt;如果正常的话，在A中如图：
+&lt;img src=&quot;/myBlog/images/kali3.jpg&quot; alt=&quot;这里写图片描述&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;去B中输入：&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
+cd osmcombb/osmocom-bb/src/host/layer23/src/misc/
+./cell_log -O
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;注：大欧，O
+扫描可用的ARFCN。查阅相关资料，移动占用890～909/935～954MHz，ARFCN：1-95；联通占用909～915/954～960MHz，ARFCN：96-124。测试后发现移动32，34能接受到的比较多一些。联通124接收到的比较多一些。
+&lt;img src=&quot;/myBlog/images/kali4.jpg&quot; alt=&quot;这里写图片描述&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;在C中，输入：&lt;/p&gt;
+
+&lt;p&gt;```
+cd osmocombb/osmocom-bb/src/host/layer23/src/misc/&lt;/p&gt;
+
+&lt;p&gt;./ccch_scan -i 127.0.0.1 -a ARFCN值
+```&lt;/p&gt;
+
+&lt;p&gt;在D中输入：&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
+wireshark -k -i lo -f &#39;port 4729&#39;
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;打开wireshark，修改过滤器为gsm_sms。点击apply就可以接受到gsm_sms协议的短信了。在最后一行的TP-USER-DATA中，可以看到短信内容，发送者的还有电话号码。
+&lt;img src=&quot;/myBlog/images/kali5.jpg&quot; alt=&quot;这里写图片描述&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;就到这里罢。&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>8种排序法（Java实现）</title>
+   <link href="http://lanyon.getpoole.com/2016/07/22/sortings/"/>
+   <updated>2016-07-22T00:00:00+08:00</updated>
+   <id>http://lanyon.getpoole.comhttp://gyk6985432.github.io/myBlog/2016/07/22/sortings</id>
+   <content type="html">&lt;p&gt;内部排序法有8种：冒泡排序法、选择排序法、插入排序法、合并排序法、快速排序法、堆排序法、希尔排序法和基数排序法。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;排序的稳定性：数据经过排序后，两个相同键值的记录仍然保持原来的次序。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;排序方法&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;稳定性&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;冒泡排序法&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;稳定&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;选择排序法&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;不稳定&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;插入排序法&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;稳定&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;希尔排序法&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;不稳定&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;归并排序法&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;稳定&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;快速排序法&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;不稳定&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;堆积排序法&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;不稳定&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;基数排序法&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;稳定&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;前四种都是简单的排序，后三种较为复杂。&lt;/p&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;冒泡排序法&lt;/h2&gt;
+&lt;p&gt;冒泡排序法为交换排序法的一种，基本思想是从第一个元素开始，与后面一个的元素比较，若顺序有误则二者交换。然后对下一个位置的元素重复上述过程。这样完成一次扫描后，最后一个元素位置是正确的。继续第二次扫描，确定倒数第二个元素，以此类推。
+由于只是对相邻元素进行交换，所以是稳定排序。&lt;/p&gt;
+
+&lt;p&gt;复杂度分析：最坏情况需要比较的次数为(n-1)+(n-2)+(n-3)+…+3+2+1=n(n-1)/2，时间复杂度为O(n^2)。最好情况为n-1次比较，时间复杂度为O(n)。只需要一个额外空间，空间复杂度为O(1)。
+适用于数据量小或部分数据已经排过序的情况。&lt;/p&gt;
+
+&lt;p&gt;```
+//冒泡排序法(Bubble Sort)&lt;/p&gt;
+
+&lt;p&gt;public class BubbleSorting {
+    public static void main(String[] args){
+        int i,j,tmp;
+        int data[] = {6,5,9,7,2,8};  //原始数据&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    System.out.println(&quot;冒泡排序法：&quot;);
+    System.out.print(&quot;原始数据为：&quot;);
+    for(i=0;i&amp;lt;6;i++){
+        System.out.print(data[i]+&quot; &quot;);
+    }
+    System.out.println();
+
+    for(i=5;i&amp;gt;0;i--){   //扫描次数
+        for(j=0;j&amp;lt;i;j++){   //比较、交换次数
+            if(data[j]&amp;gt;data[j+1]){
+                tmp = data[j];
+                data[j] = data[j+1];
+                data[j+1] = tmp;
+            }
+        }
+
+        //打印各次扫描结果
+        for(j=0;j&amp;lt;6;j++){
+            System.out.print(data[j]+&quot; &quot;);
+        }
+        System.out.println();
+    }
+
+    System.out.println(&quot;排序结果为：&quot;);
+    for(i=0;i&amp;lt;6;i++){
+            System.out.print(data[i]+&quot; &quot;);
+    }
+System.out.println();
+} } ```
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;选择排序法&lt;/h2&gt;
+&lt;p&gt;对于由小到大排序的情况，进行第一次扫描，从第一个位置开始，在其后依次寻找比它小的元素，从而将最小的元素放在第一个位置。第二次扫描，从第二个位置开始，重复上面的过程。
+由于排序时要直接和最前面的元素交换，因此有可能会使原来的次序改变，所以它是不稳定的排序法。&lt;/p&gt;
+
+&lt;p&gt;复杂度分析：每一次扫描过程中都要找到最小元素，然后进行交换，因此比较的次数总是(n-1)+(n-2)+(n-3)+…+3+2+1=n(n-1)/2，时间复杂度为O(n^2)。
+此方法适用于数据量小或部分数据已经排过序的情况。&lt;/p&gt;
+
+&lt;p&gt;```
+//选择排序法
+public class SelectionSorting{&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;int data[] = new int[]{9,7,5,3,4,6};
+public static void main(String[] args){
+    System.out.print(&quot;原始数据为：&quot;);
+    SelectionSorting test = new SelectionSorting();
+    test.showData();
+    test.select();
+}
+
+public void showData(){
+    int i;
+    for (i=0;i&amp;lt;6;i++) {
+        System.out.print(data[i]+&quot; &quot;);
+    }
+    System.out.println();
+}
+
+public void select(){
+    int i,j,temp;
+    for (i=0;i&amp;lt;5;i++) {
+        for (j=i+1;j&amp;lt;6;j++) {
+            if (data[i]&amp;gt;data[j]) {
+                temp=data[i];
+                data[i]=data[j];
+                data[j]=temp;
+            }
+        }
+        System.out.print(&quot;第&quot;+(i+1)+&quot;次排序：&quot;);
+        for (j=0;j&amp;lt;6;j++) {
+            System.out.print(data[j]+&quot; &quot;);
+        }
+        System.out.println();
+    }
+    System.out.println();
+} } ```
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;插入排序法&lt;/h2&gt;
+&lt;p&gt;第一次扫描时，从第二个元素开始，与已经排好序的每个元素比较，将其插入到合适的位置。第二次扫描从第三个元素开始，重复上述过程。
+由于将某一个元素插入到合适位置的过程中，元素是逐个依次往后移动，所以是稳定排序。&lt;/p&gt;
+
+&lt;p&gt;复杂性分析：最坏情况需要比较的次数为(n-1)+(n-2)+(n-3)+…+3+2+1=n(n-1)/2，时间复杂度为O(n^2)。最好情况为O(n)。
+插入排序法适用于大部分已经排过序，或已排序的数据中新增数据后进行排序的情况。
+插入排序中会有大量的数据移动，因此最好在链表上操作。&lt;/p&gt;
+
+&lt;p&gt;```
+//插入排序法&lt;/p&gt;
+
+&lt;p&gt;import java.io.*;&lt;/p&gt;
+
+&lt;p&gt;public class InsertSorting{
+    int data[] = new int[6];
+    int size = 6;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;public static void main(String[] args) {
+    InsertSorting test = new InsertSorting();
+    test.inputarr();
+    System.out.print(&quot;您输入的原始数据为： &quot;);
+    test.showData();
+    test.insert();
+}
+
+public void inputarr(){
+    int i;
+    for (i=0;i&amp;lt;size;i++) {
+        System.out.print(&quot;请输入第&quot;+(i+1)+&quot;个元素&quot;);
+        try{
+            InputStreamReader isr = new InputStreamReader(System.in);
+            BufferedReader br = new BufferedReader(isr);
+            data[i]=Integer.parseInt(br.readLine());
+        }catch(Exception e){
+            System.out.println(&quot;输入有误！&quot;);
+        }
+    }
+}
+
+public void showData(){
+    int i;
+    for (i=0;i&amp;lt;size;i++) {
+        System.out.print(data[i]+&quot; &quot;);
+    }
+    System.out.println();
+}
+
+public void insert(){
+    int i,j,temp;
+    for (i=1;i&amp;lt;size;i++) {
+        temp = data[i];
+        j=i-1;
+        while(j&amp;gt;=0 &amp;amp;&amp;amp; temp&amp;lt;data[j]){
+            data[j+1]=data[j];
+            j--;
+        }
+        data[j+1]=temp;
+        System.out.print(&quot;第&quot;+i+&quot;次扫描：&quot;);
+        showData();
+    }
+} } ```
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;section-3&quot;&gt;希尔排序法&lt;/h2&gt;
+&lt;p&gt;希尔排序法是D.L.Shell 于1959年7月发明的一种排序方法。排序的基本思想是将数据分为一定间隔的若干组，采用插入排序法对组内元素排序后，逐渐减小间隔，重复上述过程。
+虽然在组内排序采用的是插入排序法，但不同的分组中若含有相同元素，在排列后合并就可能使原来次序改变，因此希尔排序法是不稳定排序。&lt;/p&gt;
+
+&lt;p&gt;复杂度分析：时间复杂度随增量选择不同而不同，希尔增量的时间复杂度为O(n^2)，而Hibbard增量的时间复杂度为O(n^1.5)。空间复杂度为O(1)。有人提倡几乎任何排序工作在开始时都可以用希尔排序，若在实际使用中证明它不够快，再改成快速排序这样更高级的排序算法。希尔排序比直接插入排序快的原因：当n值很大时数据项每一趟排序需要的个数很少，但数据项的距离很长。当n值减小时每一趟需要移动的数据增多，此时已经接近于它们排序后的最终位置。正是这两种情况的结合才使希尔排序效率比插入排序高很多。&lt;/p&gt;
+
+&lt;p&gt;```
+//希尔排序法&lt;/p&gt;
+
+&lt;p&gt;import java.io.*;&lt;/p&gt;
+
+&lt;p&gt;public class ShellSorting{
+    int data[] = new int[8];
+    int size = 8;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;public static void main(String[] args) {
+    ShellSorting test = new ShellSorting();
+    test.inputarr();
+    System.out.println(&quot;您输入的原始数据为：&quot;);
+    test.showData();
+    test.shell();
+}
+
+public void inputarr(){
+    int i = 0;
+    for (i=0;i&amp;lt;size;i++) {
+        System.out.print(&quot;请输入第&quot;+(i+1)+&quot;个元素：&quot;);
+        try{
+            InputStreamReader isr = new InputStreamReader(System.in);
+            BufferedReader br = new BufferedReader(isr);
+            data[i]=Integer.parseInt(br.readLine());
+        }catch(Exception e){
+            System.out.println(&quot;输入有误！&quot;);
+        }
+    }
+}
+
+public void showData(){
+    for (int i=0;i&amp;lt;size;i++) {
+        System.out.print(data[i]+&quot; &quot;);
+    }
+    System.out.println();
+}
+
+public void shell(){
+    int i,j,temp,jmp,k;
+    k=1;
+    jmp = size/2;
+    while(jmp&amp;gt;0){
+        for (i=jmp;i&amp;lt;size;i++) {
+            temp = data[i];
+            j=i-jmp;
+            while(j&amp;gt;=0 &amp;amp;&amp;amp; data[j]&amp;gt;temp){
+                data[j+jmp] = data[j];
+                j = j-jmp;
+            }
+            data[j+jmp] = temp;
+        }
+        System.out.print(&quot;第&quot;+(k++)+&quot;次排序：&quot;);
+        showData();
+        jmp = jmp/2;
+    }
+} } ```
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;section-4&quot;&gt;快速排序&lt;/h2&gt;
+&lt;p&gt;快速排序是公认的最佳排序法，其基本思想是在数据中找一个中间值，把比它小的放在左边，比它大的放在右边，对相邻的数据重复上述过程。快速排序的步骤为：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;取K为第一个键值&lt;/li&gt;
+  &lt;li&gt;由左向右找出键值Ki使得Ki&amp;gt;K&lt;/li&gt;
+  &lt;li&gt;由右向左找出键值Kj使得Kj&amp;lt;K&lt;/li&gt;
+  &lt;li&gt;若i&amp;lt;j，则Ki和Kj交换，并跳到步骤2&lt;/li&gt;
+  &lt;li&gt;若i&amp;gt;=j，则将K和Kj交换，以j为基准点将数据分为左右两部分，对左右两部分重复上述过程。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;快速排序是不稳定排序&lt;/p&gt;
+
+&lt;p&gt;复杂度分析：最快情况和平均情况下，时间复杂度为O(nlogn)。最差情况为序列已经排好序，时间复杂度为O(n^2)。最佳情况下空间复杂度为O(logn)，最差情况为O(n)。&lt;/p&gt;
+
+&lt;p&gt;```
+//快速排序法&lt;/p&gt;
+
+&lt;p&gt;import java.io.&lt;em&gt;;
+import java.util.&lt;/em&gt;;&lt;/p&gt;
+
+&lt;p&gt;public class QuickSorting{
+    int size;
+    int process=0;
+    int[] data = new int[100];&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;public static void main(String[] args){
+    QuickSorting test = new QuickSorting();
+
+    System.out.println(&quot;请输入数组大小（100以内）:&quot;);
+    try{
+        InputStreamReader isr = new InputStreamReader(System.in);
+        BufferedReader br = new BufferedReader(isr);
+        test.size = Integer.parseInt(br.readLine());
+    }catch(Exception e){
+        System.out.println(&quot;输入有误&quot;);
+    }
+    test.inputarr();
+    System.out.print(&quot;原始数据为：&quot;);
+    test.showData();
+    test.quick(test.data,test.size,0,test.size-1);
+    System.out.print(&quot;排序结果为：&quot;);
+    test.showData();
+}
+
+void inputarr(){
+    //随机方式输入
+    Random rand = new Random();
+    for (int i=0;i&amp;lt;size;i++) {
+        data[i] = Math.abs(rand.nextInt(99))+1;
+    }
+}
+
+void showData(){
+    for (int i=0;i&amp;lt;size;i++) {
+        System.out.print(data[i] + &quot; &quot;);
+    }
+    System.out.println();
+}
+
+void quick(int[] d, int size, int lf, int rg){
+    int first,temp;
+    int lf_idx;
+    int rg_idx;
+    int t;
+
+
+    if (lf&amp;lt;rg) {
+        lf_idx = lf+1;
+        rg_idx = rg;
+
+        //取出第一个元素K
+        first = d[lf];
+        while(true){
+
+            System.out.print(&quot;第&quot;+(process++)+&quot;次处理过程：&quot;);
+            for (t=0;t&amp;lt;size;t++) {
+                System.out.print(d[t]+&quot; &quot;);
+            }
+            System.out.println();
+
+            //从左向右找出第一个大于K的元素Ki
+            for (int i=lf+1;i&amp;lt;rg;i++) {
+                if (d[i]&amp;gt;first) {
+                    lf_idx=i;
+                    break;
+                }
+                lf_idx++;
+            }
+            //从右向左找出第一个小于K的元素Kj
+            for (int j=rg; j&amp;gt;=lf+1;j--) {
+                if (d[j]&amp;lt;=first) {
+                    rg_idx=j;
+                    break;
+                }
+                rg_idx--;
+            }
+            //若i&amp;lt;j，则Ki和Kj交换
+            if (lf_idx&amp;lt;rg_idx) {
+                temp = d[lf_idx];
+                d[lf_idx] = d[rg_idx];
+                d[rg_idx] = temp;
+            }else{
+                break;
+            }
+        }
+        //若i&amp;gt;=j，则K和Kj交换
+        if (lf_idx&amp;gt;=rg_idx) {
+            temp = d[lf];
+            d[lf] = d[rg_idx];
+            d[rg_idx] = temp;
+            //对分开的两部分各自递归
+            quick(d,size,lf,rg_idx-1);
+            quick(d,size,rg_idx+1,rg);
+        }
+    }
+} } ```
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;section-5&quot;&gt;堆排序&lt;/h2&gt;
+&lt;p&gt;堆排序是基于二叉堆原理，二叉堆分为最小二叉堆和最大二叉堆。以最大二叉堆为例，它有三个特点：
+1. 它是一个完全二叉树
+2. 所有节点的值都大于或等于它左右子节点的值
+3. 树根的值是最大的
+排序的基本思想是，利用上面第三个特征，将原有数据构建成一个二叉堆，取出其树根元素，将剩下的数据继续构建二叉堆，重复上述过程。&lt;/p&gt;
+
+&lt;p&gt;在算法的实现中，需要一个构建二叉堆的方法，一个把剩余元素调整为二叉堆的方法。&lt;/p&gt;
+
+&lt;p&gt;复杂度分析：任何情况下时间复杂度为O(nlogn)，空间复杂度为O(1)。元素交换时是在父子节点间进行的，相邻节点顺序会被打乱，因此不是稳定排序。&lt;/p&gt;
+
+&lt;p&gt;```
+//堆排序法&lt;/p&gt;
+
+&lt;p&gt;public class HeapSorting{
+    public static void main(String[] args){
+        int size,i;
+        size = 9;
+        int[] data = {0,5,6,4,8,3,2,7,1};
+        System.out.print(“原始数据为：”);
+        for (i=1;i&amp;lt;size;i++) {
+            System.out.print(data[i]+” “);
+        }
+        System.out.println();
+        HeapSorting.heap(data,size);
+        System.out.print(“排序结果：”);
+        for (i=1;i&amp;lt;size;i++) {
+            System.out.print(data[i]+” “);
+        }
+        System.out.println();
+    }&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;public static void heap(int[] data, int size){
+    int i,j,temp;
+    for (i=(size/2);i&amp;gt;0;i--) {
+        HeapSorting.adjustHeap(data,i,size-1);
+    }
+    System.out.print(&quot;堆中元素：&quot;);
+    for (i=1;i&amp;lt;size;i++) {
+        System.out.print(data[i]+&quot; &quot;);
+    }
+    System.out.println();
+
+    for (i=size-2;i&amp;gt;0;i--) {
+        temp = data[i+1];       //将调整过的数据的根元素与最后一个元素交换
+        data[i+1] = data[1];
+        data[1] = temp;
+        HeapSorting.adjustHeap(data,1,i);   //除去最后一个元素，对剩余元素进行调整
+        System.out.print(&quot;处理过程：&quot;);
+        for (j=1;j&amp;lt;size;j++) {
+        System.out.print(data[j]+&quot; &quot;);
+        }
+        System.out.println();
+    }
+}
+
+public static void adjustHeap(int[] data, int i, int size){
+    int j,temp,post;
+    j = 2 * i;
+    temp = data[i];     //将根元素暂存
+    post = 0;
+    while (j&amp;lt;=size &amp;amp;&amp;amp; post==0) {
+        if (j&amp;lt;size) {
+            if (data[j]&amp;lt;data[j+1]) {   //若左孩子小于右孩子，寻找比当前节点大的孩子节点
+                j++;
+            }
+        }
+        if (temp&amp;gt;data[j]) {         //若根元素大于较大的孩子，直接跳出
+            post = 1;
+        }else{                   //若根元素小于较大的孩子，将该孩子节点向上浮动
+            data[j/2] = data[j];
+            j = 2*j;
+        }
+    }
+    data[j/2] = temp;       //将原来根元素放到较大的孩子的位置
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;}
+```&lt;/p&gt;
+
+&lt;h2 id=&quot;section-6&quot;&gt;基数排序法&lt;/h2&gt;
+
+&lt;p&gt;基数排序法也叫桶排序法，是分配方式的一种，基本思想是将数据先后按个位、十位、百位…排序，得到最终结果。&lt;/p&gt;
+
+&lt;p&gt;复杂度分析：任何情况下时间复杂度均为O(nlog_p^k)，k是原始数据的最大值。空间复杂度为O(n*p)，n是原始数据的个数，p是最大位数。&lt;/p&gt;
+
+&lt;p&gt;```
+//基数排序法&lt;/p&gt;
+
+&lt;p&gt;import java.io.&lt;em&gt;;
+import java.util.&lt;/em&gt;;&lt;/p&gt;
+
+&lt;p&gt;public class BucketSorting{&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;int size;
+int[] data = new int[100];
+
+public static void main(String[] args) {
+    BucketSorting test= new BucketSorting();
+    System.out.print(&quot;请输入数组大小（&amp;lt;100）：&quot;);
+    try{
+        InputStreamReader isr = new InputStreamReader(System.in);
+        BufferedReader br =  new BufferedReader(isr);
+        test.size = Integer.parseInt(br.readLine());
+    }catch(Exception e){
+        System.out.print(&quot;输入有误&quot;);
+    }
+    test.inputarr();
+    System.out.println(&quot;原始数据为：&quot;);
+    test.showData();
+    test.bucket();
+}
+
+public void showData(){
+    for (int i=0;i&amp;lt;size;i++) {
+        System.out.print(data[i]+&quot; &quot;);
+    }
+    System.out.println();
+}
+
+public void inputarr(){
+    Random r = new Random();
+    for (int i=0;i&amp;lt;size;i++) {
+        data[i] = Math.abs(r.nextInt(999))+1;;
+    }
+}
+
+public void bucket(){
+    for (int n=1;n&amp;lt;=100;n*=10) {
+        int[][] temp = new int[10][100];
+        for (int i=0;i&amp;lt;size;i++) {
+            int m = (data[i]/n)%10;
+            temp[m][i] = data[i];
+        }
+        int k=0;
+        for (int i=0;i&amp;lt;10;i++) {
+            for (int j=0;j&amp;lt;size;j++) {
+                if (temp[i][j] != 0) {
+                    data[k] = temp[i][j];
+                    k++;
+                }
+            }
+        }
+        System.out.print(n+&quot;位数排序结果：&quot;);
+        showData();
+    }
+} } ```
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>locate /var/lib/mlocate/mlocate.db</title>
+   <link href="http://lanyon.getpoole.com/2016/05/28/locate-linux/"/>
+   <updated>2016-05-28T00:00:00+08:00</updated>
+   <id>http://lanyon.getpoole.comhttp://gyk6985432.github.io/myBlog/2016/05/28/locate-linux</id>
+   <content type="html">&lt;p&gt;今天在CentOS里使用&lt;code class=&quot;highlighter-rouge&quot;&gt;locate&lt;/code&gt;命令时候，报错了：&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
+locate: can not stat () `/var/lib/mlocate/mlocate.db&#39;: No such file or directory
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/myBlog/images/locateError.jpg&quot; alt=&quot;locate&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;原因是找不到&lt;code class=&quot;highlighter-rouge&quot;&gt;mlocate.db&lt;/code&gt;数据库文件，因为使用&lt;code class=&quot;highlighter-rouge&quot;&gt;locate&lt;/code&gt;命令时候不是通过遍历文件目录下所有文件来查找的，而是通过数据库进行搜索，这样大大提升了搜索速度。&lt;/p&gt;
+
+&lt;p&gt;解决方法：&lt;/p&gt;
+
+&lt;p&gt;```
+sudo yum install mlocate&lt;/p&gt;
+
+&lt;p&gt;sudo updatedb
+```&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/myBlog/images/updateDB.jpg&quot; alt=&quot;locate&quot; /&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>在CentOS中编译JDK8</title>
+   <link href="http://lanyon.getpoole.com/2016/04/27/build-openjdk8-in-centos/"/>
+   <updated>2016-04-27T00:00:00+08:00</updated>
+   <id>http://lanyon.getpoole.comhttp://gyk6985432.github.io/myBlog/2016/04/27/build-openjdk8-in-centos</id>
+   <content type="html">&lt;p&gt;最近在看《深入理解java虚拟机》，第一章内容就是获取JDK源码，书看了一大半了才决定来亲自试试，毕竟在windows系统上这些东西折腾起来很麻烦。书上编译的是jdk7，因为作者出书的时候还没发布jdk8，既然都2016年了，咱们也得做点新工作，直接编译jdk8，废话不多说了，直接上手吧。&lt;/p&gt;
+
+&lt;p&gt;首先是在VMWare上安装linux，我在这有被坑了，一直比较喜欢ubuntu，所以先在ubuntu上试试，没想到别的都没问题，在make时出现错误，说checked_os_version failed，上网找了半天也没什么结果，所以又装了一个CentOS系统，实践证明，CentOS果然不负众望，怪不得很多书都推荐用这款操作系统，编译过程极其顺利。我的VMWare是32位的，只能编译32的jdk，64位的估计也差不多，下载对了即可。&lt;/p&gt;
+
+&lt;p&gt;安装CentOS就不必多说了，装系统比较简单，无非就是下载，安装，分区。。。&lt;/p&gt;
+
+&lt;p&gt;比较重要的是配置国内的源，默认的CentOS源有点慢，国内还是有很多问题，推荐的是163的源，&lt;a href=&quot;http://jingyan.baidu.com/article/d2b1d1027b76c75c7e37d4d0.html&quot;&gt;百度经验&lt;/a&gt;里有相关的教程，不会的同学可以参考一下。&lt;/p&gt;
+
+&lt;p&gt;接下来下载对应的&lt;a href=&quot;http://download.java.net/openjdk/jdk8/&quot;&gt;jdk8源码包&lt;/a&gt;和bootstrap jdk，这里参考README-builds.html里的教程，应该采用的比较新的jdk7作为bootstrap jdk，直接下载安装jdk7，解压后改名为java，移动到/usr/lib/jvm/下面&lt;/p&gt;
+
+&lt;p&gt;把java环境变量设置一下：&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
+export JAVA_HOME=/usr/lib/jvm/java
+export JRE_HOME=${JAVA_HOME}/jre
+export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib
+export PATH=${JAVA_HOME}/bin:$PATH
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/myBlog/images/javaversion.JPG&quot; alt=&quot;Alt text&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;解压jdk8源码包后，进入该文件夹&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
+sudo bash ./configure
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;根据提示安装需要的依赖，其中要求安装ccache，在163源里没找到，没有安装也没事，然后直接make即可。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/myBlog/images/finishJDK.JPG&quot; alt=&quot;Alt text&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;当然中间省略了很多书中介绍到的命令，本人linux玩的不熟练，那些命令大多都是用来优化编译速度的，也无关紧要。。。&lt;/p&gt;
+
+&lt;p&gt;在openjdk/build下可以看到编译好的jdk源码，大功告成。&lt;/p&gt;
+
+&lt;p&gt;欢迎遇到同样问题的同学前来讨论~~&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>安装jekyll问题解决方案</title>
@@ -22,10 +1075,10 @@
 
 &lt;p&gt;国内现在比较推荐的是ruby.taobao.org，但我改了之后还是无法连接。&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ gem sources -r https://rubygems.org/
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
+$ gem sources -r https://rubygems.org/
 $ gem sources -a https://ruby.taobao.org/
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/myBlog/images/gemError1.PNG&quot; alt=&quot;rubyError1&quot; /&gt;&lt;/p&gt;
 
@@ -35,10 +1088,10 @@ $ gem sources -a https://ruby.taobao.org/
 
 &lt;p&gt;试了半天不管用，有换回原来的了：&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ gem sources -r https://ruby.taobao.org/
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
+$ gem sources -r https://ruby.taobao.org/
 $ gem source -a http://rubygem.org/
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;还是不行，又更新了一下&lt;a href=&quot;http://rubygems.org/&quot;&gt;rubygems&lt;/a&gt;，开了代理后，终于大功告成了。&lt;/p&gt;
 
@@ -67,9 +1120,9 @@ $ gem source -a http://rubygem.org/
 
 &lt;p&gt;插件是个大坑啊，有的人顺利直接就装上了，可惜很多人没那么幸运，安装第一个插件就卡住了。&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Compiler Tool not found!
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
+Compiler Tool not found!
+&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;居然说我没有安装python和visual studio！！怎么可能？？&lt;/p&gt;
 
@@ -92,11 +1145,11 @@ $ gem source -a http://rubygem.org/
 &lt;p&gt;到底怎么解决呢？
 当然是开个代理了（自己找梯子），dos下设置代理&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ apm config set strict-ssl false
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
+$ apm config set strict-ssl false
 $ apm config set http-proxy http://127.0.0.1:1080
 $ apm config set https-proxy http://127.0.0.1:1080
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;（具体可参考https://github.com/atom/apm）&lt;/p&gt;
 
@@ -140,31 +1193,31 @@ $ apm config set https-proxy http://127.0.0.1:1080
 
 &lt;p&gt;1.进入目录&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cd /usr/local/src
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
+cd /usr/local/src
+&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;2.安装git需要的依赖：&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;yum install curl curl-devel zlib-devel openssl-devel perl cpio expat-devel gettext-devel
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
+yum install curl curl-devel zlib-devel openssl-devel perl cpio expat-devel gettext-devel
+&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;3.下载git包&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;wget http://git-core.googlecode.com/files/git-1.7.7.5.tar.gz
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
+wget http://git-core.googlecode.com/files/git-1.7.7.5.tar.gz
 autoconf
 ./configure
 make
 make install
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;4.安装完成&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git --version
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
+git --version
+&lt;/code&gt;&lt;/p&gt;
 
 </content>
  </entry>
@@ -209,7 +1262,7 @@ finalize()方法是对象逃过鬼门关的最后一次机会，稍后GC将对F-
    <updated>2016-01-17T00:00:00+08:00</updated>
    <id>http://lanyon.getpoole.comhttp://gyk6985432.github.io/myBlog/2016/01/17/canvas-clock</id>
    <content type="html">在慕课网上学了个动态时钟，全部用canvas实现的。
-自己改成了一个粒子时钟，放上来玩玩。
+自己改成了一个粒子时钟，放上来玩玩。屏幕拉动太快了，容易崩掉，对粒子数目限制了一下，稍稍好一些。也可以设置成彩色的，不过还是黑白的好看～～可以直接另存页面下载下来，改成自己喜欢的样子。
 
 
 
@@ -522,7 +1575,8 @@ function updateBalls(){
         balls[i].vy += balls[i].g;
 
         if (balls[i].y &gt;= WINDOW_HEIGHT-RADIUS) {
-            balls[i].y=WINDOW_HEIGHT-RADIUS;
+            //暂时删掉这句
+            //balls[i].y=WINDOW_HEIGHT-RADIUS;
             //balls[i].vy = -balls[i].vy*0.75;
         };
         if (balls[i].vx==0) {
@@ -533,12 +1587,13 @@ function updateBalls(){
     //删掉不在画面中的小球，提高性能
     var cnt=0;
     for (var i = 0; i &lt; balls.length; i++) {
-        if(balls[i].x+RADIUS &gt; 0 &amp;&amp; balls[i].x-RADIUS&lt;WINDOW_WIDTH){
+        if(balls[i].x+RADIUS &gt; 0 &amp;&amp; balls[i].x-RADIUS&lt;WINDOW_WIDTH ){
             balls[cnt++] = balls[i];
         }
     };
 
-    while(balls.length &gt; cnt){ //|| balls.length&gt;300){//Math.min(300,cnt)
+    while(balls.length &gt; cnt || balls.length&gt;900){
+        //Math.min(300,cnt)
         balls.pop();
     }
 }
