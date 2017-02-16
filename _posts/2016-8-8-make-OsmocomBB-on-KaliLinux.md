@@ -4,8 +4,9 @@ title: 在Kali Linux上编译OsmocomBB
 ---
 
 
-在虚拟机上装了kali Linux很久了，一直没整点成果出来，突发奇想看看试试看手机能不能被窃听。于是上网搜GSM Sniffing，折腾了一天，终于可以了。参考的文章如下（有需要的童鞋请参考大神们的成果）：
-
+在虚拟机上装了kali Linux很久了，一直没整点成果出来，突发奇想看看试试看手机能不能被窃听。于是上网搜GSM Sniffing，折腾了一天，终于可以了。
+<!--more-->
+参考的文章如下（有需要的童鞋请参考大神们的成果）：
 http://www.blogjava.net/baicker/archive/2013/11/13/406293.html
 http://holmesian.org/GSM-SMS-Sniffing
 http://bbs.acehat.com/forum.php?mod=viewthread&tid=6877&page=1
