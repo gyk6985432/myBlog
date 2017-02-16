@@ -3,7 +3,7 @@
 # Use of `relative_permalinks` ensures post links from the index work properly.
 gems:                [jekyll-paginate]
 permalink:           pretty
-excerpt_separator:   "\n\n"
+excerpt_separator:   <!--more-->
 
 # Setup
 title:               高悦凯的博客
