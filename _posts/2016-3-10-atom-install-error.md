@@ -5,7 +5,7 @@ title: atom安装插件的问题
 
 今天终于准备装最近很火的[atom](https://atom.io/)了，据说比SublimeText还牛，这么牛的东西咱肯定得试试啊！下载安装很给力，一键安装，好在软件也不大，只有80+M，听说windows下可以使用apm安装插件，模仿的是大名鼎鼎的npm，那想必非常Diao。
 
-{{ excerpt_separator}}
+<!--more-->
 
 前段时间看到<开发者头条>上分享的[atom酷炫打字效果](https://atom.io/packages/activate-power-mode/)，着实让人大开眼界。当然，最重要的是markdown支持要好，一边预览一边编辑，那真是飞一样的感觉~
 
