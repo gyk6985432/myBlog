@@ -5,6 +5,8 @@ title: Windows下指定python所在目录
 
 一般在安装python时要设置python的环境变量，运行.py文件：
 
+<!--more-->
+
 ```
 python ***.py
 ```
