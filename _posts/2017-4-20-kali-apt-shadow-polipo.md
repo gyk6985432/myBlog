@@ -82,9 +82,14 @@ Acquire::http::Proxy "http://12722.0.0.1：8123";
 这样就可以使用官方源了。。。
 
 
-reference:
+Reference:
+
 https://askubuntu.com/questions/257290/configure-proxy-for-apt
+
 https://www.ohlinge.cn/kali/rolling.html
+
 https://lzhd24.github.io/2015/07/30/176/
+
 http://www.jianshu.com/p/8e7d7f57bf59
+
 http://droidyue.com/blog/2016/04/04/set-shadowsocks-proxy-for-terminal/
