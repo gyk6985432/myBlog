@@ -8,6 +8,8 @@ title: Kali linux上为apt-get设置shadowsocks
 由于阿里源出现了问题，在未fq的情况下用不了官方源，配置不当的话中科大的源也用不了。
 
 阿里源有时候就不好用了，sana和rolling都不行：
+
+<!--more-->
 ```
 deb http://mirrors.aliyun.com/kali kali-rolling main non-free contrib
 deb-src http://mirrors.aliyun.com/kali kali-rolling main non-free contrib
@@ -78,3 +80,11 @@ Acquire::http::Proxy "http://12722.0.0.1：8123";
 ```
 
 这样就可以使用官方源了。。。
+
+
+reference:
+https://askubuntu.com/questions/257290/configure-proxy-for-apt
+https://www.ohlinge.cn/kali/rolling.html
+https://lzhd24.github.io/2015/07/30/176/
+http://www.jianshu.com/p/8e7d7f57bf59
+http://droidyue.com/blog/2016/04/04/set-shadowsocks-proxy-for-terminal/
